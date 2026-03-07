@@ -1,0 +1,1392 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio News Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0e17;
+            --bg-secondary: #111827;
+            --bg-card: #1a2235;
+            --bg-card-hover: #1f2a40;
+            --bg-glass: rgba(26, 34, 53, 0.7);
+            --border: #243049;
+            --border-glow: rgba(99, 132, 255, 0.15);
+            --text-primary: #e8ecf4;
+            --text-secondary: #8b95a8;
+            --text-muted: #5c6478;
+            --accent-blue: #6384ff;
+            --accent-cyan: #22d3ee;
+            --accent-green: #10b981;
+            --accent-red: #ef4444;
+            --accent-orange: #f59e0b;
+            --accent-purple: #a78bfa;
+            --accent-pink: #ec4899;
+            --gradient-1: linear-gradient(135deg, #6384ff, #22d3ee);
+            --gradient-2: linear-gradient(135deg, #a78bfa, #ec4899);
+            --gradient-3: linear-gradient(135deg, #10b981, #22d3ee);
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+            --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.4);
+            --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.5);
+            --shadow-glow: 0 0 30px rgba(99, 132, 255, 0.1);
+            --radius: 12px;
+            --radius-lg: 16px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Background gradient orbs */
+        body::before {
+            content: '';
+            position: fixed;
+            top: -200px;
+            right: -200px;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(99, 132, 255, 0.08), transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            bottom: -200px;
+            left: -200px;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(167, 139, 250, 0.06), transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 24px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* HEADER */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 32px;
+            padding: 24px 28px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md), var(--shadow-glow);
+            backdrop-filter: blur(20px);
+        }
+
+        .header-left h1 {
+            font-size: 26px;
+            font-weight: 800;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.5px;
+        }
+
+        .header-left p {
+            color: var(--text-secondary);
+            font-size: 13px;
+            margin-top: 4px;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .refresh-info {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-muted);
+            font-size: 12px;
+        }
+
+        .live-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--accent-green);
+            animation: pulse-dot 2s infinite;
+        }
+
+        @keyframes pulse-dot {
+
+            0%,
+            100% {
+                opacity: 1;
+                box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.6);
+            }
+
+            50% {
+                opacity: 0.7;
+                box-shadow: 0 0 0 6px rgba(16, 185, 129, 0);
+            }
+        }
+
+        .btn-refresh {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            border: 1px solid var(--border);
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .btn-refresh:hover {
+            border-color: var(--accent-blue);
+            background: rgba(99, 132, 255, 0.1);
+        }
+
+        .btn-refresh.loading svg {
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* MARKET OVERVIEW BAR */
+        .market-bar {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 24px;
+            overflow-x: auto;
+            padding-bottom: 4px;
+            scrollbar-width: none;
+        }
+
+        .market-bar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .market-chip {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 16px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            white-space: nowrap;
+            min-width: fit-content;
+            transition: all 0.2s;
+        }
+
+        .market-chip:hover {
+            border-color: var(--accent-blue);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .market-chip .label {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-secondary);
+        }
+
+        .market-chip .value {
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .market-chip .change {
+            font-size: 11px;
+            font-weight: 600;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        .change.up {
+            color: var(--accent-green);
+            background: rgba(16, 185, 129, 0.1);
+        }
+
+        .change.down {
+            color: var(--accent-red);
+            background: rgba(239, 68, 68, 0.1);
+        }
+
+        /* TICKER TABS */
+        .ticker-tabs {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+
+        .ticker-tab {
+            padding: 8px 16px;
+            border: 1px solid var(--border);
+            background: var(--bg-card);
+            color: var(--text-secondary);
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 600;
+            transition: all 0.25s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ticker-tab::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--gradient-1);
+            opacity: 0;
+            transition: opacity 0.25s;
+        }
+
+        .ticker-tab:hover {
+            border-color: var(--accent-blue);
+            color: var(--text-primary);
+            transform: translateY(-1px);
+        }
+
+        .ticker-tab.active {
+            border-color: var(--accent-blue);
+            background: rgba(99, 132, 255, 0.12);
+            color: var(--accent-blue);
+            box-shadow: 0 0 20px rgba(99, 132, 255, 0.1);
+        }
+
+        .ticker-tab.active::before {
+            opacity: 1;
+        }
+
+        .ticker-tab .tab-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 18px;
+            height: 18px;
+            padding: 0 4px;
+            border-radius: 9px;
+            background: rgba(99, 132, 255, 0.15);
+            color: var(--accent-blue);
+            font-size: 10px;
+            font-weight: 700;
+            margin-left: 6px;
+        }
+
+        /* MAIN CONTENT GRID */
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1fr 380px;
+            gap: 24px;
+        }
+
+        @media (max-width: 1100px) {
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* NEWS FEED */
+        .news-section h2 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .news-feed {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .news-card {
+            display: flex;
+            gap: 16px;
+            padding: 16px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            cursor: pointer;
+            transition: all 0.25s;
+            text-decoration: none;
+            color: inherit;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .news-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3px;
+            height: 100%;
+            background: var(--gradient-1);
+            opacity: 0;
+            transition: opacity 0.25s;
+        }
+
+        .news-card:hover {
+            border-color: var(--accent-blue);
+            background: var(--bg-card-hover);
+            transform: translateX(4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .news-card:hover::after {
+            opacity: 1;
+        }
+
+        .news-card-image {
+            width: 120px;
+            min-width: 120px;
+            height: 85px;
+            border-radius: 8px;
+            object-fit: cover;
+            background: var(--bg-secondary);
+        }
+
+        .news-card-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .news-card-title {
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 1.4;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .news-card-meta {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        .news-ticker-badge {
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .news-source {
+            font-size: 11px;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .news-time {
+            font-size: 11px;
+            color: var(--text-muted);
+        }
+
+        .news-dot {
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            background: var(--text-muted);
+        }
+
+        /* BADGE COLORS */
+        .badge-btc {
+            background: rgba(247, 147, 26, 0.15);
+            color: #f7931a;
+        }
+
+        .badge-rklb {
+            background: rgba(99, 132, 255, 0.15);
+            color: var(--accent-blue);
+        }
+
+        .badge-sats {
+            background: rgba(34, 211, 238, 0.15);
+            color: var(--accent-cyan);
+        }
+
+        .badge-te {
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--accent-green);
+        }
+
+        .badge-stx {
+            background: rgba(167, 139, 250, 0.15);
+            color: var(--accent-purple);
+        }
+
+        .badge-tsat {
+            background: rgba(236, 72, 153, 0.15);
+            color: var(--accent-pink);
+        }
+
+        .badge-bbai {
+            background: rgba(239, 68, 68, 0.15);
+            color: var(--accent-red);
+        }
+
+        .badge-nbis {
+            background: rgba(245, 158, 11, 0.15);
+            color: var(--accent-orange);
+        }
+
+        .badge-oklo {
+            background: rgba(34, 211, 238, 0.15);
+            color: var(--accent-cyan);
+        }
+
+        .badge-nvts {
+            background: rgba(167, 139, 250, 0.15);
+            color: var(--accent-purple);
+        }
+
+        /* AI ANALYSIS PANEL */
+        .ai-panel {
+            position: sticky;
+            top: 24px;
+        }
+
+        .ai-panel-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+        }
+
+        .ai-panel-header {
+            padding: 20px;
+            background: linear-gradient(135deg, rgba(99, 132, 255, 0.1), rgba(167, 139, 250, 0.1));
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .ai-panel-header h3 {
+            font-size: 15px;
+            font-weight: 700;
+        }
+
+        .ai-sparkle {
+            font-size: 18px;
+        }
+
+        .ai-panel-body {
+            padding: 20px;
+            max-height: calc(100vh - 280px);
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: var(--border) transparent;
+        }
+
+        .ai-panel-body::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .ai-panel-body::-webkit-scrollbar-thumb {
+            background: var(--border);
+            border-radius: 2px;
+        }
+
+        .ai-insight {
+            padding: 14px;
+            margin-bottom: 12px;
+            border-radius: 10px;
+            border-left: 3px solid;
+            background: rgba(0, 0, 0, 0.2);
+            transition: all 0.2s;
+        }
+
+        .ai-insight:hover {
+            transform: translateX(2px);
+        }
+
+        .ai-insight.bullish {
+            border-color: var(--accent-green);
+        }
+
+        .ai-insight.bearish {
+            border-color: var(--accent-red);
+        }
+
+        .ai-insight.neutral {
+            border-color: var(--accent-orange);
+        }
+
+        .ai-insight.info {
+            border-color: var(--accent-blue);
+        }
+
+        .ai-insight-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+
+        .ai-insight-ticker {
+            font-size: 12px;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .ai-insight-signal {
+            font-size: 11px;
+            font-weight: 600;
+            padding: 1px 6px;
+            border-radius: 4px;
+        }
+
+        .signal-bullish {
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--accent-green);
+        }
+
+        .signal-bearish {
+            background: rgba(239, 68, 68, 0.15);
+            color: var(--accent-red);
+        }
+
+        .signal-neutral {
+            background: rgba(245, 158, 11, 0.15);
+            color: var(--accent-orange);
+        }
+
+        .signal-info {
+            background: rgba(99, 132, 255, 0.15);
+            color: var(--accent-blue);
+        }
+
+        .ai-insight-text {
+            font-size: 13px;
+            line-height: 1.55;
+            color: var(--text-secondary);
+        }
+
+        .ai-insight-text strong {
+            color: var(--text-primary);
+        }
+
+        /* LOADING SKELETON */
+        .skeleton {
+            background: linear-gradient(90deg, var(--bg-card) 25%, var(--bg-card-hover) 50%, var(--bg-card) 75%);
+            background-size: 200% 100%;
+            animation: shimmer 1.5s infinite;
+            border-radius: 8px;
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: 200% 0;
+            }
+
+            100% {
+                background-position: -200% 0;
+            }
+        }
+
+        .skeleton-card {
+            height: 100px;
+            margin-bottom: 12px;
+        }
+
+        .skeleton-insight {
+            height: 80px;
+            margin-bottom: 12px;
+        }
+
+        /* EMPTY STATE */
+        .empty-state {
+            text-align: center;
+            padding: 40px;
+            color: var(--text-muted);
+        }
+
+        .empty-state svg {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 16px;
+            opacity: 0.3;
+        }
+
+        /* COUNTDOWN TIMER */
+        .countdown {
+            font-variant-numeric: tabular-nums;
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        /* ERROR TOAST */
+        .toast {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            padding: 12px 20px;
+            background: var(--bg-card);
+            border: 1px solid var(--accent-red);
+            border-radius: 10px;
+            color: var(--text-primary);
+            font-size: 13px;
+            box-shadow: var(--shadow-lg);
+            z-index: 1000;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s;
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* LOAD MORE */
+        .load-more {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .load-more button {
+            padding: 10px 28px;
+            border: 1px solid var(--border);
+            background: var(--bg-card);
+            color: var(--text-secondary);
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .load-more button:hover {
+            border-color: var(--accent-blue);
+            color: var(--text-primary);
+        }
+
+        /* MARKET SENTIMENT BANNER */
+        .sentiment-banner {
+            padding: 14px 20px;
+            border-radius: var(--radius);
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .sentiment-banner.bearish {
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0.08), rgba(239, 68, 68, 0.03));
+            border: 1px solid rgba(239, 68, 68, 0.2);
+            color: var(--accent-red);
+        }
+
+        .sentiment-banner.bullish {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.08), rgba(16, 185, 129, 0.03));
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            color: var(--accent-green);
+        }
+
+        .sentiment-banner.neutral {
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.08), rgba(245, 158, 11, 0.03));
+            border: 1px solid rgba(245, 158, 11, 0.2);
+            color: var(--accent-orange);
+        }
+
+        .sentiment-icon {
+            font-size: 20px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 16px;
+            }
+
+            .header {
+                flex-direction: column;
+                gap: 16px;
+                align-items: flex-start;
+            }
+
+            .news-card-image {
+                width: 80px;
+                min-width: 80px;
+                height: 60px;
+            }
+
+            .news-card-title {
+                font-size: 13px;
+            }
+
+            .market-bar {
+                gap: 8px;
+            }
+        }
+
+        /* Scrollbar global */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--border);
+            border-radius: 3px;
+        }
+
+        /* Fade in animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(12px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.4s ease forwards;
+        }
+
+        .news-card:nth-child(1) {
+            animation-delay: 0.05s;
+        }
+
+        .news-card:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+
+        .news-card:nth-child(3) {
+            animation-delay: 0.15s;
+        }
+
+        .news-card:nth-child(4) {
+            animation-delay: 0.2s;
+        }
+
+        .news-card:nth-child(5) {
+            animation-delay: 0.25s;
+        }
+
+        .news-card:nth-child(6) {
+            animation-delay: 0.3s;
+        }
+
+        .news-card:nth-child(7) {
+            animation-delay: 0.35s;
+        }
+
+        .news-card:nth-child(8) {
+            animation-delay: 0.4s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- HEADER -->
+        <header class="header">
+            <div class="header-left">
+                <h1>📈 Portfolio News Dashboard</h1>
+                <p>Real-time news & AI analysis for your holdings</p>
+            </div>
+            <div class="header-right">
+                <div class="refresh-info">
+                    <div class="live-dot"></div>
+                    <span>Auto-refresh: <span class="countdown" id="countdown">5:00</span></span>
+                </div>
+                <span id="lastUpdated" style="font-size: 11px; color: var(--text-muted); white-space: nowrap;">AI data:
+                    loading...</span>
+                <button class="btn-refresh" id="btnRefresh" onclick="refreshAll()">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="23 4 23 10 17 10" />
+                        <polyline points="1 20 1 14 7 14" />
+                        <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15" />
+                    </svg>
+                    Refresh
+                </button>
+            </div>
+        </header>
+
+        <!-- MARKET OVERVIEW -->
+        <div class="market-bar" id="marketBar">
+            <div class="market-chip">
+                <span class="label">S&P 500</span>
+                <span class="value">5,738</span>
+                <span class="change down">▼ 1.0%</span>
+            </div>
+            <div class="market-chip">
+                <span class="label">NASDAQ</span>
+                <span class="value">18,069</span>
+                <span class="change down">▼ 1.3%</span>
+            </div>
+            <div class="market-chip">
+                <span class="label">DOW</span>
+                <span class="value">42,579</span>
+                <span class="change down">▼ 1.5%</span>
+            </div>
+            <div class="market-chip">
+                <span class="label">BTC</span>
+                <span class="value">$70,658</span>
+                <span class="change down">▼ 2.8%</span>
+            </div>
+            <div class="market-chip">
+                <span class="label">VIX</span>
+                <span class="value">24.8</span>
+                <span class="change up">▲ 8.2%</span>
+            </div>
+            <div class="market-chip">
+                <span class="label">Oil (WTI)</span>
+                <span class="value">$82.40</span>
+                <span class="change up">▲ 3.1%</span>
+            </div>
+        </div>
+
+        <!-- SENTIMENT BANNER -->
+        <div class="sentiment-banner bearish" id="sentimentBanner">
+            <span class="sentiment-icon">🔴</span>
+            <span><strong>Market Sentiment: Bearish</strong> — Weak jobs report (-92K) + Iran conflict + surging oil
+                prices fueling stagflation fears. S&P 500 down ~1%, over 90% of stocks declining.</span>
+        </div>
+
+        <!-- TICKER FILTER TABS -->
+        <div class="ticker-tabs" id="tickerTabs">
+            <button class="ticker-tab active" data-ticker="all" onclick="filterNews('all')">All <span class="tab-badge"
+                    id="badge-all">0</span></button>
+            <button class="ticker-tab" data-ticker="BTCUSD" onclick="filterNews('BTCUSD')">BTC</button>
+            <button class="ticker-tab" data-ticker="RKLB" onclick="filterNews('RKLB')">RKLB</button>
+            <button class="ticker-tab" data-ticker="SATS" onclick="filterNews('SATS')">SATS</button>
+            <button class="ticker-tab" data-ticker="TE" onclick="filterNews('TE')">TE</button>
+            <button class="ticker-tab" data-ticker="STX" onclick="filterNews('STX')">STX</button>
+            <button class="ticker-tab" data-ticker="TSAT" onclick="filterNews('TSAT')">TSAT</button>
+            <button class="ticker-tab" data-ticker="BBAI" onclick="filterNews('BBAI')">BBAI</button>
+            <button class="ticker-tab" data-ticker="NBIS" onclick="filterNews('NBIS')">NBIS</button>
+            <button class="ticker-tab" data-ticker="OKLO" onclick="filterNews('OKLO')">OKLO</button>
+            <button class="ticker-tab" data-ticker="NVTS" onclick="filterNews('NVTS')">NVTS</button>
+        </div>
+
+        <!-- MAIN GRID -->
+        <div class="main-grid">
+            <!-- NEWS FEED -->
+            <div class="news-section">
+                <h2>📰 Latest News</h2>
+                <div class="news-feed" id="newsFeed">
+                    <!-- Loading skeletons -->
+                    <div class="skeleton skeleton-card"></div>
+                    <div class="skeleton skeleton-card"></div>
+                    <div class="skeleton skeleton-card"></div>
+                    <div class="skeleton skeleton-card"></div>
+                    <div class="skeleton skeleton-card"></div>
+                </div>
+                <div class="load-more" id="loadMore" style="display:none;">
+                    <button onclick="loadMoreNews()">Load More News</button>
+                </div>
+            </div>
+
+            <!-- AI TLDR PANEL -->
+            <div class="ai-panel">
+                <div class="ai-panel-card">
+                    <div class="ai-panel-header">
+                        <span class="ai-sparkle">✨</span>
+                        <h3>AI Analysis — TLDR</h3>
+                    </div>
+                    <div class="ai-panel-body" id="aiPanel">
+                        <div class="skeleton skeleton-insight"></div>
+                        <div class="skeleton skeleton-insight"></div>
+                        <div class="skeleton skeleton-insight"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TOAST -->
+    <div class="toast" id="toast"></div>
+
+    <script>
+        // ========================================
+        // CONFIGURATION
+        // ========================================
+        const PORTFOLIO = [
+            { ticker: 'BTCUSD', searchTerm: 'Bitcoin BTC crypto', name: 'Bitcoin', badge: 'badge-btc', avgCost: 73135, shares: 0.00511 },
+            { ticker: 'RKLB', searchTerm: 'Rocket Lab RKLB', name: 'Rocket Lab', badge: 'badge-rklb', avgCost: 62.04, shares: 32.67 },
+            { ticker: 'SATS', searchTerm: 'EchoStar SATS stock', name: 'EchoStar', badge: 'badge-sats', avgCost: 114.33, shares: 2 },
+            { ticker: 'TE', searchTerm: 'T1 Energy TE stock solar', name: 'T1 Energy', badge: 'badge-te', avgCost: 6.73, shares: 464.25 },
+            { ticker: 'STX', searchTerm: 'Seagate STX stock', name: 'Seagate Tech', badge: 'badge-stx', avgCost: 448.98, shares: 3 },
+            { ticker: 'TSAT', searchTerm: 'Telesat TSAT stock', name: 'Telesat', badge: 'badge-tsat', avgCost: 33.33, shares: 23 },
+            { ticker: 'BBAI', searchTerm: 'BigBear.ai BBAI stock', name: 'BigBear.ai', badge: 'badge-bbai', avgCost: 9.02, shares: 58.71 },
+            { ticker: 'NBIS', searchTerm: 'Nebius Group NBIS stock', name: 'Nebius Group', badge: 'badge-nbis', avgCost: 131.12, shares: 2.69 },
+            { ticker: 'OKLO', searchTerm: 'Oklo OKLO stock nuclear', name: 'Oklo Inc', badge: 'badge-oklo', avgCost: 125.00, shares: 3 },
+            { ticker: 'NVTS', searchTerm: 'Navitas Semiconductor NVTS', name: 'Navitas Semi', badge: 'badge-nvts', avgCost: 10.00, shares: 349.11 }
+        ];
+
+        const REFRESH_INTERVAL = 5 * 60 * 1000; // 5 minutes
+        let allNews = [];
+        let activeFilter = 'all';
+        let visibleCount = 15;
+        let countdownTimer = null;
+        let countdownSeconds = 300;
+
+        // CORS proxy options (tried in order)
+        const CORS_PROXIES = [
+            url => `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`,
+            url => `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(url)}`,
+            url => `https://corsproxy.io/?url=${encodeURIComponent(url)}`
+        ];
+
+        // ========================================
+        // AI ANALYSIS DATA (loaded from ai-data.json)
+        // ========================================
+        let AI_INSIGHTS = [];
+        let AI_DATA = null;
+
+        async function loadAIData() {
+            try {
+                const response = await fetch('ai-data.json?t=' + Date.now());
+                if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                AI_DATA = await response.json();
+                AI_INSIGHTS = AI_DATA.insights || [];
+
+                // Update market bar
+                if (AI_DATA.market_overview) {
+                    updateMarketBar(AI_DATA.market_overview);
+                }
+
+                // Update sentiment banner
+                if (AI_DATA.sentiment) {
+                    updateSentiment(AI_DATA.sentiment);
+                }
+
+                // Update last-updated timestamp
+                if (AI_DATA.generated_at) {
+                    const genDate = new Date(AI_DATA.generated_at);
+                    const dateStr = genDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' });
+                    document.getElementById('lastUpdated').textContent = `AI data: ${dateStr}`;
+                }
+
+                return true;
+            } catch (err) {
+                console.warn('Failed to load ai-data.json:', err);
+                document.getElementById('lastUpdated').textContent = 'AI data: offline';
+                return false;
+            }
+        }
+
+        function updateMarketBar(market) {
+            const bar = document.getElementById('marketBar');
+            const chips = [
+                { label: 'S&P 500', data: market.sp500 },
+                { label: 'NASDAQ', data: market.nasdaq },
+                { label: 'DOW', data: market.dow },
+                { label: 'BTC', data: market.btc },
+                { label: 'VIX', data: market.vix },
+                { label: 'Oil (WTI)', data: market.oil }
+            ];
+            bar.innerHTML = chips.map(c => `
+                <div class="market-chip">
+                    <span class="label">${c.label}</span>
+                    <span class="value">${c.data.value}</span>
+                    <span class="change ${c.data.direction}">${c.data.direction === 'up' ? '▲' : '▼'} ${c.data.change.replace(/[+-]/, '')}</span>
+                </div>
+            `).join('');
+        }
+
+        function updateSentiment(sentiment) {
+            const banner = document.getElementById('sentimentBanner');
+            banner.className = `sentiment-banner ${sentiment.mood}`;
+            banner.innerHTML = `
+                <span class="sentiment-icon">${sentiment.icon}</span>
+                <span><strong>Market Sentiment: ${sentiment.mood.charAt(0).toUpperCase() + sentiment.mood.slice(1)}</strong> — ${sentiment.summary}</span>
+            `;
+        }
+
+        // ========================================
+        // NEWS FETCHING (multi-proxy with fallback)
+        // ========================================
+
+        // Parse RSS XML text into news items
+        function parseRSSXml(xmlText, stock) {
+            try {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(xmlText, 'text/xml');
+                const items = doc.querySelectorAll('item');
+                const results = [];
+
+                items.forEach((item, i) => {
+                    if (i >= 8) return;
+                    const rawTitle = item.querySelector('title')?.textContent || '';
+                    const link = item.querySelector('link')?.textContent || '';
+                    const pubDate = item.querySelector('pubDate')?.textContent || '';
+
+                    // Try to get thumbnail from media:content or enclosure
+                    let thumbnail = null;
+                    const mediaContent = item.querySelector('content');
+                    if (mediaContent) thumbnail = mediaContent.getAttribute('url');
+                    if (!thumbnail) {
+                        const enclosure = item.querySelector('enclosure');
+                        if (enclosure) thumbnail = enclosure.getAttribute('url');
+                    }
+
+                    results.push({
+                        title: cleanTitle(rawTitle),
+                        link,
+                        source: extractSource(rawTitle, null),
+                        pubDate,
+                        thumbnail,
+                        ticker: stock.ticker,
+                        tickerName: stock.name,
+                        badge: stock.badge
+                    });
+                });
+                return results;
+            } catch (e) {
+                return [];
+            }
+        }
+
+        // Parse rss2json API response
+        function parseRss2JsonResponse(data, stock) {
+            if (data.status === 'ok' && data.items) {
+                return data.items.slice(0, 8).map(item => ({
+                    title: cleanTitle(item.title),
+                    link: item.link,
+                    source: extractSource(item.title, item.author),
+                    pubDate: item.pubDate,
+                    thumbnail: item.thumbnail || item.enclosure?.link || null,
+                    ticker: stock.ticker,
+                    tickerName: stock.name,
+                    badge: stock.badge
+                }));
+            }
+            return [];
+        }
+
+        async function fetchWithProxy(proxyFn, rssUrl, stock, timeout = 8000) {
+            const url = proxyFn(rssUrl);
+            const controller = new AbortController();
+            const timer = setTimeout(() => controller.abort(), timeout);
+
+            try {
+                const response = await fetch(url, { signal: controller.signal });
+                clearTimeout(timer);
+                if (!response.ok) throw new Error(`HTTP ${response.status}`);
+
+                const contentType = response.headers.get('content-type') || '';
+                const text = await response.text();
+
+                // If it looks like JSON (rss2json), parse as JSON
+                if (contentType.includes('json') || text.trim().startsWith('{')) {
+                    const data = JSON.parse(text);
+                    return parseRss2JsonResponse(data, stock);
+                }
+
+                // Otherwise parse as XML
+                return parseRSSXml(text, stock);
+            } catch (err) {
+                clearTimeout(timer);
+                throw err;
+            }
+        }
+
+        async function fetchNewsForTicker(stock) {
+            const rssUrl = `https://news.google.com/rss/search?q=${encodeURIComponent(stock.searchTerm)}&hl=en-US&gl=US&ceid=US:en`;
+
+            // Try each proxy in order
+            for (const proxyFn of CORS_PROXIES) {
+                try {
+                    const results = await fetchWithProxy(proxyFn, rssUrl, stock);
+                    if (results.length > 0) return results;
+                } catch (err) {
+                    console.warn(`Proxy failed for ${stock.ticker}:`, err.message);
+                }
+            }
+
+            console.warn(`All proxies failed for ${stock.ticker}`);
+            return [];
+        }
+
+        function cleanTitle(title) {
+            // Google News appends " - Source Name" at the end
+            const parts = title.split(' - ');
+            if (parts.length > 1) {
+                parts.pop();
+                return parts.join(' - ');
+            }
+            return title;
+        }
+
+        function extractSource(title, author) {
+            if (author) return author;
+            const parts = title.split(' - ');
+            if (parts.length > 1) return parts[parts.length - 1];
+            return 'News';
+        }
+
+        function timeAgo(dateString) {
+            const date = new Date(dateString);
+            const now = new Date();
+            const seconds = Math.floor((now - date) / 1000);
+
+            if (seconds < 60) return 'just now';
+            if (seconds < 3600) return `${Math.floor(seconds / 60)}m ago`;
+            if (seconds < 86400) return `${Math.floor(seconds / 3600)}h ago`;
+            if (seconds < 604800) return `${Math.floor(seconds / 86400)}d ago`;
+            return date.toLocaleDateString();
+        }
+
+        async function fetchAllNews() {
+            allNews = [];
+            // Stagger requests in batches of 3 to avoid rate limiting
+            const batchSize = 3;
+            for (let i = 0; i < PORTFOLIO.length; i += batchSize) {
+                const batch = PORTFOLIO.slice(i, i + batchSize);
+                const results = await Promise.allSettled(batch.map(s => fetchNewsForTicker(s)));
+                results.forEach(result => {
+                    if (result.status === 'fulfilled') {
+                        allNews.push(...result.value);
+                    }
+                });
+                // Render partial results as they come in
+                const sorted = [...allNews].sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
+                renderNews(deduplicateNews(sorted));
+                // Small delay between batches
+                if (i + batchSize < PORTFOLIO.length) {
+                    await new Promise(r => setTimeout(r, 400));
+                }
+            }
+
+            // Final sort and deduplicate
+            allNews.sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
+            allNews = deduplicateNews(allNews);
+
+            return allNews;
+        }
+
+        function deduplicateNews(news) {
+            const seen = new Set();
+            return news.filter(item => {
+                const key = item.title.toLowerCase().substring(0, 60);
+                if (seen.has(key)) return false;
+                seen.add(key);
+                return true;
+            });
+        }
+
+        // ========================================
+        // RENDERING
+        // ========================================
+        function renderNews(news) {
+            const feed = document.getElementById('newsFeed');
+            const loadMore = document.getElementById('loadMore');
+
+            let filtered = activeFilter === 'all' ? news : news.filter(n => n.ticker === activeFilter);
+
+            if (filtered.length === 0) {
+                feed.innerHTML = `
+                    <div class="empty-state">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 12h10"/></svg>
+                        <p>No news found for this ticker. Try refreshing.</p>
+                    </div>
+                `;
+                loadMore.style.display = 'none';
+                return;
+            }
+
+            const visible = filtered.slice(0, visibleCount);
+
+            feed.innerHTML = visible.map((item, i) => `
+                <a href="${item.link}" target="_blank" rel="noopener" class="news-card fade-in" style="animation-delay: ${i * 0.04}s; opacity: 0;">
+                    ${item.thumbnail ? `<img class="news-card-image" src="${item.thumbnail}" alt="" loading="lazy" onerror="this.style.display='none'">` : ''}
+                    <div class="news-card-content">
+                        <div class="news-card-title">${item.title}</div>
+                        <div class="news-card-meta">
+                            <span class="news-ticker-badge ${item.badge}">${item.ticker}</span>
+                            <span class="news-source">${item.source}</span>
+                            <span class="news-dot"></span>
+                            <span class="news-time">${timeAgo(item.pubDate)}</span>
+                        </div>
+                    </div>
+                </a>
+            `).join('');
+
+            loadMore.style.display = filtered.length > visibleCount ? 'flex' : 'none';
+
+            // Update badge counts
+            updateBadgeCounts(news);
+        }
+
+        function updateBadgeCounts(news) {
+            const allBadge = document.getElementById('badge-all');
+            if (allBadge) allBadge.textContent = news.length;
+        }
+
+        function renderAIInsights() {
+            const panel = document.getElementById('aiPanel');
+
+            panel.innerHTML = AI_INSIGHTS.map((insight, i) => `
+                <div class="ai-insight ${insight.type} fade-in" style="animation-delay: ${i * 0.06}s; opacity: 0;">
+                    <div class="ai-insight-header">
+                        <span class="ai-insight-ticker">${insight.ticker}</span>
+                        <span class="ai-insight-signal signal-${insight.type}">${insight.signal}</span>
+                    </div>
+                    <div class="ai-insight-text">${insight.text}</div>
+                </div>
+            `).join('');
+        }
+
+        // ========================================
+        // INTERACTIONS
+        // ========================================
+        function filterNews(ticker) {
+            activeFilter = ticker;
+            visibleCount = 15;
+
+            // Update active tab
+            document.querySelectorAll('.ticker-tab').forEach(tab => {
+                tab.classList.toggle('active', tab.dataset.ticker === ticker);
+            });
+
+            renderNews(allNews);
+        }
+
+        function loadMoreNews() {
+            visibleCount += 10;
+            renderNews(allNews);
+        }
+
+        async function refreshAll() {
+            const btn = document.getElementById('btnRefresh');
+            btn.classList.add('loading');
+
+            try {
+                const news = await fetchAllNews();
+                renderNews(news);
+                showToast('✅ News updated successfully', 'success');
+            } catch (err) {
+                showToast('❌ Failed to refresh news', 'error');
+            }
+
+            btn.classList.remove('loading');
+            resetCountdown();
+        }
+
+        function showToast(message, type) {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.style.borderColor = type === 'error' ? 'var(--accent-red)' : 'var(--accent-green)';
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 3000);
+        }
+
+        // ========================================
+        // COUNTDOWN TIMER
+        // ========================================
+        function startCountdown() {
+            countdownSeconds = 300;
+            if (countdownTimer) clearInterval(countdownTimer);
+
+            countdownTimer = setInterval(() => {
+                countdownSeconds--;
+                const mins = Math.floor(countdownSeconds / 60);
+                const secs = countdownSeconds % 60;
+                document.getElementById('countdown').textContent =
+                    `${mins}:${secs.toString().padStart(2, '0')}`;
+
+                if (countdownSeconds <= 0) {
+                    refreshAll();
+                    resetCountdown();
+                }
+            }, 1000);
+        }
+
+        function resetCountdown() {
+            countdownSeconds = 300;
+            startCountdown();
+        }
+
+        // ========================================
+        // INITIALIZATION
+        // ========================================
+        async function init() {
+            // Load AI data from JSON file first
+            await loadAIData();
+            renderAIInsights();
+            startCountdown();
+
+            try {
+                const news = await fetchAllNews();
+                renderNews(news);
+            } catch (err) {
+                document.getElementById('newsFeed').innerHTML = `
+                    <div class="empty-state">
+                        <p>⚠️ Failed to load news. Click Refresh to try again.</p>
+                    </div>
+                `;
+            }
+        }
+
+        // Start the app
+        init();
+    </script>
+</body>
+
+</html>
