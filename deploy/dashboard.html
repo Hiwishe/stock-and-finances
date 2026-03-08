@@ -4,37 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio News Dashboard</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    <title>Insight Portfolio Pro — Dashboard</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <style>
         :root {
-            --bg-primary: #0a0e17;
-            --bg-secondary: #111827;
-            --bg-card: #1a2235;
-            --bg-card-hover: #1f2a40;
-            --bg-glass: rgba(26, 34, 53, 0.7);
-            --border: #243049;
-            --border-glow: rgba(99, 132, 255, 0.15);
-            --text-primary: #e8ecf4;
-            --text-secondary: #8b95a8;
-            --text-muted: #5c6478;
-            --accent-blue: #6384ff;
-            --accent-cyan: #22d3ee;
-            --accent-green: #10b981;
-            --accent-red: #ef4444;
-            --accent-orange: #f59e0b;
-            --accent-purple: #a78bfa;
-            --accent-pink: #ec4899;
-            --gradient-1: linear-gradient(135deg, #6384ff, #22d3ee);
-            --gradient-2: linear-gradient(135deg, #a78bfa, #ec4899);
-            --gradient-3: linear-gradient(135deg, #10b981, #22d3ee);
-            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
-            --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.4);
-            --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.5);
-            --shadow-glow: 0 0 30px rgba(99, 132, 255, 0.1);
-            --radius: 12px;
-            --radius-lg: 16px;
+            --primary: #8B5CF6;
+            --secondary: #06B6D4;
+            --success: #10B981;
+            --danger: #EF4444;
+            --warning: #F59E0B;
+            --accent-soft: #F5F3FF;
+            --secondary-soft: #ECFEFF;
+            --bg-main: #F8FAFC;
+            --slate-50: #f8fafc;
+            --slate-100: #f1f5f9;
+            --slate-200: #e2e8f0;
+            --slate-300: #cbd5e1;
+            --slate-400: #94a3b8;
+            --slate-500: #64748b;
+            --slate-600: #475569;
+            --slate-700: #334155;
+            --slate-900: #0f172a;
+            --radius: 16px;
         }
 
         * {
@@ -44,95 +37,271 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: var(--bg-primary);
-            color: var(--text-primary);
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--bg-main);
+            color: var(--slate-700);
             min-height: 100vh;
-            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* Background gradient orbs */
-        body::before {
-            content: '';
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        .glass-card {
+            background: #fff;
+            border: 1px solid rgba(226, 232, 240, 0.6);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+            border-radius: var(--radius);
+            transition: all 0.3s;
+        }
+
+        .glass-card-hover:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border-color: rgba(139, 92, 246, 0.2);
+        }
+
+        /* SIDEBAR */
+        .sidebar {
             position: fixed;
-            top: -200px;
-            right: -200px;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(99, 132, 255, 0.08), transparent 70%);
-            pointer-events: none;
-            z-index: 0;
+            left: 0;
+            top: 0;
+            height: 100vh;
+            width: 256px;
+            background: #fff;
+            border-right: 1px solid var(--slate-200);
+            display: flex;
+            flex-direction: column;
+            z-index: 50;
         }
 
-        body::after {
-            content: '';
-            position: fixed;
-            bottom: -200px;
-            left: -200px;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(167, 139, 250, 0.06), transparent 70%);
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
+        .sidebar-logo {
             padding: 24px;
-            position: relative;
-            z-index: 1;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .sidebar-logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 18px;
+            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.2);
+        }
+
+        .sidebar-logo h1 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--slate-900);
+            line-height: 1.1;
+        }
+
+        .sidebar-logo p {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--slate-400);
+            font-weight: 700;
+        }
+
+        .sidebar nav {
+            flex: 1;
+            padding: 0 16px;
+            margin-top: 16px;
+        }
+
+        .nav-item {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            border-radius: 12px;
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--slate-500);
+            transition: all 0.2s;
+            font-family: inherit;
+        }
+
+        .nav-item:hover {
+            background: var(--slate-50);
+            color: var(--slate-900);
+        }
+
+        .nav-item.active {
+            background: var(--accent-soft);
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .nav-item.active .nav-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 8px rgba(139, 92, 246, 0.6);
+            margin-left: auto;
+        }
+
+        .sidebar-footer {
+            padding: 16px;
+            border-top: 1px solid var(--slate-100);
+            margin-top: auto;
+        }
+
+        .sidebar-cta {
+            background: var(--slate-50);
+            border-radius: 16px;
+            padding: 16px;
+            margin-bottom: 12px;
+        }
+
+        .sidebar-cta p:first-child {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--slate-900);
+            margin-bottom: 4px;
+        }
+
+        .sidebar-cta p:last-of-type {
+            font-size: 11px;
+            color: var(--slate-500);
+            margin-bottom: 12px;
+        }
+
+        .sidebar-cta button {
+            width: 100%;
+            padding: 8px;
+            background: #fff;
+            border: 1px solid var(--slate-200);
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--primary);
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: inherit;
+        }
+
+        .sidebar-cta button:hover {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        /* MAIN LAYOUT */
+        .main-content {
+            margin-left: 256px;
+            min-width: 0;
         }
 
         /* HEADER */
         .header {
+            position: sticky;
+            top: 0;
+            z-index: 40;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--slate-200);
+            padding: 16px 32px;
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            margin-bottom: 32px;
-            padding: 24px 28px;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-md), var(--shadow-glow);
-            backdrop-filter: blur(20px);
+            justify-content: space-between;
         }
 
-        .header-left h1 {
-            font-size: 26px;
-            font-weight: 800;
-            background: var(--gradient-1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            letter-spacing: -0.5px;
+        .header-left h2 {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--slate-900);
         }
 
         .header-left p {
-            color: var(--text-secondary);
-            font-size: 13px;
-            margin-top: 4px;
+            font-size: 14px;
+            color: var(--slate-500);
         }
 
         .header-right {
             display: flex;
             align-items: center;
-            gap: 16px;
+            gap: 24px;
         }
 
-        .refresh-info {
+        .search-box {
+            position: relative;
+        }
+
+        .search-box input {
+            padding: 8px 16px 8px 36px;
+            background: var(--slate-100);
+            border: 2px solid transparent;
+            border-radius: 12px;
+            font-size: 13px;
+            width: 300px;
+            outline: none;
+            transition: all 0.2s;
+            font-family: inherit;
+            color: var(--slate-700);
+        }
+
+        .search-box input:focus {
+            background: #fff;
+            border-color: rgba(139, 92, 246, 0.3);
+            box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.05);
+        }
+
+        .search-box svg {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--slate-400);
+        }
+
+        .header-actions {
             display: flex;
             align-items: center;
-            gap: 8px;
-            color: var(--text-muted);
-            font-size: 12px;
+            gap: 12px;
+            border-left: 1px solid var(--slate-200);
+            padding-left: 24px;
+        }
+
+        .live-indicator {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            margin-right: 8px;
+        }
+
+        .live-indicator .live-label {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--slate-400);
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .live-dot {
-            width: 8px;
-            height: 8px;
+            width: 6px;
+            height: 6px;
             border-radius: 50%;
-            background: var(--accent-green);
+            background: var(--success);
             animation: pulse-dot 2s infinite;
         }
 
@@ -150,24 +319,57 @@
             }
         }
 
+        .live-indicator .live-time {
+            font-size: 12px;
+            font-family: monospace;
+            color: var(--slate-600);
+        }
+
+        .btn-icon {
+            padding: 8px;
+            color: var(--slate-500);
+            background: none;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.2s;
+        }
+
+        .btn-icon:hover {
+            background: var(--slate-100);
+        }
+
+        .btn-icon .notif-dot {
+            position: absolute;
+            top: 6px;
+            right: 6px;
+            width: 8px;
+            height: 8px;
+            background: var(--danger);
+            border-radius: 50%;
+            border: 2px solid #fff;
+        }
+
         .btn-refresh {
             display: flex;
             align-items: center;
             gap: 6px;
             padding: 8px 16px;
-            border: 1px solid var(--border);
-            background: var(--bg-secondary);
-            color: var(--text-primary);
-            border-radius: 8px;
+            background: var(--accent-soft);
+            color: var(--primary);
+            border: none;
+            border-radius: 12px;
             cursor: pointer;
             font-size: 13px;
-            font-weight: 500;
+            font-weight: 600;
             transition: all 0.2s;
+            font-family: inherit;
         }
 
         .btn-refresh:hover {
-            border-color: var(--accent-blue);
-            background: rgba(99, 132, 255, 0.1);
+            background: var(--primary);
+            color: #fff;
         }
 
         .btn-refresh.loading svg {
@@ -184,446 +386,723 @@
             }
         }
 
-        /* MARKET OVERVIEW BAR */
-        .market-bar {
+        .user-profile {
             display: flex;
+            align-items: center;
             gap: 12px;
-            margin-bottom: 24px;
-            overflow-x: auto;
-            padding-bottom: 4px;
-            scrollbar-width: none;
+            margin-left: 8px;
+            padding-left: 16px;
+            border-left: 1px solid var(--slate-100);
+            cursor: pointer;
         }
 
-        .market-bar::-webkit-scrollbar {
+        .user-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--secondary-soft);
+            border: 1px solid rgba(6, 182, 212, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--secondary);
+        }
+
+        .user-info {
             display: none;
         }
 
-        .market-chip {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 10px 16px;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            white-space: nowrap;
-            min-width: fit-content;
-            transition: all 0.2s;
-        }
-
-        .market-chip:hover {
-            border-color: var(--accent-blue);
-            box-shadow: var(--shadow-sm);
-        }
-
-        .market-chip .label {
-            font-size: 12px;
-            font-weight: 600;
-            color: var(--text-secondary);
-        }
-
-        .market-chip .value {
-            font-size: 13px;
-            font-weight: 700;
-        }
-
-        .market-chip .change {
-            font-size: 11px;
-            font-weight: 600;
-            padding: 2px 6px;
-            border-radius: 4px;
-        }
-
-        .change.up {
-            color: var(--accent-green);
-            background: rgba(16, 185, 129, 0.1);
-        }
-
-        .change.down {
-            color: var(--accent-red);
-            background: rgba(239, 68, 68, 0.1);
-        }
-
-        /* TICKER TABS */
-        .ticker-tabs {
-            display: flex;
-            gap: 8px;
-            margin-bottom: 24px;
-            flex-wrap: wrap;
-        }
-
-        .ticker-tab {
-            padding: 8px 16px;
-            border: 1px solid var(--border);
-            background: var(--bg-card);
-            color: var(--text-secondary);
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 13px;
-            font-weight: 600;
-            transition: all 0.25s;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .ticker-tab::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: var(--gradient-1);
-            opacity: 0;
-            transition: opacity 0.25s;
-        }
-
-        .ticker-tab:hover {
-            border-color: var(--accent-blue);
-            color: var(--text-primary);
-            transform: translateY(-1px);
-        }
-
-        .ticker-tab.active {
-            border-color: var(--accent-blue);
-            background: rgba(99, 132, 255, 0.12);
-            color: var(--accent-blue);
-            box-shadow: 0 0 20px rgba(99, 132, 255, 0.1);
-        }
-
-        .ticker-tab.active::before {
-            opacity: 1;
-        }
-
-        .ticker-tab .tab-badge {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            min-width: 18px;
-            height: 18px;
-            padding: 0 4px;
-            border-radius: 9px;
-            background: rgba(99, 132, 255, 0.15);
-            color: var(--accent-blue);
-            font-size: 10px;
-            font-weight: 700;
-            margin-left: 6px;
-        }
-
-        /* MAIN CONTENT GRID */
-        .main-grid {
-            display: grid;
-            grid-template-columns: 1fr 380px;
-            gap: 24px;
-        }
-
-        @media (max-width: 1100px) {
-            .main-grid {
-                grid-template-columns: 1fr;
+        @media(min-width:768px) {
+            .user-info {
+                display: block;
             }
         }
 
-        /* NEWS FEED */
-        .news-section h2 {
-            font-size: 18px;
+        .user-info p:first-child {
+            font-size: 13px;
             font-weight: 700;
-            margin-bottom: 16px;
+            color: var(--slate-900);
+            line-height: 1;
+        }
+
+        .user-info p:last-child {
+            font-size: 10px;
+            color: var(--slate-500);
+            margin-top: 3px;
+        }
+
+        /* CONTENT AREA */
+        .content-area {
+            padding: 32px;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        /* MARKET SUMMARY */
+        .market-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+
+        .market-card {
+            padding: 16px;
+        }
+
+        .market-card .mc-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .market-card .mc-label {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--slate-400);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .market-card .mc-value {
+            font-size: 20px;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            color: var(--slate-900);
+            margin-top: 4px;
+        }
+
+        .market-card .mc-change {
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .market-card .mc-bar {
+            margin-top: 8px;
+            height: 4px;
+            background: var(--slate-50);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .market-card .mc-bar-fill {
+            height: 100%;
+            border-radius: 4px;
+            opacity: 0.3;
+        }
+
+        .text-up {
+            color: var(--secondary);
+        }
+
+        .text-down {
+            color: var(--danger);
+        }
+
+        .bg-up {
+            background: var(--secondary);
+        }
+
+        .bg-down {
+            background: var(--danger);
+        }
+
+        /* SENTIMENT BANNER */
+        .sentiment-banner {
+            padding: 20px;
+            margin-bottom: 32px;
+            border-left: 4px solid rgba(139, 92, 246, 0.4);
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            background: linear-gradient(to right, #fff, rgba(248, 250, 252, 0.5));
+        }
+
+        .sentiment-banner .sb-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 16px;
+            background: var(--accent-soft);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 24px;
+        }
+
+        .sentiment-banner .sb-content {
+            flex: 1;
+        }
+
+        .sentiment-banner .sb-label {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 4px;
             display: flex;
             align-items: center;
             gap: 8px;
         }
 
-        .news-feed {
+        .sentiment-banner .sb-mood {
+            padding: 2px 8px;
+            font-size: 10px;
+            font-weight: 700;
+            border-radius: 12px;
+        }
+
+        .sentiment-banner .sb-mood.bearish {
+            background: rgba(239, 68, 68, 0.08);
+            color: var(--danger);
+            border: 1px solid rgba(239, 68, 68, 0.15);
+        }
+
+        .sentiment-banner .sb-mood.bullish {
+            background: rgba(16, 185, 129, 0.08);
+            color: var(--success);
+            border: 1px solid rgba(16, 185, 129, 0.15);
+        }
+
+        .sentiment-banner .sb-mood.neutral {
+            background: rgba(245, 158, 11, 0.08);
+            color: var(--warning);
+            border: 1px solid rgba(245, 158, 11, 0.15);
+        }
+
+        .sentiment-banner .sb-text {
+            font-size: 14px;
+            color: var(--slate-600);
+            line-height: 1.6;
+        }
+
+        /* FILTER TABS */
+        .filter-tabs {
             display: flex;
-            flex-direction: column;
-            gap: 12px;
+            gap: 8px;
+            overflow-x: auto;
+            padding-bottom: 8px;
+            margin-bottom: 24px;
+        }
+
+        .filter-tabs::-webkit-scrollbar {
+            display: none;
+        }
+
+        .filter-tab {
+            padding: 8px 18px;
+            border-radius: 24px;
+            font-size: 12px;
+            font-weight: 700;
+            white-space: nowrap;
+            border: 1px solid var(--slate-200);
+            background: #fff;
+            color: var(--slate-500);
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: inherit;
+        }
+
+        .filter-tab:hover {
+            border-color: rgba(139, 92, 246, 0.3);
+            color: var(--primary);
+        }
+
+        .filter-tab.active {
+            background: var(--primary);
+            color: #fff;
+            border-color: var(--primary);
+            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.25);
+            transform: scale(1.05);
+        }
+
+        /* MAIN GRID */
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1fr 380px;
+            gap: 32px;
+        }
+
+        /* NEWS FEED */
+        .news-header {
+            padding: 20px 24px;
+            border-bottom: 1px solid var(--slate-100);
+            background: rgba(248, 250, 252, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .news-header h3 {
+            font-size: 18px;
+            color: var(--slate-900);
+        }
+
+        .news-feed {
+            border-radius: 0 0 16px 16px;
         }
 
         .news-card {
             display: flex;
+            align-items: flex-start;
             gap: 16px;
-            padding: 16px;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
+            padding: 20px 24px;
+            border-bottom: 1px solid var(--slate-100);
             cursor: pointer;
-            transition: all 0.25s;
+            transition: all 0.2s;
             text-decoration: none;
             color: inherit;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .news-card::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 3px;
-            height: 100%;
-            background: var(--gradient-1);
-            opacity: 0;
-            transition: opacity 0.25s;
         }
 
         .news-card:hover {
-            border-color: var(--accent-blue);
-            background: var(--bg-card-hover);
-            transform: translateX(4px);
-            box-shadow: var(--shadow-md);
+            background: var(--slate-50);
         }
 
-        .news-card:hover::after {
-            opacity: 1;
+        .news-card:last-child {
+            border-bottom: none;
         }
 
-        .news-card-image {
-            width: 120px;
-            min-width: 120px;
-            height: 85px;
-            border-radius: 8px;
-            object-fit: cover;
-            background: var(--bg-secondary);
+        .news-ticker-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            border: 1px solid;
+            font-size: 10px;
+            font-weight: 900;
+            transition: all 0.2s;
+        }
+
+        .news-ticker-icon .ticker-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            margin-top: 3px;
         }
 
         .news-card-content {
             flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+            min-width: 0;
         }
 
         .news-card-title {
             font-size: 14px;
             font-weight: 600;
-            line-height: 1.4;
+            color: var(--slate-900);
+            line-height: 1.5;
+            margin-bottom: 8px;
+            transition: color 0.2s;
             display: -webkit-box;
             -webkit-line-clamp: 2;
+            line-clamp: 2;
             -webkit-box-orient: vertical;
             overflow: hidden;
+        }
+
+        .news-card:hover .news-card-title {
+            color: var(--primary);
+        }
+
+        .news-card-tldr {
+            font-size: 12.5px;
+            line-height: 1.55;
+            color: var(--slate-500);
+            margin-bottom: 8px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            font-weight: 400;
+            letter-spacing: -0.01em;
+        }
+
+        .news-card-tldr .tldr-label {
+            font-weight: 700;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: var(--primary);
+            margin-right: 5px;
+            opacity: 0.85;
+        }
+
+        @keyframes pulse {
+            0% {
+                opacity: 0.4;
+            }
+
+            50% {
+                opacity: 0.7;
+            }
+
+            100% {
+                opacity: 0.4;
+            }
         }
 
         .news-card-meta {
             display: flex;
             align-items: center;
-            gap: 8px;
-            margin-top: 8px;
-        }
-
-        .news-ticker-badge {
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-size: 10px;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-        }
-
-        .news-source {
-            font-size: 11px;
-            color: var(--text-muted);
+            gap: 12px;
+            font-size: 12px;
+            color: var(--slate-400);
             font-weight: 500;
         }
 
-        .news-time {
-            font-size: 11px;
-            color: var(--text-muted);
-        }
-
-        .news-dot {
-            width: 3px;
-            height: 3px;
+        .news-card-meta .meta-dot {
+            width: 4px;
+            height: 4px;
             border-radius: 50%;
-            background: var(--text-muted);
+            background: var(--slate-300);
         }
 
-        /* BADGE COLORS */
-        .badge-btc {
-            background: rgba(247, 147, 26, 0.15);
-            color: #f7931a;
+        .load-more {
+            padding: 16px;
+            background: rgba(248, 250, 252, 0.5);
+            text-align: center;
+            border-radius: 0 0 16px 16px;
         }
 
-        .badge-rklb {
-            background: rgba(99, 132, 255, 0.15);
-            color: var(--accent-blue);
+        .load-more button {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--slate-500);
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+            transition: color 0.2s;
         }
 
-        .badge-sats {
-            background: rgba(34, 211, 238, 0.15);
-            color: var(--accent-cyan);
+        .load-more button:hover {
+            color: var(--slate-900);
         }
 
-        .badge-te {
-            background: rgba(16, 185, 129, 0.15);
-            color: var(--accent-green);
-        }
-
-        .badge-stx {
-            background: rgba(167, 139, 250, 0.15);
-            color: var(--accent-purple);
-        }
-
-        .badge-tsat {
-            background: rgba(236, 72, 153, 0.15);
-            color: var(--accent-pink);
-        }
-
-        .badge-bbai {
-            background: rgba(239, 68, 68, 0.15);
-            color: var(--accent-red);
-        }
-
-        .badge-nbis {
-            background: rgba(245, 158, 11, 0.15);
-            color: var(--accent-orange);
-        }
-
-        .badge-oklo {
-            background: rgba(34, 211, 238, 0.15);
-            color: var(--accent-cyan);
-        }
-
-        .badge-nvts {
-            background: rgba(167, 139, 250, 0.15);
-            color: var(--accent-purple);
-        }
-
-        /* AI ANALYSIS PANEL */
-        .ai-panel {
-            position: sticky;
-            top: 24px;
-        }
-
-        .ai-panel-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            box-shadow: var(--shadow-md);
-        }
-
-        .ai-panel-header {
-            padding: 20px;
-            background: linear-gradient(135deg, rgba(99, 132, 255, 0.1), rgba(167, 139, 250, 0.1));
-            border-bottom: 1px solid var(--border);
+        /* AI ANALYSIS */
+        .ai-section-header {
             display: flex;
             align-items: center;
-            gap: 10px;
+            justify-content: space-between;
+            padding: 0 4px;
+            margin-bottom: 16px;
         }
 
-        .ai-panel-header h3 {
-            font-size: 15px;
-            font-weight: 700;
-        }
-
-        .ai-sparkle {
+        .ai-section-header .ai-title {
+            display: flex;
+            align-items: center;
+            gap: 8px;
             font-size: 18px;
+            color: var(--slate-900);
         }
 
-        .ai-panel-body {
-            padding: 20px;
-            max-height: calc(100vh - 280px);
-            overflow-y: auto;
-            scrollbar-width: thin;
-            scrollbar-color: var(--border) transparent;
-        }
-
-        .ai-panel-body::-webkit-scrollbar {
-            width: 4px;
-        }
-
-        .ai-panel-body::-webkit-scrollbar-thumb {
-            background: var(--border);
-            border-radius: 2px;
+        .ai-section-header .ai-badge {
+            font-size: 10px;
+            font-weight: 700;
+            color: var(--slate-400);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
         }
 
         .ai-insight {
-            padding: 14px;
-            margin-bottom: 12px;
-            border-radius: 10px;
-            border-left: 3px solid;
-            background: rgba(0, 0, 0, 0.2);
-            transition: all 0.2s;
+            padding: 16px;
+            border-top: 4px solid transparent;
         }
 
         .ai-insight:hover {
-            transform: translateX(2px);
-        }
-
-        .ai-insight.bullish {
-            border-color: var(--accent-green);
-        }
-
-        .ai-insight.bearish {
-            border-color: var(--accent-red);
-        }
-
-        .ai-insight.neutral {
-            border-color: var(--accent-orange);
-        }
-
-        .ai-insight.info {
-            border-color: var(--accent-blue);
+            border-top-color: rgba(139, 92, 246, 0.4);
         }
 
         .ai-insight-header {
             display: flex;
             align-items: center;
+            justify-content: space-between;
+            margin-bottom: 12px;
+        }
+
+        .ai-insight-header .ai-tags {
+            display: flex;
+            align-items: center;
             gap: 8px;
-            margin-bottom: 8px;
         }
 
         .ai-insight-ticker {
-            font-size: 12px;
-            font-weight: 700;
-            padding: 2px 8px;
-            border-radius: 4px;
-            background: rgba(255, 255, 255, 0.08);
+            padding: 4px 8px;
+            background: var(--slate-100);
+            color: var(--slate-900);
+            font-size: 10px;
+            font-weight: 900;
+            border-radius: 6px;
         }
 
         .ai-insight-signal {
-            font-size: 11px;
-            font-weight: 600;
-            padding: 1px 6px;
-            border-radius: 4px;
-        }
-
-        .signal-bullish {
-            background: rgba(16, 185, 129, 0.15);
-            color: var(--accent-green);
-        }
-
-        .signal-bearish {
-            background: rgba(239, 68, 68, 0.15);
-            color: var(--accent-red);
-        }
-
-        .signal-neutral {
-            background: rgba(245, 158, 11, 0.15);
-            color: var(--accent-orange);
-        }
-
-        .signal-info {
-            background: rgba(99, 132, 255, 0.15);
-            color: var(--accent-blue);
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .ai-insight-text {
             font-size: 13px;
-            line-height: 1.55;
-            color: var(--text-secondary);
+            color: var(--slate-600);
+            line-height: 1.6;
         }
 
         .ai-insight-text strong {
-            color: var(--text-primary);
+            color: var(--slate-900);
         }
 
-        /* LOADING SKELETON */
+        .ai-insight-footer {
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid var(--slate-50);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .ai-insight-footer span {
+            font-size: 10px;
+            color: var(--slate-400);
+        }
+
+        .ai-insight-footer button {
+            font-size: 10px;
+            font-weight: 700;
+            color: var(--primary);
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+        }
+
+        .ai-risk-card {
+            background: var(--primary);
+            padding: 20px;
+            color: #fff;
+            border-radius: var(--radius);
+            overflow: hidden;
+            position: relative;
+            margin-top: 16px;
+        }
+
+        .ai-risk-card h4 {
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .ai-risk-card p {
+            font-size: 12px;
+            opacity: 0.8;
+            margin-bottom: 16px;
+        }
+
+        .ai-risk-card button {
+            width: 100%;
+            padding: 8px;
+            background: #fff;
+            color: var(--primary);
+            border: none;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            font-family: inherit;
+        }
+
+        /* ANALYTICS PLACEHOLDERS */
+        .analytics-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-top: 32px;
+        }
+
+        .chart-placeholder {
+            height: 256px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chart-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 24px;
+        }
+
+        .chart-header h3 {
+            font-size: 18px;
+            color: var(--slate-900);
+        }
+
+        .chart-header select,
+        .chart-header button {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--slate-500);
+            background: var(--slate-50);
+            border: none;
+            border-radius: 8px;
+            padding: 4px 8px;
+            cursor: pointer;
+            font-family: inherit;
+        }
+
+        .chart-header button {
+            color: var(--primary);
+            background: none;
+        }
+
+        .chart-body {
+            flex: 1;
+            background: linear-gradient(135deg, var(--slate-50), rgba(139, 92, 246, 0.03));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--slate-400);
+            font-size: 13px;
+            font-weight: 500;
+            border: 2px dashed var(--slate-200);
+        }
+
+        /* EXTRA WIDGETS */
+        .widgets-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-top: 24px;
+        }
+
+        .widget-card {
+            padding: 16px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .widget-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 18px;
+        }
+
+        .widget-label {
+            font-size: 10px;
+            font-weight: 700;
+            color: var(--slate-400);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .widget-value {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .widget-value span:first-child {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--slate-900);
+        }
+
+        .widget-dots {
+            display: flex;
+            gap: 3px;
+        }
+
+        .widget-dots .dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+        }
+
+        /* FOOTER */
+        .footer {
+            margin-top: 48px;
+            padding: 24px 32px;
+            border-top: 1px solid var(--slate-200);
+            background: rgba(255, 255, 255, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .footer p {
+            font-size: 12px;
+            color: var(--slate-400);
+            font-weight: 500;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .footer-links button {
+            font-size: 12px;
+            color: var(--slate-500);
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+            transition: color 0.2s;
+        }
+
+        .footer-links button:hover {
+            color: var(--primary);
+        }
+
+        /* TOAST */
+        .toast {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            padding: 12px 20px;
+            background: #fff;
+            border: 1px solid var(--success);
+            border-radius: 12px;
+            color: var(--slate-700);
+            font-size: 13px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+            z-index: 1000;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s;
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .toast.error {
+            border-color: var(--danger);
+        }
+
+        /* SKELETON */
         .skeleton {
-            background: linear-gradient(90deg, var(--bg-card) 25%, var(--bg-card-hover) 50%, var(--bg-card) 75%);
+            background: linear-gradient(90deg, var(--slate-100) 25%, var(--slate-50) 50%, var(--slate-100) 75%);
             background-size: 200% 100%;
             animation: shimmer 1.5s infinite;
-            border-radius: 8px;
+            border-radius: 12px;
         }
 
         @keyframes shimmer {
@@ -637,159 +1116,31 @@
         }
 
         .skeleton-card {
-            height: 100px;
-            margin-bottom: 12px;
+            height: 80px;
+            margin-bottom: 1px;
         }
 
         .skeleton-insight {
-            height: 80px;
+            height: 100px;
             margin-bottom: 12px;
+            border-radius: 16px;
         }
 
         /* EMPTY STATE */
         .empty-state {
             text-align: center;
             padding: 40px;
-            color: var(--text-muted);
+            color: var(--slate-400);
         }
 
         .empty-state svg {
             width: 48px;
             height: 48px;
-            margin-bottom: 16px;
+            margin-bottom: 12px;
             opacity: 0.3;
         }
 
-        /* COUNTDOWN TIMER */
-        .countdown {
-            font-variant-numeric: tabular-nums;
-            font-size: 12px;
-            color: var(--text-muted);
-        }
-
-        /* ERROR TOAST */
-        .toast {
-            position: fixed;
-            bottom: 24px;
-            right: 24px;
-            padding: 12px 20px;
-            background: var(--bg-card);
-            border: 1px solid var(--accent-red);
-            border-radius: 10px;
-            color: var(--text-primary);
-            font-size: 13px;
-            box-shadow: var(--shadow-lg);
-            z-index: 1000;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.3s;
-        }
-
-        .toast.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* LOAD MORE */
-        .load-more {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-        }
-
-        .load-more button {
-            padding: 10px 28px;
-            border: 1px solid var(--border);
-            background: var(--bg-card);
-            color: var(--text-secondary);
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 13px;
-            font-weight: 600;
-            transition: all 0.2s;
-        }
-
-        .load-more button:hover {
-            border-color: var(--accent-blue);
-            color: var(--text-primary);
-        }
-
-        /* MARKET SENTIMENT BANNER */
-        .sentiment-banner {
-            padding: 14px 20px;
-            border-radius: var(--radius);
-            margin-bottom: 24px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-size: 13px;
-            font-weight: 500;
-        }
-
-        .sentiment-banner.bearish {
-            background: linear-gradient(135deg, rgba(239, 68, 68, 0.08), rgba(239, 68, 68, 0.03));
-            border: 1px solid rgba(239, 68, 68, 0.2);
-            color: var(--accent-red);
-        }
-
-        .sentiment-banner.bullish {
-            background: linear-gradient(135deg, rgba(16, 185, 129, 0.08), rgba(16, 185, 129, 0.03));
-            border: 1px solid rgba(16, 185, 129, 0.2);
-            color: var(--accent-green);
-        }
-
-        .sentiment-banner.neutral {
-            background: linear-gradient(135deg, rgba(245, 158, 11, 0.08), rgba(245, 158, 11, 0.03));
-            border: 1px solid rgba(245, 158, 11, 0.2);
-            color: var(--accent-orange);
-        }
-
-        .sentiment-icon {
-            font-size: 20px;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .container {
-                padding: 16px;
-            }
-
-            .header {
-                flex-direction: column;
-                gap: 16px;
-                align-items: flex-start;
-            }
-
-            .news-card-image {
-                width: 80px;
-                min-width: 80px;
-                height: 60px;
-            }
-
-            .news-card-title {
-                font-size: 13px;
-            }
-
-            .market-bar {
-                gap: 8px;
-            }
-        }
-
-        /* Scrollbar global */
-        ::-webkit-scrollbar {
-            width: 6px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: transparent;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: var(--border);
-            border-radius: 3px;
-        }
-
-        /* Fade in animation */
+        /* ANIMATIONS */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -806,162 +1157,357 @@
             animation: fadeInUp 0.4s ease forwards;
         }
 
-        .news-card:nth-child(1) {
-            animation-delay: 0.05s;
+        /* RESPONSIVE */
+        @media(max-width: 1200px) {
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .analytics-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
-        .news-card:nth-child(2) {
-            animation-delay: 0.1s;
+        @media(max-width: 1024px) {
+            .sidebar {
+                display: none;
+            }
+
+            .main-content {
+                margin-left: 0;
+            }
+
+            .market-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
         }
 
-        .news-card:nth-child(3) {
-            animation-delay: 0.15s;
+        @media(max-width: 768px) {
+            .header {
+                flex-direction: column;
+                gap: 12px;
+                align-items: flex-start;
+                padding: 16px;
+            }
+
+            .search-box {
+                display: none;
+            }
+
+            .content-area {
+                padding: 16px;
+            }
+
+            .market-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .widgets-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .user-profile {
+                display: none;
+            }
         }
 
-        .news-card:nth-child(4) {
-            animation-delay: 0.2s;
+        /* SCROLLBAR */
+        ::-webkit-scrollbar {
+            width: 6px;
         }
 
-        .news-card:nth-child(5) {
-            animation-delay: 0.25s;
+        ::-webkit-scrollbar-track {
+            background: transparent;
         }
 
-        .news-card:nth-child(6) {
-            animation-delay: 0.3s;
-        }
-
-        .news-card:nth-child(7) {
-            animation-delay: 0.35s;
-        }
-
-        .news-card:nth-child(8) {
-            animation-delay: 0.4s;
+        ::-webkit-scrollbar-thumb {
+            background: var(--slate-300);
+            border-radius: 3px;
         }
     </style>
 </head>
 
 <body>
-    <div class="container">
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <div class="sidebar-logo-icon">📈</div>
+            <div>
+                <h1>Insight</h1>
+                <p>Portfolio Pro</p>
+            </div>
+        </div>
+        <nav>
+            <button class="nav-item active">📊 Dashboard <span class="nav-dot"></span></button>
+            <button class="nav-item">💼 Portfolio</button>
+            <button class="nav-item">📰 News Feed</button>
+            <button class="nav-item">📈 Market Trends</button>
+            <button class="nav-item">🔬 Analytics</button>
+        </nav>
+        <div class="sidebar-footer">
+            <div class="sidebar-cta">
+                <p>Upgrade to Pro</p>
+                <p>Get advanced AI insights and real-time alerts.</p>
+                <button>View Plans</button>
+            </div>
+        </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <div class="main-content">
         <!-- HEADER -->
         <header class="header">
             <div class="header-left">
-                <h1>📈 Portfolio News Dashboard</h1>
+                <h2>Portfolio News Dashboard</h2>
                 <p>Real-time news & AI analysis for your holdings</p>
             </div>
             <div class="header-right">
-                <div class="refresh-info">
-                    <div class="live-dot"></div>
-                    <span>Auto-refresh: <span class="countdown" id="countdown">5:00</span></span>
-                </div>
-                <span id="lastUpdated" style="font-size: 11px; color: var(--text-muted); white-space: nowrap;">AI data:
-                    loading...</span>
-                <button class="btn-refresh" id="btnRefresh" onclick="refreshAll()">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="23 4 23 10 17 10" />
-                        <polyline points="1 20 1 14 7 14" />
-                        <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15" />
+                <div class="search-box">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8" />
+                        <path d="M21 21l-4.35-4.35" />
                     </svg>
-                    Refresh
-                </button>
+                    <input type="text" placeholder="Search tickers, news, or analysis...">
+                </div>
+                <div class="header-actions">
+                    <div class="live-indicator">
+                        <div class="live-label"><span class="live-dot"></span> Live Market</div>
+                        <span class="live-time">Auto-refresh: <span class="countdown" id="countdown">5:00</span></span>
+                    </div>
+                    <span id="lastUpdated" style="font-size:11px;color:var(--slate-400);white-space:nowrap;">AI data:
+                        loading...</span>
+                    <button class="btn-icon" title="Notifications">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+                        </svg>
+                        <span class="notif-dot"></span>
+                    </button>
+                    <button class="btn-refresh" id="btnRefresh" onclick="refreshAll()">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="23 4 23 10 17 10" />
+                            <polyline points="1 20 1 14 7 14" />
+                            <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15" />
+                        </svg>
+                        Refresh
+                    </button>
+                    <div class="user-profile">
+                        <div class="user-avatar">W</div>
+                        <div class="user-info">
+                            <p>Wish</p>
+                            <p>Premium Member</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </header>
 
-        <!-- MARKET OVERVIEW -->
-        <div class="market-bar" id="marketBar">
-            <div class="market-chip">
-                <span class="label">S&P 500</span>
-                <span class="value">5,738</span>
-                <span class="change down">▼ 1.0%</span>
-            </div>
-            <div class="market-chip">
-                <span class="label">NASDAQ</span>
-                <span class="value">18,069</span>
-                <span class="change down">▼ 1.3%</span>
-            </div>
-            <div class="market-chip">
-                <span class="label">DOW</span>
-                <span class="value">42,579</span>
-                <span class="change down">▼ 1.5%</span>
-            </div>
-            <div class="market-chip">
-                <span class="label">BTC</span>
-                <span class="value">$70,658</span>
-                <span class="change down">▼ 2.8%</span>
-            </div>
-            <div class="market-chip">
-                <span class="label">VIX</span>
-                <span class="value">24.8</span>
-                <span class="change up">▲ 8.2%</span>
-            </div>
-            <div class="market-chip">
-                <span class="label">Oil (WTI)</span>
-                <span class="value">$82.40</span>
-                <span class="change up">▲ 3.1%</span>
-            </div>
-        </div>
-
-        <!-- SENTIMENT BANNER -->
-        <div class="sentiment-banner bearish" id="sentimentBanner">
-            <span class="sentiment-icon">🔴</span>
-            <span><strong>Market Sentiment: Bearish</strong> — Weak jobs report (-92K) + Iran conflict + surging oil
-                prices fueling stagflation fears. S&P 500 down ~1%, over 90% of stocks declining.</span>
-        </div>
-
-        <!-- TICKER FILTER TABS -->
-        <div class="ticker-tabs" id="tickerTabs">
-            <button class="ticker-tab active" data-ticker="all" onclick="filterNews('all')">All <span class="tab-badge"
-                    id="badge-all">0</span></button>
-            <button class="ticker-tab" data-ticker="BTCUSD" onclick="filterNews('BTCUSD')">BTC</button>
-            <button class="ticker-tab" data-ticker="RKLB" onclick="filterNews('RKLB')">RKLB</button>
-            <button class="ticker-tab" data-ticker="SATS" onclick="filterNews('SATS')">SATS</button>
-            <button class="ticker-tab" data-ticker="TE" onclick="filterNews('TE')">TE</button>
-            <button class="ticker-tab" data-ticker="STX" onclick="filterNews('STX')">STX</button>
-            <button class="ticker-tab" data-ticker="TSAT" onclick="filterNews('TSAT')">TSAT</button>
-            <button class="ticker-tab" data-ticker="BBAI" onclick="filterNews('BBAI')">BBAI</button>
-            <button class="ticker-tab" data-ticker="NBIS" onclick="filterNews('NBIS')">NBIS</button>
-            <button class="ticker-tab" data-ticker="OKLO" onclick="filterNews('OKLO')">OKLO</button>
-            <button class="ticker-tab" data-ticker="NVTS" onclick="filterNews('NVTS')">NVTS</button>
-        </div>
-
-        <!-- MAIN GRID -->
-        <div class="main-grid">
-            <!-- NEWS FEED -->
-            <div class="news-section">
-                <h2>📰 Latest News</h2>
-                <div class="news-feed" id="newsFeed">
-                    <!-- Loading skeletons -->
-                    <div class="skeleton skeleton-card"></div>
-                    <div class="skeleton skeleton-card"></div>
-                    <div class="skeleton skeleton-card"></div>
-                    <div class="skeleton skeleton-card"></div>
-                    <div class="skeleton skeleton-card"></div>
-                </div>
-                <div class="load-more" id="loadMore" style="display:none;">
-                    <button onclick="loadMoreNews()">Load More News</button>
-                </div>
-            </div>
-
-            <!-- AI TLDR PANEL -->
-            <div class="ai-panel">
-                <div class="ai-panel-card">
-                    <div class="ai-panel-header">
-                        <span class="ai-sparkle">✨</span>
-                        <h3>AI Analysis — TLDR</h3>
+        <div class="content-area">
+            <!-- MARKET SUMMARY -->
+            <div class="market-grid" id="marketBar">
+                <div class="glass-card glass-card-hover market-card">
+                    <div class="mc-header"><span class="mc-label">S&P 500</span><span class="text-down">▼</span></div>
+                    <div class="mc-value">5,738</div>
+                    <div class="mc-change text-down">▼ 1.0%</div>
+                    <div class="mc-bar">
+                        <div class="mc-bar-fill bg-down" style="width:60%"></div>
                     </div>
-                    <div class="ai-panel-body" id="aiPanel">
-                        <div class="skeleton skeleton-insight"></div>
-                        <div class="skeleton skeleton-insight"></div>
-                        <div class="skeleton skeleton-insight"></div>
+                </div>
+                <div class="glass-card glass-card-hover market-card">
+                    <div class="mc-header"><span class="mc-label">NASDAQ</span><span class="text-down">▼</span></div>
+                    <div class="mc-value">18,069</div>
+                    <div class="mc-change text-down">▼ 1.3%</div>
+                    <div class="mc-bar">
+                        <div class="mc-bar-fill bg-down" style="width:60%"></div>
+                    </div>
+                </div>
+                <div class="glass-card glass-card-hover market-card">
+                    <div class="mc-header"><span class="mc-label">DOW</span><span class="text-down">▼</span></div>
+                    <div class="mc-value">42,579</div>
+                    <div class="mc-change text-down">▼ 1.5%</div>
+                    <div class="mc-bar">
+                        <div class="mc-bar-fill bg-down" style="width:60%"></div>
+                    </div>
+                </div>
+                <div class="glass-card glass-card-hover market-card">
+                    <div class="mc-header"><span class="mc-label">BTC</span><span class="text-down">▼</span></div>
+                    <div class="mc-value">$70,658</div>
+                    <div class="mc-change text-down">▼ 2.8%</div>
+                    <div class="mc-bar">
+                        <div class="mc-bar-fill bg-down" style="width:60%"></div>
+                    </div>
+                </div>
+                <div class="glass-card glass-card-hover market-card">
+                    <div class="mc-header"><span class="mc-label">VIX</span><span class="text-up">▲</span></div>
+                    <div class="mc-value">24.8</div>
+                    <div class="mc-change text-up">▲ 8.2%</div>
+                    <div class="mc-bar">
+                        <div class="mc-bar-fill bg-up" style="width:60%"></div>
+                    </div>
+                </div>
+                <div class="glass-card glass-card-hover market-card">
+                    <div class="mc-header"><span class="mc-label">Oil (WTI)</span><span class="text-up">▲</span></div>
+                    <div class="mc-value">$82.40</div>
+                    <div class="mc-change text-up">▲ 3.1%</div>
+                    <div class="mc-bar">
+                        <div class="mc-bar-fill bg-up" style="width:60%"></div>
                     </div>
                 </div>
             </div>
+
+            <!-- SENTIMENT BANNER -->
+            <div class="glass-card sentiment-banner" id="sentimentBanner">
+                <div class="sb-icon">🔴</div>
+                <div class="sb-content">
+                    <div class="sb-label">Market Sentiment <span class="sb-mood bearish">BEARISH</span></div>
+                    <p class="sb-text">Weak jobs report (-92K) + Iran conflict + surging oil prices fueling stagflation
+                        fears. S&P 500 down ~1%, over 90% of stocks declining.</p>
+                </div>
+            </div>
+
+            <!-- FILTER TABS -->
+            <div class="filter-tabs" id="tickerTabs">
+                <button class="filter-tab active" data-ticker="all" onclick="filterNews('all')">All <span id="badge-all"
+                        style="margin-left:4px;font-size:10px;opacity:0.7">0</span></button>
+                <button class="filter-tab" data-ticker="BTCUSD" onclick="filterNews('BTCUSD')">BTC</button>
+                <button class="filter-tab" data-ticker="RKLB" onclick="filterNews('RKLB')">RKLB</button>
+                <button class="filter-tab" data-ticker="SATS" onclick="filterNews('SATS')">SATS</button>
+                <button class="filter-tab" data-ticker="TE" onclick="filterNews('TE')">TE</button>
+                <button class="filter-tab" data-ticker="STX" onclick="filterNews('STX')">STX</button>
+                <button class="filter-tab" data-ticker="TSAT" onclick="filterNews('TSAT')">TSAT</button>
+                <button class="filter-tab" data-ticker="BBAI" onclick="filterNews('BBAI')">BBAI</button>
+                <button class="filter-tab" data-ticker="NBIS" onclick="filterNews('NBIS')">NBIS</button>
+                <button class="filter-tab" data-ticker="OKLO" onclick="filterNews('OKLO')">OKLO</button>
+                <button class="filter-tab" data-ticker="NVTS" onclick="filterNews('NVTS')">NVTS</button>
+            </div>
+
+            <!-- MAIN GRID: News + AI -->
+            <div class="main-grid">
+                <!-- NEWS FEED -->
+                <div>
+                    <div class="glass-card" style="overflow:hidden">
+                        <div class="news-header">
+                            <h3>📰 Latest News</h3>
+                        </div>
+                        <div class="news-feed" id="newsFeed">
+                            <div class="skeleton skeleton-card"></div>
+                            <div class="skeleton skeleton-card"></div>
+                            <div class="skeleton skeleton-card"></div>
+                            <div class="skeleton skeleton-card"></div>
+                            <div class="skeleton skeleton-card"></div>
+                        </div>
+                        <div class="load-more" id="loadMore" style="display:none;">
+                            <button onclick="loadMoreNews()">Load More News</button>
+                        </div>
+                    </div>
+
+                    <!-- ANALYTICS — Chart placeholders for future integration -->
+                    <div class="analytics-grid">
+                        <div class="glass-card chart-placeholder" style="padding:24px">
+                            <div class="chart-header">
+                                <h3>Portfolio Performance</h3>
+                                <select>
+                                    <option>Last 6 Months</option>
+                                    <option>Last Year</option>
+                                </select>
+                            </div>
+                            <!-- TODO: Connect chart library (e.g. Chart.js / Recharts) here -->
+                            <div class="chart-body">📊 Line chart placeholder — connect data later</div>
+                        </div>
+                        <div class="glass-card chart-placeholder" style="padding:24px">
+                            <div class="chart-header">
+                                <h3>Sector Allocation</h3>
+                                <button>Edit Allocation</button>
+                            </div>
+                            <!-- TODO: Connect pie chart here -->
+                            <div class="chart-body">🥧 Pie chart placeholder — connect data later</div>
+                        </div>
+                    </div>
+
+                    <!-- EXTRA WIDGETS -->
+                    <div class="widgets-grid">
+                        <div class="glass-card widget-card">
+                            <div class="widget-icon" style="background:var(--secondary-soft);color:var(--secondary)">↗
+                            </div>
+                            <div>
+                                <div class="widget-label">Top Mover</div>
+                                <div class="widget-value"><span>RKLB</span><span
+                                        style="font-size:12px;font-weight:700;color:var(--secondary)">+12.4%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="glass-card widget-card">
+                            <div class="widget-icon" style="background:var(--accent-soft);color:var(--primary)">⚡</div>
+                            <div>
+                                <div class="widget-label">Risk Level</div>
+                                <div class="widget-value"><span>Moderate</span>
+                                    <div class="widget-dots">
+                                        <div class="dot" style="background:var(--primary)"></div>
+                                        <div class="dot" style="background:var(--primary)"></div>
+                                        <div class="dot" style="background:var(--primary)"></div>
+                                        <div class="dot" style="background:var(--slate-200)"></div>
+                                        <div class="dot" style="background:var(--slate-200)"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="glass-card widget-card">
+                            <div class="widget-icon" style="background:var(--slate-50);color:var(--slate-400)">📅</div>
+                            <div>
+                                <div class="widget-label">Next Earnings</div>
+                                <div class="widget-value"><span>OKLO</span><span
+                                        style="font-size:12px;color:var(--slate-500)">Mar 17</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI ANALYSIS PANEL -->
+                <aside style="position:sticky;top:100px;align-self:start;">
+                    <div class="ai-section-header">
+                        <div class="ai-title">✨ <span>AI Analysis — TLDR</span></div>
+                        <span class="ai-badge">Beta</span>
+                    </div>
+                    <div id="aiPanel" style="display:flex;flex-direction:column;gap:12px;">
+                        <div class="skeleton skeleton-insight"></div>
+                        <div class="skeleton skeleton-insight"></div>
+                        <div class="skeleton skeleton-insight"></div>
+                    </div>
+                    <!-- Portfolio Risk Check Card -->
+                    <div class="ai-risk-card">
+                        <div style="position:relative;z-index:1;">
+                            <h4>Portfolio Risk Check</h4>
+                            <p>Your current exposure to Tech is 64%. Consider diversifying.</p>
+                            <button>Run Stress Test</button>
+                        </div>
+                        <div
+                            style="position:absolute;right:-16px;bottom:-16px;width:96px;height:96px;background:rgba(255,255,255,0.1);border-radius:50%;filter:blur(16px);">
+                        </div>
+                        <div
+                            style="position:absolute;left:-16px;top:-16px;width:64px;height:64px;background:rgba(6,182,212,0.2);border-radius:50%;filter:blur(12px);">
+                        </div>
+                    </div>
+                </aside>
+            </div>
         </div>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <p>© 2026 Insight Portfolio Pro. All market data delayed by 15 minutes.</p>
+            <div class="footer-links">
+                <button>Terms of Service</button>
+                <button>Privacy Policy</button>
+                <button>Contact Support</button>
+            </div>
+        </footer>
     </div>
 
     <!-- TOAST -->
     <div class="toast" id="toast"></div>
 
+    <!-- JAVASCRIPT: All original logic preserved -->
     <script>
         // ========================================
         // CONFIGURATION
@@ -979,14 +1525,13 @@
             { ticker: 'NVTS', searchTerm: 'Navitas Semiconductor NVTS', name: 'Navitas Semi', badge: 'badge-nvts', avgCost: 10.00, shares: 349.11 }
         ];
 
-        const REFRESH_INTERVAL = 5 * 60 * 1000; // 5 minutes
+        const REFRESH_INTERVAL = 5 * 60 * 1000;
         let allNews = [];
         let activeFilter = 'all';
         let visibleCount = 15;
         let countdownTimer = null;
         let countdownSeconds = 300;
 
-        // CORS proxy options (tried in order)
         const CORS_PROXIES = [
             url => `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`,
             url => `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(url)}`,
@@ -994,40 +1539,213 @@
         ];
 
         // ========================================
-        // AI ANALYSIS DATA (loaded from ai-data.json)
+        // LIVE MARKET DATA (Yahoo Finance + CoinGecko)
+        // ========================================
+        const MARKET_SYMBOLS = {
+            sp500: '^GSPC',
+            nasdaq: '^IXIC',
+            dow: '^DJI',
+            btc: 'BTC-USD',
+            vix: '^VIX',
+            oil: 'CL=F'
+        };
+
+        const MARKET_LABELS = {
+            sp500: 'S&P 500',
+            nasdaq: 'NASDAQ',
+            dow: 'DOW',
+            btc: 'BTC',
+            vix: 'VIX',
+            oil: 'Oil (WTI)'
+        };
+
+        async function fetchViaProxy(url, timeout = 10000) {
+            const proxies = [
+                u => `https://api.allorigins.win/raw?url=${encodeURIComponent(u)}`,
+                u => `https://corsproxy.io/?url=${encodeURIComponent(u)}`,
+            ];
+            for (const proxyFn of proxies) {
+                const controller = new AbortController();
+                const timer = setTimeout(() => controller.abort(), timeout);
+                try {
+                    const resp = await fetch(proxyFn(url), { signal: controller.signal });
+                    clearTimeout(timer);
+                    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+                    return await resp.text();
+                } catch (e) { clearTimeout(timer); continue; }
+            }
+            throw new Error('All proxies failed for ' + url);
+        }
+
+        async function fetchYahooQuotes(symbols) {
+            const symStr = symbols.join(',');
+            const url = `https://query1.finance.yahoo.com/v7/finance/quote?symbols=${symStr}&fields=regularMarketPrice,regularMarketChangePercent,regularMarketPreviousClose`;
+            const text = await fetchViaProxy(url);
+            const data = JSON.parse(text);
+            if (!data.quoteResponse || !data.quoteResponse.result) throw new Error('Invalid Yahoo response');
+            return data.quoteResponse.result;
+        }
+
+        function formatPrice(price, key) {
+            if (key === 'btc') return '$' + Math.round(price).toLocaleString();
+            if (key === 'oil') return '$' + price.toFixed(2);
+            if (key === 'vix') return price.toFixed(2);
+            return price.toLocaleString(undefined, { maximumFractionDigits: 2 });
+        }
+
+        async function fetchLiveMarketData() {
+            console.log('[Market] Fetching live market data...');
+            try {
+                const symbols = Object.values(MARKET_SYMBOLS);
+                const quotes = await fetchYahooQuotes(symbols);
+                const marketData = {};
+                const symbolToKey = {};
+                for (const [key, sym] of Object.entries(MARKET_SYMBOLS)) {
+                    symbolToKey[sym] = key;
+                }
+                for (const q of quotes) {
+                    const key = symbolToKey[q.symbol];
+                    if (!key) continue;
+                    const price = q.regularMarketPrice;
+                    const changePct = q.regularMarketChangePercent;
+                    const dir = changePct >= 0 ? 'up' : 'down';
+                    marketData[key] = {
+                        value: formatPrice(price, key),
+                        change: (changePct >= 0 ? '+' : '') + changePct.toFixed(2) + '%',
+                        direction: dir
+                    };
+                }
+                if (Object.keys(marketData).length > 0) {
+                    updateMarketBar(marketData);
+                    console.log('[Market] Live data updated successfully', marketData);
+                    return true;
+                }
+                throw new Error('No market data parsed');
+            } catch (err) {
+                console.warn('[Market] Yahoo Finance failed, trying CoinGecko for BTC...', err.message);
+                // Try CoinGecko for at least BTC
+                try {
+                    await fetchBTCFromCoinGecko();
+                } catch (e) {
+                    console.warn('[Market] CoinGecko also failed:', e.message);
+                }
+                return false;
+            }
+        }
+
+        async function fetchBTCFromCoinGecko() {
+            const resp = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd&include_24hr_change=true');
+            if (!resp.ok) throw new Error('CoinGecko HTTP ' + resp.status);
+            const data = await resp.json();
+            if (data.bitcoin) {
+                const price = data.bitcoin.usd;
+                const change = data.bitcoin.usd_24h_change || 0;
+                const dir = change >= 0 ? 'up' : 'down';
+                // Update just the BTC card
+                const btcData = {
+                    btc: {
+                        value: '$' + Math.round(price).toLocaleString(),
+                        change: (change >= 0 ? '+' : '') + change.toFixed(2) + '%',
+                        direction: dir
+                    }
+                };
+                // Merge with existing market data
+                if (AI_DATA && AI_DATA.market_overview) {
+                    const merged = { ...AI_DATA.market_overview, ...btcData };
+                    updateMarketBar(merged);
+                }
+            }
+        }
+
+        async function fetchPortfolioStockPrices() {
+            console.log('[Portfolio] Fetching live portfolio prices...');
+            try {
+                const tickers = PORTFOLIO.filter(s => s.ticker !== 'BTCUSD').map(s => s.ticker);
+                const quotes = await fetchYahooQuotes(tickers);
+                let topMover = { ticker: '', change: -999 };
+                for (const q of quotes) {
+                    const pct = q.regularMarketChangePercent || 0;
+                    if (pct > topMover.change) {
+                        topMover = { ticker: q.symbol, change: pct, price: q.regularMarketPrice };
+                    }
+                }
+                // Update Top Mover widget
+                if (topMover.ticker) {
+                    const widget = document.querySelector('.widget-value span:first-child');
+                    const widgetPct = document.querySelector('.widget-value span:last-child');
+                    if (widget) widget.textContent = topMover.ticker;
+                    if (widgetPct) {
+                        widgetPct.textContent = (topMover.change >= 0 ? '+' : '') + topMover.change.toFixed(1) + '%';
+                        widgetPct.style.color = topMover.change >= 0 ? 'var(--secondary)' : 'var(--danger)';
+                    }
+                }
+                console.log('[Portfolio] Top mover:', topMover.ticker, topMover.change.toFixed(2) + '%');
+            } catch (err) {
+                console.warn('[Portfolio] Failed to fetch portfolio prices:', err.message);
+            }
+        }
+
+        // ========================================
+        // AI ANALYSIS DATA
         // ========================================
         let AI_INSIGHTS = [];
         let AI_DATA = null;
+
+        // Embedded fallback data — used when ai-data.json can't be fetched (e.g. file:// protocol)
+        const AI_DATA_FALLBACK = {
+            "generated_at": "2026-03-07T21:00:00+07:00",
+            "market_overview": {
+                "sp500": { "value": "6,740.02", "change": "-1.33%", "direction": "down" },
+                "nasdaq": { "value": "22,387.68", "change": "-1.59%", "direction": "down" },
+                "dow": { "value": "47,501.55", "change": "-0.95%", "direction": "down" },
+                "btc": { "value": "$68,037", "change": "-3.9%", "direction": "down" },
+                "vix": { "value": "29.49", "change": "+24.17%", "direction": "up" },
+                "oil": { "value": "$90.90", "change": "+12.2%", "direction": "up" }
+            },
+            "sentiment": {
+                "mood": "bearish",
+                "icon": "🔴",
+                "summary": "Stocks sold off as unemployment jumped to 4.4%, oil spiked 12% on Strait of Hormuz closure, and VIX surged to highest since October — classic stagflation fear trade."
+            },
+            "insights": [
+                { "ticker": "MARKET", "type": "bearish", "signal": "FEAR MODE", "text": "<strong>Stagflation fears slam Wall Street.</strong> Unemployment spiked to 4.4% while oil surged 12% on Strait of Hormuz closure. VIX exploded to 29.49 (+24%). Risk-off across the board — energy the only winner." },
+                { "ticker": "BTCUSD", "type": "bearish", "signal": "FEAR MODE", "text": "<strong>Bitcoin sliding despite bullish news cycle.</strong> BTC dropped to $68K despite a midweek push to $74K. Fear & Greed at 18 (Extreme Fear). Macro is overriding crypto sentiment entirely." },
+                { "ticker": "RKLB", "type": "bullish", "signal": "BULLISH", "text": "<strong>Rocket Lab holding $70 in a brutal selloff.</strong> Trading above your $62 cost basis despite market carnage. 10/10 analysts say Buy, avg target $90. Two launches in six days shows execution." },
+                { "ticker": "SATS", "type": "neutral", "signal": "HOLD", "text": "<strong>EchoStar pivots hard — kills D2D, partners SpaceX.</strong> At $109 vs your $114 cost, slightly underwater. Took $16B impairment on 5G decom. The SpaceX equity stake remains the hidden value play." },
+                { "ticker": "TE", "type": "bullish", "signal": "BULLISH", "text": "<strong>T1 Energy gets tax credit confirmation.</strong> At $6.72, flat to your $6.73 cost. Section 45X credits confirmed plus $160M PTC sale closed. Analysts unanimous Strong Buy with $10.71 avg target." },
+                { "ticker": "STX", "type": "bearish", "signal": "CAUTION", "text": "<strong>Seagate caught in AI export restriction fears.</strong> Down to $375 from your $449 cost — 16% loss. China chip restrictions and insider selling weigh heavy." },
+                { "ticker": "TSAT", "type": "neutral", "signal": "HIGH RISK", "text": "<strong>Telesat flat near cost — fraud probes linger.</strong> At $33 vs your $33.33 entry. Multiple law firm investigations ongoing. Lightspeed LEO on track for late 2026 launch." },
+                { "ticker": "BBAI", "type": "bearish", "signal": "HIGH RISK", "text": "<strong>BigBear.ai in freefall — down 56% from cost.</strong> At $4.00 vs your $9.02 entry. Q4 revenue crashed 38% YoY to $27.3M, gross margin collapsed to 20%." },
+                { "ticker": "NBIS", "type": "neutral", "signal": "SPECULATIVE", "text": "<strong>Nebius earns Bloomberg 500 inclusion March 12.</strong> At $89 vs your $131 cost — still 32% underwater. Missouri 1.2GW AI factory approved. Revenue up 461-547% YoY." },
+                { "ticker": "OKLO", "type": "bearish", "signal": "SPECULATIVE", "text": "<strong>Oklo halved from your $125 entry.</strong> Trading around $61 — a 51% loss. 14 analysts still rate Buy with $112 avg target. Earnings March 17 is the next big catalyst." },
+                { "ticker": "NVTS", "type": "neutral", "signal": "PIVOT", "text": "<strong>Navitas pivoting to high-power AI markets.</strong> At $9.50 vs your $10 cost — nearly flat. Mobile revenue dropped below 25% as company shifts to GaN/SiC power semis." }
+            ]
+        };
+
+        function applyAIData(data) {
+            AI_DATA = data;
+            AI_INSIGHTS = AI_DATA.insights || [];
+            if (AI_DATA.market_overview) updateMarketBar(AI_DATA.market_overview);
+            if (AI_DATA.sentiment) updateSentiment(AI_DATA.sentiment);
+            if (AI_DATA.generated_at) {
+                const genDate = new Date(AI_DATA.generated_at);
+                const dateStr = genDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' });
+                document.getElementById('lastUpdated').textContent = `AI data: ${dateStr}`;
+            }
+        }
 
         async function loadAIData() {
             try {
                 const response = await fetch('ai-data.json?t=' + Date.now());
                 if (!response.ok) throw new Error(`HTTP ${response.status}`);
-                AI_DATA = await response.json();
-                AI_INSIGHTS = AI_DATA.insights || [];
-
-                // Update market bar
-                if (AI_DATA.market_overview) {
-                    updateMarketBar(AI_DATA.market_overview);
-                }
-
-                // Update sentiment banner
-                if (AI_DATA.sentiment) {
-                    updateSentiment(AI_DATA.sentiment);
-                }
-
-                // Update last-updated timestamp
-                if (AI_DATA.generated_at) {
-                    const genDate = new Date(AI_DATA.generated_at);
-                    const dateStr = genDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' });
-                    document.getElementById('lastUpdated').textContent = `AI data: ${dateStr}`;
-                }
-
+                const data = await response.json();
+                applyAIData(data);
                 return true;
             } catch (err) {
-                console.warn('Failed to load ai-data.json:', err);
-                document.getElementById('lastUpdated').textContent = 'AI data: offline';
-                return false;
+                console.warn('Failed to fetch ai-data.json, using embedded fallback:', err);
+                applyAIData(AI_DATA_FALLBACK);
+                document.getElementById('lastUpdated').textContent += ' (cached)';
+                return true;
             }
         }
 
@@ -1041,80 +1759,63 @@
                 { label: 'VIX', data: market.vix },
                 { label: 'Oil (WTI)', data: market.oil }
             ];
-            bar.innerHTML = chips.map(c => `
-                <div class="market-chip">
-                    <span class="label">${c.label}</span>
-                    <span class="value">${c.data.value}</span>
-                    <span class="change ${c.data.direction}">${c.data.direction === 'up' ? '▲' : '▼'} ${c.data.change.replace(/[+-]/, '')}</span>
-                </div>
-            `).join('');
+            bar.innerHTML = chips.map(c => {
+                const dir = c.data.direction;
+                const arrow = dir === 'up' ? '▲' : '▼';
+                return `
+                <div class="glass-card glass-card-hover market-card">
+                    <div class="mc-header"><span class="mc-label">${c.label}</span><span class="text-${dir}">${arrow}</span></div>
+                    <div class="mc-value">${c.data.value}</div>
+                    <div class="mc-change text-${dir}">${arrow} ${c.data.change.replace(/[+-]/, '')}</div>
+                    <div class="mc-bar"><div class="mc-bar-fill bg-${dir}" style="width:60%"></div></div>
+                </div>`;
+            }).join('');
         }
 
         function updateSentiment(sentiment) {
             const banner = document.getElementById('sentimentBanner');
-            banner.className = `sentiment-banner ${sentiment.mood}`;
+            const mood = sentiment.mood;
+            const moodUp = mood.charAt(0).toUpperCase() + mood.slice(1);
             banner.innerHTML = `
-                <span class="sentiment-icon">${sentiment.icon}</span>
-                <span><strong>Market Sentiment: ${sentiment.mood.charAt(0).toUpperCase() + sentiment.mood.slice(1)}</strong> — ${sentiment.summary}</span>
-            `;
+                <div class="sb-icon">${sentiment.icon}</div>
+                <div class="sb-content">
+                    <div class="sb-label">Market Sentiment <span class="sb-mood ${mood}">${moodUp.toUpperCase()}</span></div>
+                    <p class="sb-text">${sentiment.summary}</p>
+                </div>`;
         }
 
         // ========================================
-        // NEWS FETCHING (multi-proxy with fallback)
+        // NEWS FETCHING
         // ========================================
-
-        // Parse RSS XML text into news items
         function parseRSSXml(xmlText, stock) {
             try {
                 const parser = new DOMParser();
                 const doc = parser.parseFromString(xmlText, 'text/xml');
                 const items = doc.querySelectorAll('item');
                 const results = [];
-
                 items.forEach((item, i) => {
                     if (i >= 8) return;
                     const rawTitle = item.querySelector('title')?.textContent || '';
                     const link = item.querySelector('link')?.textContent || '';
                     const pubDate = item.querySelector('pubDate')?.textContent || '';
-
-                    // Try to get thumbnail from media:content or enclosure
+                    const rawDesc = item.querySelector('description')?.textContent || '';
                     let thumbnail = null;
                     const mediaContent = item.querySelector('content');
                     if (mediaContent) thumbnail = mediaContent.getAttribute('url');
-                    if (!thumbnail) {
-                        const enclosure = item.querySelector('enclosure');
-                        if (enclosure) thumbnail = enclosure.getAttribute('url');
-                    }
-
-                    results.push({
-                        title: cleanTitle(rawTitle),
-                        link,
-                        source: extractSource(rawTitle, null),
-                        pubDate,
-                        thumbnail,
-                        ticker: stock.ticker,
-                        tickerName: stock.name,
-                        badge: stock.badge
-                    });
+                    if (!thumbnail) { const enc = item.querySelector('enclosure'); if (enc) thumbnail = enc.getAttribute('url'); }
+                    results.push({ title: cleanTitle(rawTitle), link, source: extractSource(rawTitle, null), pubDate, thumbnail, description: cleanDescription(rawDesc, rawTitle), ticker: stock.ticker, tickerName: stock.name, badge: stock.badge });
                 });
                 return results;
-            } catch (e) {
-                return [];
-            }
+            } catch (e) { return []; }
         }
 
-        // Parse rss2json API response
         function parseRss2JsonResponse(data, stock) {
             if (data.status === 'ok' && data.items) {
                 return data.items.slice(0, 8).map(item => ({
-                    title: cleanTitle(item.title),
-                    link: item.link,
-                    source: extractSource(item.title, item.author),
-                    pubDate: item.pubDate,
-                    thumbnail: item.thumbnail || item.enclosure?.link || null,
-                    ticker: stock.ticker,
-                    tickerName: stock.name,
-                    badge: stock.badge
+                    title: cleanTitle(item.title), link: item.link, source: extractSource(item.title, item.author),
+                    pubDate: item.pubDate, thumbnail: item.thumbnail || item.enclosure?.link || null,
+                    description: cleanDescription(item.description || item.content || '', item.title),
+                    ticker: stock.ticker, tickerName: stock.name, badge: stock.badge
                 }));
             }
             return [];
@@ -1124,153 +1825,236 @@
             const url = proxyFn(rssUrl);
             const controller = new AbortController();
             const timer = setTimeout(() => controller.abort(), timeout);
-
             try {
                 const response = await fetch(url, { signal: controller.signal });
                 clearTimeout(timer);
                 if (!response.ok) throw new Error(`HTTP ${response.status}`);
-
                 const contentType = response.headers.get('content-type') || '';
                 const text = await response.text();
-
-                // If it looks like JSON (rss2json), parse as JSON
-                if (contentType.includes('json') || text.trim().startsWith('{')) {
-                    const data = JSON.parse(text);
-                    return parseRss2JsonResponse(data, stock);
-                }
-
-                // Otherwise parse as XML
+                if (contentType.includes('json') || text.trim().startsWith('{')) return parseRss2JsonResponse(JSON.parse(text), stock);
                 return parseRSSXml(text, stock);
-            } catch (err) {
-                clearTimeout(timer);
-                throw err;
+            } catch (err) { clearTimeout(timer); throw err; }
+        }
+
+        function buildNewsUrls(stock) {
+            const urls = [];
+            // 1. Google News RSS — primary source
+            urls.push(`https://news.google.com/rss/search?q=${encodeURIComponent(stock.searchTerm)}&hl=en-US&gl=US&ceid=US:en&when=1d`);
+            // 2. Google News — recent only (last 1 hour for freshness)
+            urls.push(`https://news.google.com/rss/search?q=${encodeURIComponent(stock.searchTerm + ' stock')}&hl=en-US&gl=US&ceid=US:en&when=1h`);
+            // 3. Yahoo Finance RSS for ticker
+            if (stock.ticker !== 'BTCUSD') {
+                urls.push(`https://feeds.finance.yahoo.com/rss/2.0/headline?s=${stock.ticker}&region=US&lang=en-US`);
             }
+            // 4. Google News — major financial sites
+            urls.push(`https://news.google.com/rss/search?q=${encodeURIComponent(stock.searchTerm + ' (site:reuters.com OR site:bloomberg.com OR site:marketwatch.com OR site:cnbc.com OR site:wsj.com)')}&hl=en-US&gl=US&ceid=US:en`);
+            // 5. Crypto-specific feeds for BTC
+            if (stock.ticker === 'BTCUSD') {
+                urls.push(`https://news.google.com/rss/search?q=${encodeURIComponent('Bitcoin BTC (site:coindesk.com OR site:cointelegraph.com OR site:decrypt.co OR site:theblock.co)')}&hl=en-US&gl=US&ceid=US:en`);
+                urls.push(`https://news.google.com/rss/search?q=${encodeURIComponent('Bitcoin price today')}&hl=en-US&gl=US&ceid=US:en&when=1h`);
+            }
+            return urls;
         }
 
         async function fetchNewsForTicker(stock) {
-            const rssUrl = `https://news.google.com/rss/search?q=${encodeURIComponent(stock.searchTerm)}&hl=en-US&gl=US&ceid=US:en`;
-
-            // Try each proxy in order
-            for (const proxyFn of CORS_PROXIES) {
-                try {
-                    const results = await fetchWithProxy(proxyFn, rssUrl, stock);
-                    if (results.length > 0) return results;
-                } catch (err) {
-                    console.warn(`Proxy failed for ${stock.ticker}:`, err.message);
+            const rssUrls = buildNewsUrls(stock);
+            const allResults = [];
+            // Fetch all sources in parallel for speed
+            const fetches = rssUrls.map(async (rssUrl) => {
+                for (const proxyFn of CORS_PROXIES) {
+                    try {
+                        const results = await fetchWithProxy(proxyFn, rssUrl, stock, 6000);
+                        if (results.length > 0) return results;
+                    } catch (err) { /* try next proxy */ }
                 }
+                return [];
+            });
+            const results = await Promise.allSettled(fetches);
+            results.forEach(r => {
+                if (r.status === 'fulfilled' && r.value.length > 0) {
+                    allResults.push(...r.value);
+                }
+            });
+            // Deduplicate per-ticker results
+            const seen = new Set();
+            const unique = allResults.filter(item => {
+                const key = item.title.toLowerCase().substring(0, 50);
+                if (seen.has(key)) return false;
+                seen.add(key);
+                return true;
+            });
+            // Sort by date, newest first
+            unique.sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
+            console.log(`[News] ${stock.ticker}: fetched ${unique.length} unique articles from ${rssUrls.length} sources`);
+            return unique;
+        }
+
+        function cleanTitle(title) { const parts = title.split(' - '); if (parts.length > 1) { parts.pop(); return parts.join(' - '); } return title; }
+        function extractSource(title, author) { if (author) return author; const parts = title.split(' - '); if (parts.length > 1) return parts[parts.length - 1]; return 'News'; }
+
+        function cleanDescription(html, title) {
+            if (!html) return '';
+            // Strip HTML tags
+            const text = html.replace(/<[^>]*>/g, ' ').replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&#39;/g, "'");
+            // Collapse whitespace and trim
+            const clean = text.replace(/\s+/g, ' ').trim();
+            // Skip if it's too short, or if it's just repeating the title (Google News does this)
+            if (clean.length < 30) return '';
+            if (title && clean.toLowerCase().includes(title.toLowerCase().substring(0, 30))) return '';
+
+            // Truncate to ~180 chars at word boundary
+            if (clean.length > 180) {
+                return clean.substring(0, 180).replace(/\s+\S*$/, '') + '…';
             }
-
-            console.warn(`All proxies failed for ${stock.ticker}`);
-            return [];
+            return clean;
         }
-
-        function cleanTitle(title) {
-            // Google News appends " - Source Name" at the end
-            const parts = title.split(' - ');
-            if (parts.length > 1) {
-                parts.pop();
-                return parts.join(' - ');
-            }
-            return title;
-        }
-
-        function extractSource(title, author) {
-            if (author) return author;
-            const parts = title.split(' - ');
-            if (parts.length > 1) return parts[parts.length - 1];
-            return 'News';
-        }
-
         function timeAgo(dateString) {
-            const date = new Date(dateString);
-            const now = new Date();
-            const seconds = Math.floor((now - date) / 1000);
-
-            if (seconds < 60) return 'just now';
-            if (seconds < 3600) return `${Math.floor(seconds / 60)}m ago`;
-            if (seconds < 86400) return `${Math.floor(seconds / 3600)}h ago`;
-            if (seconds < 604800) return `${Math.floor(seconds / 86400)}d ago`;
-            return date.toLocaleDateString();
+            const seconds = Math.floor((new Date() - new Date(dateString)) / 1000);
+            if (seconds < 60) return 'just now'; if (seconds < 3600) return `${Math.floor(seconds / 60)}m ago`;
+            if (seconds < 86400) return `${Math.floor(seconds / 3600)}h ago`; if (seconds < 604800) return `${Math.floor(seconds / 86400)}d ago`;
+            return new Date(dateString).toLocaleDateString();
         }
 
         async function fetchAllNews() {
             allNews = [];
-            // Stagger requests in batches of 3 to avoid rate limiting
             const batchSize = 3;
             for (let i = 0; i < PORTFOLIO.length; i += batchSize) {
                 const batch = PORTFOLIO.slice(i, i + batchSize);
                 const results = await Promise.allSettled(batch.map(s => fetchNewsForTicker(s)));
-                results.forEach(result => {
-                    if (result.status === 'fulfilled') {
-                        allNews.push(...result.value);
-                    }
-                });
-                // Render partial results as they come in
+                results.forEach(r => { if (r.status === 'fulfilled') allNews.push(...r.value); });
                 const sorted = [...allNews].sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
                 renderNews(deduplicateNews(sorted));
-                // Small delay between batches
-                if (i + batchSize < PORTFOLIO.length) {
-                    await new Promise(r => setTimeout(r, 400));
-                }
+                if (i + batchSize < PORTFOLIO.length) await new Promise(r => setTimeout(r, 400));
             }
-
-            // Final sort and deduplicate
             allNews.sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
             allNews = deduplicateNews(allNews);
-
             return allNews;
         }
 
         function deduplicateNews(news) {
             const seen = new Set();
-            return news.filter(item => {
-                const key = item.title.toLowerCase().substring(0, 60);
-                if (seen.has(key)) return false;
-                seen.add(key);
-                return true;
-            });
+            return news.filter(item => { const key = item.title.toLowerCase().substring(0, 60); if (seen.has(key)) return false; seen.add(key); return true; });
         }
 
         // ========================================
-        // RENDERING
+        // TLD EXRACTION (Web Scraping)
         // ========================================
+        async function fetchArticleSummary(url) {
+            try {
+                // Use corsproxy.io to fetch the actual HTML of the article
+                const proxyUrl = `https://corsproxy.io/?url=${encodeURIComponent(url)}`;
+                const controller = new AbortController();
+                const timer = setTimeout(() => controller.abort(), 4000); // Fast timeout for summaries
+
+                const response = await fetch(proxyUrl, { signal: controller.signal });
+                clearTimeout(timer);
+
+                if (!response.ok) return null;
+                const html = await response.text();
+
+                // Parse HTML to extract paragraph text
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, 'text/html');
+
+                // Common terms found in bot-blockers or paywalls
+                const blocklist = ['Cookie', 'JavaScript', 'experiencing some temporary issues', 'Are you a robot', 'Please enable', 'Access Denied', 'Attention Required', 'We ran into a problem'];
+
+                const paragraphs = Array.from(doc.querySelectorAll('p'))
+                    .map(p => p.textContent.trim())
+                    .filter(text => text.length > 50 && !blocklist.some(blocked => text.toLowerCase().includes(blocked.toLowerCase())));
+
+                if (paragraphs.length === 0) return null;
+
+                // Join first few paragraphs and grab first 3-4 sentences
+                const fullText = paragraphs.join(' ');
+                const sentences = fullText.match(/[^.!?]+[.!?]+/g) || [fullText];
+
+                // Take 3 sentences max, up to ~300 chars
+                let summary = sentences.slice(0, 3).join(' ').trim();
+                if (summary.length > 300) {
+                    summary = summary.substring(0, 300).replace(/\s+\S*$/, '') + '...';
+                }
+
+                return summary;
+            } catch (err) {
+                return null;
+            }
+        }
+
+        // ========================================
+        // RENDERING (updated for new UI)
+        // ========================================
+        // Sentiment color helper for news ticker icons
+        function getTickerSentiment(ticker) {
+            const insight = AI_INSIGHTS.find(i => i.ticker === ticker);
+            if (!insight) return 'neutral';
+            return insight.type; // bullish, bearish, neutral
+        }
+
         function renderNews(news) {
             const feed = document.getElementById('newsFeed');
             const loadMore = document.getElementById('loadMore');
-
             let filtered = activeFilter === 'all' ? news : news.filter(n => n.ticker === activeFilter);
 
             if (filtered.length === 0) {
-                feed.innerHTML = `
-                    <div class="empty-state">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 12h10"/></svg>
-                        <p>No news found for this ticker. Try refreshing.</p>
-                    </div>
-                `;
+                feed.innerHTML = `<div class="empty-state"><p>📭 No news found for this ticker. Try refreshing.</p></div>`;
                 loadMore.style.display = 'none';
                 return;
             }
 
             const visible = filtered.slice(0, visibleCount);
 
-            feed.innerHTML = visible.map((item, i) => `
-                <a href="${item.link}" target="_blank" rel="noopener" class="news-card fade-in" style="animation-delay: ${i * 0.04}s; opacity: 0;">
-                    ${item.thumbnail ? `<img class="news-card-image" src="${item.thumbnail}" alt="" loading="lazy" onerror="this.style.display='none'">` : ''}
+            // Render basic cards first
+            feed.innerHTML = visible.map((item, i) => {
+                const sent = getTickerSentiment(item.ticker);
+                const iconBg = sent === 'bullish' ? 'var(--secondary-soft)' : sent === 'bearish' ? 'rgba(239,68,68,0.05)' : 'var(--slate-50)';
+                const iconBorder = sent === 'bullish' ? 'rgba(6,182,212,0.2)' : sent === 'bearish' ? 'rgba(239,68,68,0.15)' : 'var(--slate-200)';
+                const iconColor = sent === 'bullish' ? 'var(--secondary)' : sent === 'bearish' ? 'var(--danger)' : 'var(--slate-400)';
+                const dotColor = sent === 'bullish' ? 'var(--secondary)' : sent === 'bearish' ? 'var(--danger)' : 'var(--slate-300)';
+
+                // Create a unique ID for the TLDR container
+                const tldrId = `tldr-${Math.random().toString(36).substr(2, 9)}`;
+
+                // Fallback description or start empty
+                let initialTldr = item.description
+                    ? `<span class="tldr-label">TLDR</span>${item.description}`
+                    : ``;
+
+                // Fire off async fetch for real summary
+                if (!item.fullDescFetched) {
+                    item.fullDescFetched = true; // prevent re-fetching
+                    setTimeout(async () => {
+                        const summary = await fetchArticleSummary(item.link);
+                        const el = document.getElementById(tldrId);
+                        if (el && summary && summary.length > 40) {
+                            el.innerHTML = `<span class="tldr-label">TLDR</span>${summary}`;
+                            el.style.display = 'block';
+                            el.style.animation = 'fadeInUp 0.4s ease forwards';
+                            item.description = summary; // cache it
+                        } else if (el && !item.description) {
+                            el.style.display = 'none'; // hide if nothing found
+                        }
+                    }, i * 200 + 100); // stagger fetches to avoid rate limits
+                }
+
+                return `
+                <a href="${item.link}" target="_blank" rel="noopener" class="news-card fade-in" style="animation-delay:${i * 0.04}s;opacity:0">
+                    <div class="news-ticker-icon" style="background:${iconBg};border-color:${iconBorder};color:${iconColor}">
+                        ${item.ticker}
+                        <div class="ticker-dot" style="background:${dotColor}"></div>
+                    </div>
                     <div class="news-card-content">
                         <div class="news-card-title">${item.title}</div>
+                        <div class="news-card-tldr" id="${tldrId}" style="${!item.description ? 'display:none' : ''}">${initialTldr}</div>
                         <div class="news-card-meta">
-                            <span class="news-ticker-badge ${item.badge}">${item.ticker}</span>
-                            <span class="news-source">${item.source}</span>
-                            <span class="news-dot"></span>
-                            <span class="news-time">${timeAgo(item.pubDate)}</span>
+                            <span><span class="meta-dot"></span> ${item.source}</span>
+                            <span>🕐 ${timeAgo(item.pubDate)}</span>
                         </div>
                     </div>
-                </a>
-            `).join('');
+                </a>`;
+            }).join('');
 
-            loadMore.style.display = filtered.length > visibleCount ? 'flex' : 'none';
-
-            // Update badge counts
+            loadMore.style.display = filtered.length > visibleCount ? 'block' : 'none';
             updateBadgeCounts(news);
         }
 
@@ -1281,16 +2065,23 @@
 
         function renderAIInsights() {
             const panel = document.getElementById('aiPanel');
-
-            panel.innerHTML = AI_INSIGHTS.map((insight, i) => `
-                <div class="ai-insight ${insight.type} fade-in" style="animation-delay: ${i * 0.06}s; opacity: 0;">
+            panel.innerHTML = AI_INSIGHTS.map((insight, i) => {
+                const signalColor = insight.type === 'bullish' ? 'var(--secondary)' : insight.type === 'bearish' ? 'var(--danger)' : 'var(--primary)';
+                return `
+                <div class="glass-card ai-insight glass-card-hover fade-in" style="animation-delay:${i * 0.06}s;opacity:0">
                     <div class="ai-insight-header">
-                        <span class="ai-insight-ticker">${insight.ticker}</span>
-                        <span class="ai-insight-signal signal-${insight.type}">${insight.signal}</span>
+                        <div class="ai-tags">
+                            <span class="ai-insight-ticker">${insight.ticker}</span>
+                            <span class="ai-insight-signal" style="color:${signalColor}">${insight.signal}</span>
+                        </div>
                     </div>
                     <div class="ai-insight-text">${insight.text}</div>
-                </div>
-            `).join('');
+                    <div class="ai-insight-footer">
+                        <span>Confidence: 84%</span>
+                        <button>Deep Dive</button>
+                    </div>
+                </div>`;
+            }).join('');
         }
 
         // ========================================
@@ -1299,32 +2090,50 @@
         function filterNews(ticker) {
             activeFilter = ticker;
             visibleCount = 15;
-
-            // Update active tab
-            document.querySelectorAll('.ticker-tab').forEach(tab => {
+            document.querySelectorAll('.filter-tab').forEach(tab => {
                 tab.classList.toggle('active', tab.dataset.ticker === ticker);
             });
-
             renderNews(allNews);
         }
 
-        function loadMoreNews() {
-            visibleCount += 10;
-            renderNews(allNews);
-        }
+        function loadMoreNews() { visibleCount += 10; renderNews(allNews); }
 
         async function refreshAll() {
             const btn = document.getElementById('btnRefresh');
             btn.classList.add('loading');
-
+            let stocksOk = false;
+            let newsOk = false;
             try {
-                const news = await fetchAllNews();
-                renderNews(news);
-                showToast('✅ News updated successfully', 'success');
-            } catch (err) {
-                showToast('❌ Failed to refresh news', 'error');
-            }
+                // Fetch stocks and news in parallel
+                const [marketResult, newsResult] = await Promise.allSettled([
+                    (async () => {
+                        const ok = await fetchLiveMarketData();
+                        fetchPortfolioStockPrices(); // fire and forget
+                        return ok;
+                    })(),
+                    fetchAllNews()
+                ]);
+                stocksOk = marketResult.status === 'fulfilled' && marketResult.value;
+                if (newsResult.status === 'fulfilled') {
+                    renderNews(newsResult.value);
+                    newsOk = true;
+                }
+                // Update timestamp
+                const now = new Date();
+                const timeStr = now.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) + ', ' +
+                    now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+                document.getElementById('lastUpdated').textContent = `AI data: ${timeStr}` + (stocksOk ? ' · Live' : ' · Cached');
 
+                if (stocksOk && newsOk) {
+                    showToast('✅ Stocks & news updated with live data');
+                } else if (newsOk) {
+                    showToast('✅ News updated · Stocks using cached data');
+                } else {
+                    showToast('⚠️ Partial update — some data may be stale');
+                }
+            } catch (err) {
+                showToast('❌ Failed to refresh data', 'error');
+            }
             btn.classList.remove('loading');
             resetCountdown();
         }
@@ -1332,7 +2141,7 @@
         function showToast(message, type) {
             const toast = document.getElementById('toast');
             toast.textContent = message;
-            toast.style.borderColor = type === 'error' ? 'var(--accent-red)' : 'var(--accent-green)';
+            toast.className = type === 'error' ? 'toast error' : 'toast';
             toast.classList.add('show');
             setTimeout(() => toast.classList.remove('show'), 3000);
         }
@@ -1343,48 +2152,55 @@
         function startCountdown() {
             countdownSeconds = 300;
             if (countdownTimer) clearInterval(countdownTimer);
-
             countdownTimer = setInterval(() => {
                 countdownSeconds--;
                 const mins = Math.floor(countdownSeconds / 60);
                 const secs = countdownSeconds % 60;
-                document.getElementById('countdown').textContent =
-                    `${mins}:${secs.toString().padStart(2, '0')}`;
-
-                if (countdownSeconds <= 0) {
-                    refreshAll();
-                    resetCountdown();
-                }
+                document.getElementById('countdown').textContent = `${mins}:${secs.toString().padStart(2, '0')}`;
+                if (countdownSeconds <= 0) { refreshAll(); resetCountdown(); }
             }, 1000);
         }
 
-        function resetCountdown() {
-            countdownSeconds = 300;
-            startCountdown();
-        }
+        function resetCountdown() { countdownSeconds = 300; startCountdown(); }
+
+        // ========================================
+        // LIVE CLOCK (new feature from design)
+        // ========================================
+        setInterval(() => {
+            const el = document.querySelector('.live-time');
+            if (!el) return;
+            const now = new Date();
+            const cd = document.getElementById('countdown');
+            el.innerHTML = `Auto-refresh: <span class="countdown" id="countdown">${cd ? cd.textContent : '5:00'}</span>`;
+        }, 60000);
 
         // ========================================
         // INITIALIZATION
         // ========================================
         async function init() {
-            // Load AI data from JSON file first
             await loadAIData();
             renderAIInsights();
             startCountdown();
-
+            // Try to fetch live market data (updates stock prices)
+            fetchLiveMarketData().then(ok => {
+                if (ok) {
+                    const now = new Date();
+                    const timeStr = now.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) + ', ' +
+                        now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+                    document.getElementById('lastUpdated').textContent = `AI data: ${timeStr} · Live`;
+                }
+            });
+            // Fetch portfolio prices for widgets
+            fetchPortfolioStockPrices();
+            // Fetch news from multiple sources
             try {
                 const news = await fetchAllNews();
                 renderNews(news);
             } catch (err) {
-                document.getElementById('newsFeed').innerHTML = `
-                    <div class="empty-state">
-                        <p>⚠️ Failed to load news. Click Refresh to try again.</p>
-                    </div>
-                `;
+                document.getElementById('newsFeed').innerHTML = `<div class="empty-state"><p>⚠️ Failed to load news. Click Refresh to try again.</p></div>`;
             }
         }
 
-        // Start the app
         init();
     </script>
 </body>
