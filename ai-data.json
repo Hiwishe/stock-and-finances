@@ -1,84 +1,84 @@
 {
-    "generated_at": "2026-03-07T21:00:00+07:00",
+    "generated_at": "2026-03-08T21:08:07+07:00",
     "market_overview": {
-        "sp500": { "value": "6,740.02", "change": "-1.33%", "direction": "down" },
-        "nasdaq": { "value": "22,387.68", "change": "-1.59%", "direction": "down" },
-        "dow": { "value": "47,501.55", "change": "-0.95%", "direction": "down" },
-        "btc": { "value": "$68,037", "change": "-3.9%", "direction": "down" },
+        "sp500": { "value": "6,740", "change": "-1.33%", "direction": "down" },
+        "nasdaq": { "value": "22,388", "change": "-1.59%", "direction": "down" },
+        "dow": { "value": "47,502", "change": "-0.95%", "direction": "down" },
+        "btc": { "value": "$67,254", "change": "-1.25%", "direction": "down" },
         "vix": { "value": "29.49", "change": "+24.17%", "direction": "up" },
-        "oil": { "value": "$90.90", "change": "+12.2%", "direction": "up" }
+        "oil": { "value": "$90.90", "change": "+12.21%", "direction": "up" }
     },
     "sentiment": {
         "mood": "bearish",
         "icon": "🔴",
-        "summary": "Stocks sold off as unemployment jumped to 4.4%, oil spiked 12% on Strait of Hormuz closure, and VIX surged to highest since October — classic stagflation fear trade."
+        "summary": "A devastating jobs miss and Middle East oil shock sent markets reeling — fear is dominating."
     },
     "insights": [
         {
             "ticker": "MARKET",
             "type": "bearish",
             "signal": "FEAR MODE",
-            "text": "<strong>Stagflation fears slam Wall Street.</strong> Unemployment spiked to 4.4% while oil surged 12% on Strait of Hormuz closure. VIX exploded to 29.49 (+24%). Blackrock capped withdrawals on a private credit fund. Risk-off across the board — energy the only winner."
+            "text": "<strong>Jobs collapse + Iran war premium = perfect storm.</strong> February payrolls fell 92K vs. +55K expected, unemployment rose to 4.4%, and oil spiked above $90 on U.S.-Israel strikes against Iran. VIX exploded to 29.49. Dow turned red for 2026. Cash is king this weekend."
         },
         {
             "ticker": "BTCUSD",
             "type": "bearish",
-            "signal": "FEAR MODE",
-            "text": "<strong>Bitcoin sliding despite bullish news cycle.</strong> BTC dropped to $68K despite a midweek push to $74K. Fear & Greed at 18 (Extreme Fear). You're underwater from your $73,135 cost basis — macro is overriding crypto sentiment entirely."
+            "signal": "CAUTION",
+            "text": "<strong>BTC at $67,254 — $6K below your cost basis of $73,135.</strong> Fear & Greed at 18 (Extreme Fear). Hit $73K last week on ETF inflows, then reversed hard with macro. Jobs data may revive Fed cut hopes, but geopolitical risk keeps crypto sentiment crushed right now."
         },
         {
             "ticker": "RKLB",
             "type": "bullish",
             "signal": "BULLISH",
-            "text": "<strong>Rocket Lab holding $70 in a brutal selloff.</strong> Trading above your $62 cost basis despite market carnage. 10/10 analysts say Buy, avg target $90. Two launches in six days shows execution. Neutron delay to Q4 2026 is the only real risk."
+            "text": "<strong>RKLB at $70.11 — solidly above your ~$62 cost basis.</strong> 83rd Electron mission launched March 6, record Q4 revenue $180M, backlog up 73% to $1.85B. Neutron delayed to Q4 2026 is a risk, but operational momentum is real. Holding strong in a very weak tape."
         },
         {
             "ticker": "SATS",
             "type": "neutral",
             "signal": "HOLD",
-            "text": "<strong>EchoStar pivots hard — kills D2D, partners SpaceX.</strong> At $109 vs your $114 cost, slightly underwater. Took $16B impairment on 5G decom. Cash influx expected H1 2026 for debt reduction. The SpaceX equity stake remains the hidden value play."
+            "text": "<strong>SATS at $109 — slightly below your $114.33 cost basis.</strong> SpaceX partnership is the new thesis: market now values SATS as a SpaceX proxy, not satellite TV. $16B impairment cleared the decks. Watch SpaceX valuation moves as the only real catalyst from here."
         },
         {
             "ticker": "TE",
             "type": "bullish",
             "signal": "BULLISH",
-            "text": "<strong>T1 Energy gets tax credit confirmation.</strong> At $6.72, flat to your $6.73 cost. Section 45X credits confirmed plus $160M PTC sale closed. 900MW Treaty Oak supply deal is a strong catalyst. Analysts unanimous Strong Buy with $10.71 avg target."
+            "text": "<strong>TE at $6.72 — right at your ~$6.73 cost basis, but catalysts are stacking.</strong> Section 45X tax credits confirmed under the One Big Beautiful Bill Act. G2_Austin fab breaking ground. Analyst targets up to $15.75. Solar manufacturing credits are real recurring revenue."
         },
         {
             "ticker": "STX",
             "type": "bearish",
             "signal": "CAUTION",
-            "text": "<strong>Seagate caught in AI export restriction fears.</strong> Down to $375 from your $449 cost — 16% loss. China chip restrictions and insider selling weigh heavy. HAMR tech promising but Iran oil shock inflates server costs. Analyst target $475."
+            "text": "<strong>STX at $352 — down 22% from your $448.98 cost basis.</strong> Fundamentals strong: Q2 revenue $2.83B, analyst targets at $475, AI storage supercycle intact. Deep underwater in a macro selloff. HAMR tech and hyperscaler demand remain the long-term thesis — patience required."
         },
         {
             "ticker": "TSAT",
-            "type": "neutral",
-            "signal": "HIGH RISK",
-            "text": "<strong>Telesat flat near cost — fraud probes linger.</strong> At $33 vs your $33.33 entry. Multiple law firm investigations ongoing. Lightspeed LEO on track for late 2026 launch. Earnings March 26. High volatility, low conviction — tread carefully."
+            "type": "bearish",
+            "signal": "SPECULATIVE",
+            "text": "<strong>TSAT at $30.84 — below your $33.33 cost basis.</strong> Lightspeed LEO construction starting (antennas spring 2026) and military comms partnerships developing. Pre-revenue LEO bet in a market preferring safety. High execution risk — hold only for the LEO network thesis."
         },
         {
             "ticker": "BBAI",
             "type": "bearish",
             "signal": "HIGH RISK",
-            "text": "<strong>BigBear.ai in freefall — down 56% from cost.</strong> At $4.00 vs your $9.02 entry. Q4 revenue crashed 38% YoY to $27.3M, gross margin collapsed to 20%. 2026 guidance $135-165M shows hope but execution risk is massive."
+            "text": "<strong>BBAI at $4.24 — down 53% from your $9.02 cost basis.</strong> Q4 revenue cratered 37.5% to $27.3M. Upside: 90% debt reduction, $462M cash, 2026 guidance $135-165M on Middle East expansion. Stockholder meeting March 18. Turnaround story — but execution must prove out."
         },
         {
             "ticker": "NBIS",
-            "type": "neutral",
-            "signal": "SPECULATIVE",
-            "text": "<strong>Nebius earns Bloomberg 500 inclusion March 12.</strong> At $89 vs your $131 cost — still 32% underwater. Missouri 1.2GW AI factory approved. Revenue up 461-547% YoY. Fundamentals accelerating but needs AI sentiment recovery."
+            "type": "bearish",
+            "signal": "HOLD",
+            "text": "<strong>NBIS at $89 — down 32% from your $131.12 cost basis.</strong> Q4 revenue $227.7M (+547% YoY), Missouri AI campus approved, Microsoft/Meta deals inked. The gap between fundamentals and price is striking. AI infrastructure secular tailwind is intact — patience required here."
         },
         {
             "ticker": "OKLO",
             "type": "bearish",
-            "signal": "SPECULATIVE",
-            "text": "<strong>Oklo halved from your $125 entry.</strong> Trading around $61 — a 51% loss. 14 analysts still rate Buy with $112 avg target. Earnings March 17 is the next big catalyst. Pre-revenue nuclear play requires serious patience."
+            "signal": "HIGH RISK",
+            "text": "<strong>OKLO at $61 — down 51% from your $125 cost basis.</strong> Analysts warn of $50 if $60 support breaks. DOE facility win and $1.68B Tennessee fuel recycling plant are real milestones. Nuclear plays need patience — revenue years away. Watch the $60 level closely this week."
         },
         {
             "ticker": "NVTS",
-            "type": "neutral",
-            "signal": "PIVOT",
-            "text": "<strong>Navitas pivoting to high-power AI markets.</strong> At $9.50 vs your $10 cost — nearly flat. Mobile revenue dropped below 25% as company shifts to GaN/SiC power semis. 250kW Solid-State Transformer for AI data centers is innovative. CFO departing mid-pivot."
+            "type": "bearish",
+            "signal": "BEARISH",
+            "text": "<strong>NVTS at $8.90 — below your $10.00 cost basis.</strong> Morgan Stanley Sell rating, Jefferies cut target to $9. APEC conference March 22-26 could provide a catalyst. GaN/SiC for AI data centers is the thesis, but execution has disappointed. Earnings May 7 is the next test."
         }
     ]
 }
