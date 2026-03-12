@@ -1,84 +1,84 @@
 {
-    "generated_at": "2026-03-11T20:03:29+07:00",
+    "generated_at": "2026-03-12T21:00:00+07:00",
     "market_overview": {
-        "sp500": { "value": "6,781", "change": "-0.21%", "direction": "down" },
-        "nasdaq": { "value": "22,697", "change": "+0.01%", "direction": "up" },
-        "dow": { "value": "47,706", "change": "-0.07%", "direction": "down" },
-        "btc": { "value": "$69,500", "change": "-0.63%", "direction": "down" },
-        "vix": { "value": "24.25", "change": "-4.84%", "direction": "down" },
-        "oil": { "value": "$89.24", "change": "-5.84%", "direction": "down" }
+        "sp500": { "value": "6,692", "change": "-1.2%", "direction": "down" },
+        "nasdaq": { "value": "22,344", "change": "-1.6%", "direction": "down" },
+        "dow": { "value": "46,842", "change": "-1.2%", "direction": "down" },
+        "btc": { "value": "$69,853", "change": "-0.5%", "direction": "down" },
+        "vix": { "value": "24.58", "change": "-1.4%", "direction": "down" },
+        "oil": { "value": "$94.88", "change": "+8.7%", "direction": "up" }
     },
     "sentiment": {
-        "mood": "neutral",
-        "icon": "🟡",
-        "summary": "Markets in cautious relief as Trump hints Iran conflict may end soon — oil crashing 5.8%, VIX declining to 24, but crypto sits in Extreme Fear and BTC pulls back."
+        "mood": "bearish",
+        "icon": "🔴",
+        "summary": "Oil surges 8.7% toward $95 as US-Iran war re-escalates, crushing yesterday's relief rally and triggering stagflation fears across all asset classes."
     },
     "insights": [
         {
             "ticker": "MARKET",
-            "type": "neutral",
-            "signal": "HOLD",
-            "text": "<strong>Iran fears fade, oil craters 5.8%.</strong> Trump signaled a potential end to the US-Iran conflict, sending WTI crude to $89 and VIX down to 24 (-4.8%). Tech stocks catching bids as energy risk premium deflates. Crypto stays in Extreme Fear (F&G: 15)."
+            "type": "bearish",
+            "signal": "BEARISH",
+            "text": "<strong>Stagflation fears back with a vengeance.</strong> Oil ripped 8.7% to $95 as the US-Iran conflict intensifies into day 12. S&P 500 -1.2%, NASDAQ -1.6%, VIX at 24.58. IEA's 400M barrel reserve dump failed to cap crude. Yesterday's relief rally is gone."
         },
         {
             "ticker": "BTCUSD",
-            "type": "bearish",
+            "type": "neutral",
             "signal": "CAUTION",
-            "text": "<strong>BTC bleeding — $3,600 below your $73,135 cost basis.</strong> Bitcoin at $69,500 (-0.63%), under both the 50-day and 200-day EMAs. Fear & Greed at 15 (Extreme Fear). No technical reversal confirmed. Iran de-escalation could be the catalyst but wait for confirmation."
+            "text": "<strong>Bitcoin holding $70K but still below your cost basis.</strong> BTC at $69,853, -4.5% below your $73,135 avg. Spot ETF inflows of $115M on March 11 offer structural support, but oil-driven macro fear and war uncertainty make a near-term recovery hard to time."
         },
         {
             "ticker": "RKLB",
             "type": "bullish",
             "signal": "BULLISH",
-            "text": "<strong>Rocket Lab up 14.8% from your $62.04 basis.</strong> RKLB trading near $71 with record $602M revenue in 2025 (+38% YoY) and $1.85B backlog up 73%. 4th launch of 2026 completed March 6. Silicon solar array unveiled for space-based data centers. Strong Buy consensus, avg PT $69."
+            "text": "<strong>Rocket Lab unstoppable — 16% above your cost basis.</strong> Closed at $71.96 (+4.4%), well above your $62.04 avg. Record $602M FY revenue (+36% YoY), 38% gross margins, 83rd launch completed. Buy consensus, avg PT $69 — already printing. Strong hold."
         },
         {
             "ticker": "SATS",
-            "type": "bullish",
-            "signal": "BULLISH",
-            "text": "<strong>S&P 500 inclusion March 23 — forced buying incoming.</strong> EchoStar joins the S&P 500 before market open March 23, triggering passive index fund buying. EchoStar XXV satellite launching tonight on Falcon 9. Trading near $110 vs your $114.33 cost basis — nearly flat."
+            "type": "neutral",
+            "signal": "HOLD",
+            "text": "<strong>EchoStar near breakeven — forced S&P buying incoming.</strong> At $110.09, just 4% below your $114.33 cost. S&P 500 inclusion triggers passive buying before March 23 open. $42.65B AT&T/SpaceX spectrum sale transforms the balance sheet. Hold into the catalyst."
         },
         {
             "ticker": "TE",
             "type": "bullish",
             "signal": "BULLISH",
-            "text": "<strong>TE ripped 11% today — solar thesis on fire.</strong> T1 Energy at $7.98 vs your $6.73 basis (+18.6%). Section 45X manufacturing tax credits confirmed, 900MW supply deal locked in with Treaty Oak. Stock broke above 200-day MA. Avg analyst PT: $10.71. Looking strong."
+            "text": "<strong>T1 Energy up 25% from cost — solar thesis validated.</strong> At $8.42 vs your $6.73 avg (+25.1%). 900MW Treaty Oak supply deal locked in, Texas 5GW TOPCon facility starting production by end of 2026. Strong Buy consensus, avg PT $10.71. Momentum intact."
         },
         {
             "ticker": "STX",
-            "type": "bearish",
+            "type": "neutral",
             "signal": "HOLD",
-            "text": "<strong>Seagate stuck 21% below your $448.98 entry — hold the line.</strong> STX at $352.80. Q2 revenue strong at $2.83B with 42% gross margins. $0.74 quarterly dividend declared. AI/cloud storage demand is the long-term tailwind. Thesis intact — needs patience to close the gap."
+            "text": "<strong>Seagate rebounding — down 14% from basis, was 21% yesterday.</strong> STX at $385.23 vs your $448.98 avg. AI/cloud HDD demand accelerating with 42% gross margins. Analysts target $475. The gap is narrowing but macro selloff caps upside near-term. Patient hold."
         },
         {
             "ticker": "TSAT",
             "type": "bearish",
             "signal": "HIGH RISK",
-            "text": "<strong>Telesat burning runway before LEO launch.</strong> TSAT at $30.84, below your $33.33 cost basis (-7.5%). First Lightspeed LEO satellite launch targeted December 2026. New ground stations added in Quebec and Saskatchewan. Earnings March 26. Pure execution risk until birds fly."
+            "text": "<strong>Telesat stuck below cost — execution risk until LEO launches.</strong> At $30.84, -7.5% below your $33.33 avg. Canadian Armed Forces satellite contract and Lightspeed LEO first launch Dec 2026 are real milestones. Earnings March 26. All catalyst, no revenue yet — high risk."
         },
         {
             "ticker": "BBAI",
             "type": "bearish",
-            "signal": "FEAR MODE",
-            "text": "<strong>BigBear down 54% from your $9.02 basis — severe pain.</strong> BBAI at $4.08. Q4 revenue crashed 37.5% YoY to $27.3M, missing badly. Investigations looming, special stockholder meeting March 18. Ask Sage acquisition adds AI platform optionality. Risk remains very high."
+            "signal": "HIGH RISK",
+            "text": "<strong>BigBear.ai still down 54% from your $9.02 basis.</strong> At $4.11, bleeding slow. Q4 revenue fell 37.7% YoY. Special stockholder meeting passed, Ask Sage acquisition adds AI optionality. 17% growth guided for 2026 — but it needs to be proven. One bad quarter away from trouble."
         },
         {
             "ticker": "NBIS",
             "type": "bullish",
-            "signal": "BULLISH",
-            "text": "<strong>NVIDIA drops $2B bomb on Nebius — today's biggest catalyst.</strong> NVIDIA invested $2B in NBIS to deploy 5GW of AI systems by 2030. Missouri AI campus approved, SVP Americas hired. Stock at $97 vs your $131.12 cost basis — still underwater, but deal rerates the story."
+            "signal": "PIVOT",
+            "text": "<strong>Nvidia's $2B bet on Nebius is closing your gap fast.</strong> NBIS at $109.70 after surging 16% on Nvidia's strategic investment and Rubin GPU campus deal. Still $21 below your $131.12 avg, but the story is fundamentally rerating. 300MW New Jersey campus, 5GW by decade end."
         },
         {
             "ticker": "OKLO",
-            "type": "bearish",
-            "signal": "HIGH RISK",
-            "text": "<strong>Oklo down 54% from your $125 cost basis — painful hold.</strong> OKLO near $58, 60% below ATH. Centrus JV for nuclear fuel services announced. Earnings March 17 is the next catalyst. DOE targeting July 4 criticality milestone. Buy consensus, $113 avg PT — but execution risk is real."
+            "type": "neutral",
+            "signal": "SPECULATIVE",
+            "text": "<strong>Oklo down 54% from your $125 cost — thesis building slowly.</strong> At $57.82. Meta's 1.2GW advanced nuclear campus deal and Centrus HALEU JV are major milestones. Earnings March 17 next catalyst. BofA upgraded to Buy, $127 PT. The thesis is real — the timeline is not."
         },
         {
             "ticker": "NVTS",
-            "type": "bearish",
-            "signal": "CAUTION",
-            "text": "<strong>Navitas sacrificing revenue to pivot to AI power.</strong> NVTS at $8.36, below your $10.00 basis (-16.4%). Q4 revenue crashed 59.4% YoY as company exits low-power business. Showcasing 10kW GaN/SiC solutions at APEC March 22-26. Q1 2026 guide: $8–$8.5M. Watch for design wins."
+            "type": "bullish",
+            "signal": "BULLISH",
+            "text": "<strong>Navitas finally above your $10 cost basis after monster launch.</strong> At $10.83 (+8.3% from avg) after yesterday's +24.9% surge. New 5th-gen GeneSiC QDPAK platform targets AI power racks and data centers directly. This is the product cycle inflection you've been waiting for."
         }
     ]
 }
