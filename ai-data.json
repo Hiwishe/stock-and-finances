@@ -1,84 +1,84 @@
 {
-    "generated_at": "2026-03-28T15:00:00+07:00",
+    "generated_at": "2026-03-30T01:05:47+07:00",
     "market_overview": {
-        "sp500": { "value": "6,369", "change": "-1.67%", "direction": "down" },
-        "nasdaq": { "value": "20,948", "change": "-2.15%", "direction": "down" },
-        "dow": { "value": "45,167", "change": "-1.73%", "direction": "down" },
-        "btc": { "value": "$66,194", "change": "-3.33%", "direction": "down" },
-        "vix": { "value": "29.35", "change": "+8.33%", "direction": "up" },
+        "sp500": { "value": "6,368.85", "change": "-1.67%", "direction": "down" },
+        "nasdaq": { "value": "20,948.36", "change": "-2.15%", "direction": "down" },
+        "dow": { "value": "45,166.64", "change": "-1.73%", "direction": "down" },
+        "btc": { "value": "$66,600", "change": "+0.44%", "direction": "up" },
+        "vix": { "value": "31.05", "change": "+13.16%", "direction": "up" },
         "oil": { "value": "$99.64", "change": "+5.46%", "direction": "up" }
     },
     "sentiment": {
         "mood": "bearish",
         "icon": "🔴",
-        "summary": "Markets in fear mode as Iran rejects peace talks, oil spikes toward $100/bbl, and the S&P posts its fifth straight losing week."
+        "summary": "Dow enters correction territory on fifth straight losing week as U.S.-Iran war blocks Strait of Hormuz, keeping oil near $100 and VIX spiking above 31."
     },
     "insights": [
         {
             "ticker": "MARKET",
             "type": "bearish",
             "signal": "FEAR MODE",
-            "text": "<strong>Geopolitical meltdown drives fifth straight losing week.</strong> Iran rejected Trump's 15-point peace proposal; Trump warned of a \"final blow\" — oil crossed $100 intraday. VIX spiked to 29+. Energy the lone winner; everything else is bleeding. Stay cautious on speculative names."
+            "text": "<strong>Dow in correction — fifth straight losing week and no bottom in sight.</strong> U.S.-Iran war has closed the Strait of Hormuz, locking in a $14-18 oil risk premium near $100. VIX above 31 screams fear. Energy is the only winner; everything else is bleeding. Do not fight this tape."
         },
         {
             "ticker": "BTCUSD",
             "type": "bearish",
-            "signal": "BEARISH",
-            "text": "<strong>BTC slides to $66K — 9.5% below your $73,135 cost basis.</strong> Risk-off from the Iran conflict hit crypto hard. Bitcoin is down 24.6% YTD with no macro catalyst until geopolitical tensions ease. Further downside likely if oil stays elevated."
+            "signal": "CAUTION",
+            "text": "<strong>BTC ticking up to $66.6K but still 9% below your $73,135 cost basis.</strong> Weekend bounce (+0.44%) is noise vs. the macro trend. Geopolitical risk and risk-off flows keep crypto rangebound. No near-term catalyst to recover losses — hold, don't add."
         },
         {
             "ticker": "RKLB",
-            "type": "neutral",
-            "signal": "HOLD",
-            "text": "<strong>RKLB at $62 — barely holding your $62.04 cost by a thread.</strong> Fundamentals are solid: $190M MACH-TB 2.0 contract, $2B+ backlog, 10 buy ratings. Broader risk-off is the drag, not the business. Neutron first launch targets Q4 2026 — patience required."
+            "type": "bearish",
+            "signal": "CAUTION",
+            "text": "<strong>RKLB drops to $60.93 — slipping below your $62.04 cost basis.</strong> $190M DoD hypersonics contract is a real fundamental win, but the broader selloff is overriding it. SpaceX IPO buzz sparked a brief pop that faded fast. 10 analysts target $90 avg — hold, stay patient."
         },
         {
             "ticker": "SATS",
-            "type": "bullish",
-            "signal": "BULLISH",
-            "text": "<strong>SATS pops to $114.96 — finally breaking even on your $114.33 cost basis.</strong> S&P 500 Equal Weighted Index addition is fueling momentum alongside SpaceX deal optimism. Fundamentals remain weak with ongoing losses, but index flows are doing the heavy lifting right now."
+            "type": "neutral",
+            "signal": "HOLD",
+            "text": "<strong>SATS holds at $114.96 — right at your $114.33 cost basis with fresh tailwinds.</strong> S&P 500 inclusion triggered an 8% surge this week — structural index-fund buying is a real driver. Debt restructuring and Starlink strategic partnership add long-term upside. Hold and accumulate on dips."
         },
         {
             "ticker": "TE",
-            "type": "neutral",
-            "signal": "HOLD",
-            "text": "<strong>TE at $6.68 — just below your $6.73 cost with Q4 earnings due March 31.</strong> 2.1 GW Austin solar fab construction on track for year-end at $400-425M. Avg analyst target is $10.71. Earnings Tuesday could be a major catalyst — set a price alert."
+            "type": "bearish",
+            "signal": "CAUTION",
+            "text": "<strong>TE at $5.98 — 11% below your $6.73 cost with earnings due March 31.</strong> Norway Statnett 50MW grid assignment shows operational momentum. Analysts avg $10.50 target. Beat earnings and this reverses hard — miss and it breaks lower. High-stakes binary event in 48 hours."
         },
         {
             "ticker": "STX",
             "type": "bearish",
-            "signal": "CAUTION",
-            "text": "<strong>STX at $377 — 16% below your $448.98 cost and under new AI pressure.</strong> Google's TurboQuant AI compression algo triggered a sector-wide storage selloff. Analysts still rate Buy with $385 target but AI disruption risk is real and mounting. Watch this one closely."
+            "signal": "BEARISH",
+            "text": "<strong>STX at $378 — down 16% from your $449 cost as AI disruption hits storage.</strong> Massive Q2 beat (EPS +11%, revenue +22% YoY, FCF +42% QoQ) crushed by Google TurboQuant AI compression triggering a sector-wide selloff. Fundamentals are strong — this is sentiment-driven pain."
         },
         {
             "ticker": "TSAT",
             "type": "neutral",
-            "signal": "HOLD",
-            "text": "<strong>TSAT at ~$36 — thin cushion above your $33.33 cost after the March 17 spike faded.</strong> Jumped +19% to $42 before retreating. Multiple law firms investigating potential securities fraud is a serious red flag. Lightspeed LEO progress is the only bullish thread keeping this alive."
+            "signal": "SPECULATIVE",
+            "text": "<strong>TSAT near $36 — thin cushion above your $33.33 cost after the March 17 spike faded.</strong> Stock surged 19% to $42 on earnings then pulled back. Securities fraud investigations from multiple law firms add serious legal overhang. Lightspeed LEO is the only live catalyst — hold speculative."
         },
         {
             "ticker": "BBAI",
             "type": "bearish",
             "signal": "HIGH RISK",
-            "text": "<strong>BBAI at $3.13 — down 65% from your $9.02 cost with no floor in sight.</strong> Stock dropped 20% this month alone. 52-week range $2.36–$9.39 shows brutal volatility. Analysts project 40% EPS improvement ahead but operational losses and weak revenue make this a speculative hold at best."
+            "text": "<strong>BBAI at $3.13 — down 65% from your $9.02 cost with no floor visible.</strong> Revenue cratered 37.7% YoY, share dilution vote looms, and Cantor Fitzgerald slashed target to $5. Analysts see 120% upside on paper but execution is failing. Do NOT add — wait for evidence of a turn."
         },
         {
             "ticker": "NBIS",
             "type": "neutral",
             "signal": "HOLD",
-            "text": "<strong>NBIS at $100 — still 24% below your $131.12 cost but catalysts are stacking up.</strong> $27B Meta AI infrastructure deal, $2B Nvidia investment, BofA Buy initiation. Avg analyst target $166.78 implies 67% upside. Conviction hold — the market simply hasn't caught up yet."
+            "text": "<strong>NBIS at ~$100 — 24% below your $131 cost but catalysts keep stacking up.</strong> Meta $27B AI infrastructure deal, Nvidia $2B investment, $4B convertible raise, and 1.2 GW Missouri campus approved. BofA targets $150. Dilution near-term, but long-term thesis is intact — conviction hold."
         },
         {
             "ticker": "OKLO",
             "type": "bearish",
             "signal": "HIGH RISK",
-            "text": "<strong>OKLO at $54 — down 57% from your $125 cost with broken support and no near-term floor.</strong> Tumbled from $194 highs despite Meta 1.2 GW Ohio partnership and DOE radioisotope facility contract. Nuclear thesis is intact long-term, but this stock needs time, not optimism."
+            "text": "<strong>OKLO at $50.23 — down 60% from your $125 cost with no near-term floor.</strong> Regulatory hurdles and financing risks dominate. Avg analyst PT $101 implies 100% upside but commercialization timeline is highly uncertain. Nuclear thesis is real long-term — be patient, do not panic sell."
         },
         {
             "ticker": "NVTS",
-            "type": "bearish",
-            "signal": "BEARISH",
-            "text": "<strong>NVTS at $8.28 — down 17% from your $10 cost and accelerating lower.</strong> Dropped 7.21% Friday on revenue miss ($45.92M below expectations) and a $31.81M net loss. GaN/SiC EV thesis is intact but execution is lagging the story. Next earnings May 7 is the line in the sand."
+            "type": "neutral",
+            "signal": "CAUTION",
+            "text": "<strong>NVTS at $8.37 — 16% below your $10 cost but momentum is quietly building.</strong> New CFO Tonya Stevens starts March 30. APEC 2026 launches show product velocity. Q1 revenue guide of $8-8.5M beats estimates. Broader semis macro weakness is the primary drag — hold and monitor."
         }
     ]
 }
