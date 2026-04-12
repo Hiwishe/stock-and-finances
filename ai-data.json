@@ -1,84 +1,84 @@
 {
     "generated_at": "2026-04-12T09:00:00+07:00",
     "market_overview": {
-        "sp500": { "value": "6,817", "change": "-0.1%", "direction": "down" },
-        "nasdaq": { "value": "22,903", "change": "+0.4%", "direction": "up" },
-        "dow": { "value": "47,917", "change": "-0.6%", "direction": "down" },
-        "btc": { "value": "$71,787", "change": "+1.3%", "direction": "up" },
-        "vix": { "value": "19.71", "change": "+1.1%", "direction": "up" },
-        "oil": { "value": "$96.57", "change": "+2.0%", "direction": "up" }
+        "sp500": { "value": "6,817", "change": "-0.11%", "direction": "down" },
+        "nasdaq": { "value": "22,903", "change": "+0.35%", "direction": "up" },
+        "dow": { "value": "47,917", "change": "-0.56%", "direction": "down" },
+        "btc": { "value": "$72,204", "change": "+0.4%", "direction": "up" },
+        "vix": { "value": "19.23", "change": "-1.33%", "direction": "down" },
+        "oil": { "value": "$96.00", "change": "-1.33%", "direction": "down" }
     },
     "sentiment": {
-        "mood": "neutral",
-        "icon": "🟡",
-        "summary": "Markets in a fragile holding pattern as US-Iran ceasefire tensions resurface and oil climbs back toward $97."
+        "mood": "bullish",
+        "icon": "🟢",
+        "summary": "Markets rallied strongly this week on US-Iran ceasefire hopes, retreating oil, and a soft CPI print — S&P 500 +3% and Nasdaq +4% for the week."
     },
     "insights": [
         {
             "ticker": "MARKET",
-            "type": "neutral",
-            "signal": "HOLD",
-            "text": "<strong>Ceasefire relief stalls as Iran violations rattle confidence.</strong> S&P 500 nearly flat, DOW slipped 0.6%. Trump accused Iran of poorly reopening the Strait of Hormuz, pushing oil higher. Sentiment-driven rally is fragile — underlying fundamentals unchanged. Trade with caution."
+            "type": "bullish",
+            "signal": "BULLISH",
+            "text": "<strong>Relief rally on ceasefire hopes and soft CPI — best week since November.</strong> S&P 500 +3%, Nasdaq +4% on the week. Oil retreated from $110+ peaks as US-Iran peace talks advanced in Pakistan. Core CPI came in 0.2% vs 0.3% expected. Risk-on into the weekend."
         },
         {
             "ticker": "BTCUSD",
             "type": "neutral",
             "signal": "HOLD",
-            "text": "<strong>BTC at $71,787 — just below your $73,135 cost basis.</strong> Up 1.3% today and 7.9% on the week, riding geopolitical relief. A clean break above $73K returns you to profit. Iran-driven macro volatility is the key risk. Hold; no urgency to add or cut."
+            "text": "<strong>BTC just below your $73,135 cost basis at $72,204.</strong> Ceasefire rally and soft CPI pushed crypto higher from April lows. Tax-season selling keeps a lid on it. Consolidation in $68K–$76K range likely through April, with $76K median target by month end."
         },
         {
             "ticker": "RKLB",
             "type": "bullish",
             "signal": "BULLISH",
-            "text": "<strong>Rocket Lab raises $474M and accelerates its roadmap.</strong> Completed at-the-market equity offering, 85th flight (ESA launch), Citizens upgrade to Outperform, and Mynaric acquisition closing this month. Dilution from 6.7M new shares is real, but war chest now loaded for growth."
+            "text": "<strong>RKLB upgraded to Outperform — $474M raise and Mynaric acquisition approved.</strong> 85th launch complete, largest hypersonic contract signed. At $68.05, up ~10% from $62.04 basis. Citizens upgrade, avg analyst target $71, $1.3B SDA satellite contract now in-house."
         },
         {
             "ticker": "SATS",
             "type": "bullish",
-            "signal": "BULLISH",
-            "text": "<strong>EchoStar at $128.80 — 12.6% above your $114.33 cost.</strong> SpaceX spectrum sale (~$17B), FCC satellite spectrum reform tailwind, and debt restructuring in motion. Sling Essentials adds revenue diversification. Regulatory timeline remains the primary risk."
+            "signal": "CAUTION",
+            "text": "<strong>SpaceX $17B spectrum deal lifting SATS — up 12.7% from $114.33 basis at ~$128.80.</strong> FCC spectrum-sharing votes ahead are a key catalyst. Warning: GF fair value just $16.84 and insiders sold $15.5M in 3 months. Ride the SpaceX wave but keep stops tight."
         },
         {
             "ticker": "TE",
-            "type": "neutral",
-            "signal": "HOLD",
-            "text": "<strong>T1 Energy volatile but analyst PT of $7.83 supports your ~$6.73 cost.</strong> Q4 miss dropped stock 6.7% on Apr 2 then bounced 8.4% by Apr 10. Norway industrial site allocation adds short-term uncertainty. Moderate Buy consensus across 7 analysts. Hold and watch."
+            "type": "bearish",
+            "signal": "HIGH RISK",
+            "text": "<strong>T1 Energy bleeding — down 30% from $6.73 basis at ~$4.73.</strong> Q4 badly missed expectations, stock down 41.8% in 30 days, Zacks downgraded to Strong Sell. Texas 2.1GW solar buildout is the long-term thesis, but execution risk is extreme right now."
         },
         {
             "ticker": "STX",
             "type": "bullish",
             "signal": "BULLISH",
-            "text": "<strong>Seagate on a tear — 39% gain in 8 days, near all-time highs at $501.</strong> Well above your $448.98 cost. Morgan Stanley named STX top pick with $582 PT. AI data center HDD demand creating shortages extending through 2028. Consider a trailing stop to lock in gains."
+            "text": "<strong>Seagate on 8-day 39% tear — new all-time highs on AI demand.</strong> Morgan Stanley named it top pick with $582 target. HDD supply shortages projected through 2028. At ~$500, you're up 11% from $448.98 basis. Analyst high target is $700 — consider trailing stop."
         },
         {
             "ticker": "TSAT",
             "type": "bullish",
             "signal": "BULLISH",
-            "text": "<strong>Telesat at $43.15, up 29% from your $33.33 cost.</strong> Northwestel Lightspeed LEO deal signed; first satellites launch late 2026. 52-week high of $46.65 is within reach. Full commercial service now delayed to Q1 2028 — watch for further timeline slippage."
+            "text": "<strong>Telesat near 52-week highs — up 29% from your $33.33 basis at ~$43.15.</strong> Northwestel Lightspeed LEO deal formalized, first satellites launch late 2026. Deutsche Bank raised target to $37. Key risk: $1.7B debt matures December 2026 — watch for dilutive financing."
         },
         {
             "ticker": "BBAI",
             "type": "bearish",
-            "signal": "HIGH RISK",
-            "text": "<strong>BigBear.ai at $3.49 — down 61% from your $9.02 cost.</strong> Revenue fell 37.7% YoY on Army contract disruptions. H.C. Wainwright and Cantor both cut PTs to $6/$5 (neutral). Recapitalization clears 90% of debt but dilution hurts. Full rebuild story — hold only if conviction remains."
+            "signal": "BEARISH",
+            "text": "<strong>BigBear.ai in freefall — down 63% from your $9.02 basis at $3.34.</strong> Revenue crashed 38% in Q4, full-year 2025 down 37.7%. Price targets cut to $5. Recapitalization raised $462M liquidity. Ask Sage $25M ARR target is the only near-term catalyst to watch."
         },
         {
             "ticker": "NBIS",
             "type": "bullish",
             "signal": "BULLISH",
-            "text": "<strong>Nebius at $145.19, above your $131.12 cost and surging.</strong> $27B Meta AI deal plus $19.4B Microsoft compute contract are transformational. AI21 Labs acquisition talks add optionality. Capacity scaling from 170 MW to 800 MW–1 GW by end of 2026 — top AI infrastructure play."
+            "text": "<strong>Nebius exploding — $27B Meta deal plus $19.4B Microsoft contract.</strong> Up 21% in one week, at $145.19 you're up 10.7% from $131.12 basis. Scaling from 170MW to 1GW by end 2026. Strong Buy consensus, targets up to $215. Your strongest position right now."
         },
         {
             "ticker": "OKLO",
             "type": "bearish",
-            "signal": "SPECULATIVE",
-            "text": "<strong>Oklo at ~$48.65 — down 61% from your $125.00 cost.</strong> NRC and DoE approvals landed but stock fell 20% post-announcement. Revenue not expected until 2027–2028. Down 70% from 2025 highs. Wall Street PT $101.54 implies big upside if it executes — pure speculation, long hold required."
+            "signal": "HIGH RISK",
+            "text": "<strong>Oklo gets DoE + NRC approvals — stock still crushed, down 61% from $125 basis at ~$48.65.</strong> CEO and CFO actively selling shares in April. Pre-revenue with $139M 2025 operating loss. $2.5B cash runway is the only safety net. Full commercial NRC approval still pending."
         },
         {
             "ticker": "NVTS",
             "type": "neutral",
-            "signal": "HOLD",
-            "text": "<strong>Navitas popped 8.5% at NVIDIA GTC then profit-taking hit.</strong> 800V-to-6V AI power board is genuinely disruptive but sentiment cooled. Price near $11.59, slightly above your $10.00 cost. Analyst Hold consensus; CFO transition adds uncertainty. AI power delivery thesis intact — hold."
+            "signal": "CAUTION",
+            "text": "<strong>NVTS just below your $10.00 basis at $9.50 — analyst consensus target only $7.60.</strong> AI power board at NVIDIA GTC sparked 10.8% spike but profit-taking followed. CFO transition adds uncertainty. FY25 revenue down 45% YoY — the AI story needs to convert to real sales."
         }
     ]
 }
