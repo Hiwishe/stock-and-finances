@@ -1,84 +1,84 @@
 {
-    "generated_at": "2026-04-12T09:00:00+07:00",
+    "generated_at": "2026-04-14T17:30:00+07:00",
     "market_overview": {
-        "sp500": { "value": "6,817", "change": "-0.11%", "direction": "down" },
-        "nasdaq": { "value": "22,903", "change": "+0.35%", "direction": "up" },
-        "dow": { "value": "47,917", "change": "-0.56%", "direction": "down" },
-        "btc": { "value": "$72,204", "change": "+0.4%", "direction": "up" },
-        "vix": { "value": "19.23", "change": "-1.33%", "direction": "down" },
-        "oil": { "value": "$96.00", "change": "-1.33%", "direction": "down" }
+        "sp500": { "value": "6,886", "change": "+1.0%", "direction": "up" },
+        "nasdaq": { "value": "23,184", "change": "+1.2%", "direction": "up" },
+        "dow": { "value": "48,218", "change": "+0.6%", "direction": "up" },
+        "btc": { "value": "$74,361", "change": "+4.6%", "direction": "up" },
+        "vix": { "value": "18.57", "change": "-2.9%", "direction": "down" },
+        "oil": { "value": "$97.22", "change": "-1.9%", "direction": "down" }
     },
     "sentiment": {
         "mood": "bullish",
         "icon": "🟢",
-        "summary": "Markets rallied strongly this week on US-Iran ceasefire hopes, retreating oil, and a soft CPI print — S&P 500 +3% and Nasdaq +4% for the week."
+        "summary": "S&P 500 fully erased Iran war losses as ceasefire talks advanced, oil retreated from $114 highs, and VIX cooled to 18 — broad risk-on rally with tech leading."
     },
     "insights": [
         {
             "ticker": "MARKET",
             "type": "bullish",
             "signal": "BULLISH",
-            "text": "<strong>Relief rally on ceasefire hopes and soft CPI — best week since November.</strong> S&P 500 +3%, Nasdaq +4% on the week. Oil retreated from $110+ peaks as US-Iran peace talks advanced in Pakistan. Core CPI came in 0.2% vs 0.3% expected. Risk-on into the weekend."
+            "text": "<strong>S&P 500 wipes out all Iran war losses — ceasefire optimism takes hold.</strong> Markets staged a powerful recovery: S&P +1%, Nasdaq +1.2%, Dow +0.6%. US-Iran ceasefire talks gaining traction while oil retreated from $114 peaks to $97. VIX cooled to 18.57. Broad earnings growth of 14% YoY across 10 of 11 sectors gives this rally fundamental legs."
         },
         {
             "ticker": "BTCUSD",
-            "type": "neutral",
-            "signal": "HOLD",
-            "text": "<strong>BTC just below your $73,135 cost basis at $72,204.</strong> Ceasefire rally and soft CPI pushed crypto higher from April lows. Tax-season selling keeps a lid on it. Consolidation in $68K–$76K range likely through April, with $76K median target by month end."
+            "type": "bullish",
+            "signal": "BULLISH",
+            "text": "<strong>BTC breaks above your $73,135 cost basis — surging toward $76K.</strong> Bitcoin hit $74,361, its highest level since the Feb 5 crash. Risk appetite is returning hard. Next resistance at $76K; a break there targets $80K+. You are finally in the green on this position — momentum is strong, hold."
         },
         {
             "ticker": "RKLB",
             "type": "bullish",
             "signal": "BULLISH",
-            "text": "<strong>RKLB upgraded to Outperform — $474M raise and Mynaric acquisition approved.</strong> 85th launch complete, largest hypersonic contract signed. At $68.05, up ~10% from $62.04 basis. Citizens upgrade, avg analyst target $71, $1.3B SDA satellite contract now in-house."
+            "text": "<strong>Rocket Lab +4.5% on Gauss thruster unveil and iQPS multi-launch agreement.</strong> New Hall Thruster with 200+ units/yr production capacity announced. Cantor Fitzgerald reiterated Overweight at $85 target tied to 15 total iQPS missions. Now ~$71, about 15% above your $62.04 cost. Space infrastructure thesis fully intact."
         },
         {
             "ticker": "SATS",
-            "type": "bullish",
-            "signal": "CAUTION",
-            "text": "<strong>SpaceX $17B spectrum deal lifting SATS — up 12.7% from $114.33 basis at ~$128.80.</strong> FCC spectrum-sharing votes ahead are a key catalyst. Warning: GF fair value just $16.84 and insiders sold $15.5M in 3 months. Ride the SpaceX wave but keep stops tight."
+            "type": "neutral",
+            "signal": "HOLD",
+            "text": "<strong>EchoStar dips 2.4% to $125.55 — still 10% above your $114.33 cost basis.</strong> The $17B SpaceX AWS-4 spectrum sale remains the dominant narrative and a massive balance sheet catalyst. 30-day return remains near 19%. Slight pullback today is noise — hold and watch FCC spectrum vote timing as the next trigger."
         },
         {
             "ticker": "TE",
             "type": "bearish",
-            "signal": "HIGH RISK",
-            "text": "<strong>T1 Energy bleeding — down 30% from $6.73 basis at ~$4.73.</strong> Q4 badly missed expectations, stock down 41.8% in 30 days, Zacks downgraded to Strong Sell. Texas 2.1GW solar buildout is the long-term thesis, but execution risk is extreme right now."
+            "signal": "CAUTION",
+            "text": "<strong>T1 Energy announces $125M convertible notes — dilution hits a bleeding stock.</strong> TE slid from the mid-$7s to ~$5.19, now 23% below your ~$6.73 cost. Capital raise funds Phase 1 of the Austin 2.1GW solar fab but adds near-term dilution pressure. Strong Buy consensus with $7.30 target suggests the thesis survives — but this is a painful hold."
         },
         {
             "ticker": "STX",
             "type": "bullish",
             "signal": "BULLISH",
-            "text": "<strong>Seagate on 8-day 39% tear — new all-time highs on AI demand.</strong> Morgan Stanley named it top pick with $582 target. HDD supply shortages projected through 2028. At ~$500, you're up 11% from $448.98 basis. Analyst high target is $700 — consider trailing stop."
+            "text": "<strong>Seagate hits $528 — you are up 18% from your $448.98 cost basis.</strong> STX added another 3% today extending an 8-day, 39% win streak on HAMR drive demand and a Citi target raise to $595. FY2025 revenue grew 39% YoY. Stock may be extended but the AI storage supercycle is real. Set a trailing stop to protect these gains."
         },
         {
             "ticker": "TSAT",
             "type": "bullish",
-            "signal": "BULLISH",
-            "text": "<strong>Telesat near 52-week highs — up 29% from your $33.33 basis at ~$43.15.</strong> Northwestel Lightspeed LEO deal formalized, first satellites launch late 2026. Deutsche Bank raised target to $37. Key risk: $1.7B debt matures December 2026 — watch for dilutive financing."
+            "signal": "HOLD",
+            "text": "<strong>Telesat holds near $43 — 29% above your $33.33 cost basis.</strong> TSAT is trading near its 52-week high of $46.65. Lightspeed LEO first launches due late 2026 remain the key catalyst. Watch the $1.7B debt maturing December 2026 — dilutive financing is a real risk. Broader satellite sector benefits from geopolitical demand for resilient comms."
         },
         {
             "ticker": "BBAI",
             "type": "bearish",
-            "signal": "BEARISH",
-            "text": "<strong>BigBear.ai in freefall — down 63% from your $9.02 basis at $3.34.</strong> Revenue crashed 38% in Q4, full-year 2025 down 37.7%. Price targets cut to $5. Recapitalization raised $462M liquidity. Ask Sage $25M ARR target is the only near-term catalyst to watch."
+            "signal": "HIGH RISK",
+            "text": "<strong>BigBear.ai at $3.54 — down 61% from your $9.02 cost and still falling.</strong> BBAI continues to lag even as AI stocks rally. Q4 revenue missed badly. Special stockholder meeting April 21 and a platform-centric AI pivot are the only near-term catalysts. Competition is intense and execution has been weak. This position needs a hard reassessment."
         },
         {
             "ticker": "NBIS",
             "type": "bullish",
             "signal": "BULLISH",
-            "text": "<strong>Nebius exploding — $27B Meta deal plus $19.4B Microsoft contract.</strong> Up 21% in one week, at $145.19 you're up 10.7% from $131.12 basis. Scaling from 170MW to 1GW by end 2026. Strong Buy consensus, targets up to $215. Your strongest position right now."
+            "text": "<strong>Nebius at $156.85 — 20% above your $131.12 cost and near all-time highs.</strong> Goldman Sachs raised its target to $205 after the $27B Meta AI contract. AI21 Labs acquisition sparked a 33% surge. All 22 technical indicators are bullish. This is your strongest position right now — let it run. Minor insider selling (6,250 shares) is noise."
         },
         {
             "ticker": "OKLO",
-            "type": "bearish",
-            "signal": "HIGH RISK",
-            "text": "<strong>Oklo gets DoE + NRC approvals — stock still crushed, down 61% from $125 basis at ~$48.65.</strong> CEO and CFO actively selling shares in April. Pre-revenue with $139M 2025 operating loss. $2.5B cash runway is the only safety net. Full commercial NRC approval still pending."
+            "type": "bullish",
+            "signal": "SPECULATIVE",
+            "text": "<strong>Oklo rips 9.7% on AI nuclear deals — still deep underwater from $125 cost.</strong> 12 GW data-center deal with Switch and LOI with Equinix are driving momentum. Wedbush kept Outperform but cut target to $110. At ~$53, you are down ~58% from cost. Nuclear power for AI is a decade-long thesis — hold if you believe, but eyes open on execution risk."
         },
         {
             "ticker": "NVTS",
             "type": "neutral",
-            "signal": "CAUTION",
-            "text": "<strong>NVTS just below your $10.00 basis at $9.50 — analyst consensus target only $7.60.</strong> AI power board at NVIDIA GTC sparked 10.8% spike but profit-taking followed. CFO transition adds uncertainty. FY25 revenue down 45% YoY — the AI story needs to convert to real sales."
+            "signal": "HOLD",
+            "text": "<strong>Navitas pulls back to $9.32 — just below your $10.00 cost basis.</strong> NVTS gave back some of its April 8 spike driven by the AI server power board at NVIDIA GTC. Earnings due May 4 are the next major catalyst. GaN power semiconductors for AI data centers is a solid structural theme — hold through earnings before adding or trimming."
         }
     ]
 }
