@@ -1,84 +1,102 @@
 {
-    "generated_at": "2026-03-24T23:51:04+07:00",
+    "generated_at": "2026-05-14T10:15:00+07:00",
     "market_overview": {
-        "sp500": { "value": "6,553", "change": "-0.7%", "direction": "down" },
-        "nasdaq": { "value": "21,828", "change": "-0.5%", "direction": "down" },
-        "dow": { "value": "45,977", "change": "-0.5%", "direction": "down" },
-        "btc": { "value": "$70,900", "change": "+4.1%", "direction": "up" },
-        "vix": { "value": "26.15", "change": "-2.35%", "direction": "down" },
-        "oil": { "value": "$88.67", "change": "+4.1%", "direction": "up" }
+        "sp500": { "value": "7,499", "change": "+0.75%", "direction": "up" },
+        "nasdaq": { "value": "26,611", "change": "+0.79%", "direction": "up" },
+        "dow": { "value": "50,091", "change": "+0.80%", "direction": "up" },
+        "btc": { "value": "$79,549", "change": "+0.34%", "direction": "up" },
+        "vix": { "value": "18.01", "change": "+0.11%", "direction": "up" },
+        "oil": { "value": "$100.87", "change": "-0.15%", "direction": "down" }
     },
     "sentiment": {
-        "mood": "bearish",
-        "icon": "🔴",
-        "summary": "Equities retreated as U.S.-Iran tensions reignited, spiking oil on Strait of Hormuz fears—while Bitcoin surged 4% as crypto attracted risk-on flows away from stocks."
+        "mood": "bullish",
+        "icon": "🟢",
+        "summary": "AI mega-rally continues: Cisco surged 17% on earnings, S&P 500 hit new record highs, and $670B in hyperscaler capex plus 27% S&P Q1 earnings growth are driving broad tech optimism."
     },
     "insights": [
         {
             "ticker": "MARKET",
-            "type": "bearish",
-            "signal": "BEARISH",
-            "text": "<strong>Geopolitical fears drag equities lower as oil spikes.</strong> U.S.-Iran tensions erased Monday's rally. S&P -0.7%, NASDAQ -0.5%. Oil surged ~$3.67 on Strait of Hormuz supply fears. BTC +4% bucked the trend on crypto safe-haven flows."
-        },
-        {
-            "ticker": "BTCUSD",
             "type": "bullish",
             "signal": "BULLISH",
-            "text": "<strong>BTC breaks $70K on risk-on crypto rotation.</strong> Up 4.1% to ~$70,900—still 3% below your $73,135 cost. Crypto diverging bullishly from equities. A push through cost basis is in play if geopolitical fears ease and momentum holds."
+            "text": "<strong>AI boom lifts all boats to new records.</strong> S&P 500 hit new ATH May 14 as Cisco surged 17% on AI earnings beat. Hyperscalers plan $670B capex in 2026. S&P Q1 profits +27% YoY. Trump-Xi summit easing trade fears. Broad risk-on environment — your portfolio is aligned."
+        },
+        {
+            "ticker": "NVTS",
+            "type": "bullish",
+            "signal": "BULLISH",
+            "text": "<strong>NVTS at $21.15 — more than 2x your $10 cost basis.</strong> Completed $122M ATM offering, strengthening the balance sheet. India GaN partnership with Cyient expanding TAM. Rallied 24.5% on May 11. Power semiconductors for AI data centers remain a structural growth story."
         },
         {
             "ticker": "RKLB",
             "type": "bullish",
-            "signal": "CAUTION",
-            "text": "<strong>$190M DoD HASTE deal secured but $1B ATM dilution hits the stock.</strong> RKLB -4.3% to $66.45, still above your $62.04 avg. $1.85B backlog up 73% YoY is rock solid. Dilution is the near-term drag; Neutron Q4 2026 is the real catalyst."
-        },
-        {
-            "ticker": "SATS",
-            "type": "neutral",
-            "signal": "HOLD",
-            "text": "<strong>EchoStar holds near $110 despite a messy Q4 earnings miss.</strong> EPS -$1.03 vs -$0.75 est.; $14.5B non-cash losses weigh. S&P 500 inclusion and $125 median analyst target cushion downside. At $109.85, slightly below your $114.33 cost basis."
+            "signal": "BULLISH",
+            "text": "<strong>Rocket Lab at $128 — 2x your $62.19 cost basis.</strong> Q1 revenue $200.3M (+63.5% YoY) crushed estimates, backlog doubled to $2.2B. Deutsche Bank raised PT to $120, New Street initiated Buy. Market cap now $71.85B. Massive winner — trail your stop and let it run."
         },
         {
             "ticker": "TE",
-            "type": "bullish",
-            "signal": "BULLISH",
-            "text": "<strong>Norway 50MW grid assignment is a legit catalyst for T1 Energy.</strong> Shares at $6.84, just above your $6.73 avg. Earnings March 31 could be a big mover. G2_Austin ramp and 396MW interconnection queue give this real upside. Watch the print closely."
+            "type": "bearish",
+            "signal": "CAUTION",
+            "text": "<strong>T1 Energy at $5.63 — still below your $6.73 cost basis (-16%).</strong> Q1 earnings beat expectations (+60% revenue), new $160M convertible notes fund Phase 1 solar fab in Austin. High beta speculative. Execution risk real but thesis intact — position is sized appropriately."
         },
         {
             "ticker": "STX",
             "type": "bullish",
+            "signal": "BULLISH",
+            "text": "<strong>Seagate at $807 — up 80% from your $449 cost basis.</strong> Q3 EPS beat by 18%, revenue +44% YoY, FCF at decade-high $953M. Evercore raised PT to $1,000. AI data center storage demand is structural. Core winner — hold and let Evercore's $1K target play out."
+        },
+        {
+            "ticker": "GOOG",
+            "type": "bullish",
+            "signal": "BULLISH",
+            "text": "<strong>Alphabet near 52-week high at $400, just above your $390.64 avg.</strong> Q1 EPS $5.11 crushed $2.62 estimates. Google Cloud +63%, Search +19%. $180B+ AI capex planned. Googlebook AI laptop launching this fall. Solid core compounder — no reason to trim."
+        },
+        {
+            "ticker": "MU",
+            "type": "bullish",
+            "signal": "BULLISH",
+            "text": "<strong>Micron at $786 — just below your $790.62 cost, PT raised to $950.</strong> HBM and DRAM fully allocated through 2026, market's most heavily traded stock. BofA raised PT to $950. AI memory demand is a freight train — tiny unrealized loss is noise vs the long-term setup."
+        },
+        {
+            "ticker": "MSFT",
+            "type": "neutral",
             "signal": "HOLD",
-            "text": "<strong>Record Q2 results—but STX is still 10% below your $448.98 cost basis.</strong> At ~$405 after an 11.5% EPS beat and $2.83B revenue record. AI nearline storage fully committed through 2026. CEO sold $10M in shares March 23—a yellow flag to monitor."
+            "text": "<strong>Microsoft at $404 — just below your $409.86 cost basis.</strong> Azure AI growth strong but massive capex pressuring free cash flow. LinkedIn cutting 5% of staff. P/E 24x reasonable. Collect the $0.91 quarterly dividend (ex-date May 21) and hold through the AI cycle."
         },
         {
-            "ticker": "TSAT",
-            "type": "bearish",
-            "signal": "HIGH RISK",
-            "text": "<strong>$1.7B debt wall due Dec 2026—existential threat for Telesat.</strong> Creditors suing over Lightspeed asset transfer; launch delayed to late 2026. At $36.08, up 8% from $33.33. Consider whether near-term gains are worth holding through a refinancing cliff."
-        },
-        {
-            "ticker": "BBAI",
-            "type": "bearish",
-            "signal": "BEARISH",
-            "text": "<strong>Share authorization doubled today—BBAI bleeds to $3.69, down 59% from your $9.02 cost.</strong> $293.9M net loss in FY2025 with no clear path to profitability. CargoSeer is speculative upside only. Deep underwater; reassess position sizing."
+            "ticker": "SNDK",
+            "type": "neutral",
+            "signal": "CAUTION",
+            "text": "<strong>SanDisk opened down 5.66% at $1,413 — below your $1,550.95 cost.</strong> Q3 EPS beat 59% vs estimates, data center +233%. Stock up 558% YTD — today's selloff is profit-taking after a parabolic run. Underlying fundamentals strong but volatility is extreme at these levels."
         },
         {
             "ticker": "NBIS",
             "type": "bullish",
             "signal": "BULLISH",
-            "text": "<strong>Meta $12B contract + BofA BUY rating ($150 target) validate the NBIS thesis.</strong> At $114.64, still 12.6% below your $131.12 cost. Nvidia partnership and $4B convertible notes show elite institutional conviction. AI infra is structural—hold and be patient."
+            "text": "<strong>Nebius exploding — up 7.7% today to $222, +70% above your $131 cost.</strong> Q1 revenue $399M — 684% YoY growth. $27B Meta contract + U.S. gigawatt-scale AI factory. NVIDIA-funded pivot paying off massively. Fastest-growing AI infra play in your entire portfolio."
+        },
+        {
+            "ticker": "SATS",
+            "type": "bullish",
+            "signal": "BULLISH",
+            "text": "<strong>EchoStar surging 7%+ on FCC-approved $40B spectrum sale to SpaceX/AT&T.</strong> Now trading ~$135-145, well above your $114.33 cost. Up 564% over the past year. This spectrum monetization was the thesis catalyst — this is the payoff. Trail your stop up."
+        },
+        {
+            "ticker": "BBAI",
+            "type": "bearish",
+            "signal": "HIGH RISK",
+            "text": "<strong>BigBear.ai at $4.23 — down 53% from your $9.02 cost basis.</strong> Recent 24.7% monthly bounce driven by Q1 beats and Ask Sage deal. Down 26% YTD. Avg analyst PT $5.50. Ongoing losses and dilution risk remain. Defense AI thesis intact but patience is running thin here."
         },
         {
             "ticker": "OKLO",
-            "type": "bullish",
-            "signal": "SPECULATIVE",
-            "text": "<strong>NRC license + 59% EPS beat, but OKLO sits 55% below your $125 cost at $56.26.</strong> $1.41B cash runway; Aurora reactor advancing through approvals. Potential 1.2GW Meta deal in Ohio could be transformative. Multi-year hold—high conviction required."
+            "type": "bearish",
+            "signal": "CAUTION",
+            "text": "<strong>Oklo sinking post-earnings — trading ~$69, still 45% below your $125 cost.</strong> Q1 net loss $33.1M on zero revenue. July 4 reactor criticality deadline is a binary catalyst — pass it and sentiment shifts; miss it and it bleeds further. New $1B ATM adds dilution risk."
         },
         {
-            "ticker": "NVTS",
-            "type": "neutral",
-            "signal": "CAUTION",
-            "text": "<strong>CFO departure overshadows NVIDIA GTC AI momentum for Navitas.</strong> NVTS at $8.98, near your $10.00 cost. New 800V GaNFast and 1200V SiC products target AI datacenters—thesis intact. Leadership transition is real risk; watch for Q1 guidance stability."
+            "ticker": "BTCUSD",
+            "type": "bullish",
+            "signal": "HOLD",
+            "text": "<strong>BTC at $79,549 — up 8.8% from your $73,135 cost basis.</strong> Prices slipping slightly this week but institutional ETF inflows and shrinking exchange reserves remain bullish. $80K is key resistance — a clean break above targets $85K+. Small position, let it ride."
         }
     ]
 }
