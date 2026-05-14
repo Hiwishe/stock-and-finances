@@ -1,0 +1,108 @@
+{
+    "generated_at": "2026-03-07T21:00:00+07:00",
+    "market_overview": {
+        "sp500": {
+            "value": "6,740",
+            "change": "-1.3%",
+            "direction": "down"
+        },
+        "nasdaq": {
+            "value": "22,388",
+            "change": "-1.6%",
+            "direction": "down"
+        },
+        "dow": {
+            "value": "47,502",
+            "change": "-0.9%",
+            "direction": "down"
+        },
+        "btc": {
+            "value": "$68,800",
+            "change": "-3.0%",
+            "direction": "down"
+        },
+        "vix": {
+            "value": "29.49",
+            "change": "+22.9%",
+            "direction": "up"
+        },
+        "oil": {
+            "value": "$90.10",
+            "change": "+11.0%",
+            "direction": "up"
+        }
+    },
+    "sentiment": {
+        "mood": "bearish",
+        "icon": "🔴",
+        "summary": "Iran war + shocking jobs miss (-92K vs +56K expected) sent stocks, crypto, and risk assets into a brutal Friday selloff. Oil hit $90, VIX spiked to 29.49 — worst week in months."
+    },
+    "insights": [
+        {
+            "ticker": "MARKET",
+            "type": "bearish",
+            "signal": "BEARISH",
+            "text": "<strong>Stagflation fears are back — jobs crash + oil surge.</strong> Feb payrolls lost 92K (expected +56K). WTI oil hit $90 as Trump demanded Iran's unconditional surrender. Fed can't cut into this — weak growth AND rising inflation. Tech bled, energy was the only winner."
+        },
+        {
+            "ticker": "RKLB",
+            "type": "bullish",
+            "signal": "BULLISH",
+            "text": "<strong>$805M SDA contract — biggest in company history.</strong> Record 2025 revenue of $602M beat estimates. 4th launch of 2026 complete, 2 missions in 6 days. Cantor raised PT to $85. You're up 13% from your $62 avg cost at ~$70. Neutron delay to Q4 2026 is the only real risk."
+        },
+        {
+            "ticker": "BBAI",
+            "type": "bearish",
+            "signal": "HIGH RISK",
+            "text": "<strong>Bounced 7.3% today on CargoSeer acquisition — but still down 58% from cost.</strong> Revenue missed at $27.3M vs $33M expected (-38% YoY). Debt cut 90% is good. The AI defense pivot via CargoSeer and Ask Sage is the turnaround thesis. Needs serious catalyst to recover."
+        },
+        {
+            "ticker": "NBIS",
+            "type": "bullish",
+            "signal": "BULLISH",
+            "text": "<strong>1.2GW Missouri AI factory approved — biggest US campus yet.</strong> Revenue up 461-547% YoY, deals with Microsoft ($19.4B) and Meta ($3B). At $95, you're down 27% from your $131 cost but fundamentals are accelerating. Heavy capex ($16-20B) is the only real risk."
+        },
+        {
+            "ticker": "TE",
+            "type": "bullish",
+            "signal": "SPECULATIVE",
+            "text": "<strong>Section 45X tax credits confirmed + Encompass Capital all-in.</strong> Smart money bought $95M more shares — TE is their #1 holding. 900 MW supply deal signed. G2_Austin fab under construction. At $6.61, just below your $6.73 avg cost. 100% analyst Strong Buy consensus."
+        },
+        {
+            "ticker": "STX",
+            "type": "bearish",
+            "signal": "CAUTION",
+            "text": "<strong>Great fundamentals, caught in the tech selloff.</strong> EPS beat ($3.11 vs $2.77 est), Mozaic HAMR drives qualified with 2 hyperscalers. But at ~$378, you're down 16% from your $449 cost. Analyst target $447. Iran oil shock inflates server costs — macro headwind is real."
+        },
+        {
+            "ticker": "OKLO",
+            "type": "bearish",
+            "signal": "FEAR MODE",
+            "text": "<strong>Down 51% from your $125 cost — nuclear speculative names got crushed.</strong> Meta 1.2GW nuclear deal and BofA Buy upgrade ($127 PT) keep thesis alive. But COO sold $12.6M in stock, revenue is 2+ years away. Earnings March 17 — watch this closely."
+        },
+        {
+            "ticker": "SATS",
+            "type": "neutral",
+            "signal": "SPECULATIVE",
+            "text": "<strong>SpaceX proxy play — up 300% since 2025.</strong> The $11B SpaceX equity stake is the real story. At $117, near your $114 cost and 11% off Jan's $131 all-time high. Risk: SpaceX IPO delay unwinds the narrative fast. $3.5B debt due 2027 is the overhang."
+        },
+        {
+            "ticker": "TSAT",
+            "type": "bearish",
+            "signal": "HIGH RISK",
+            "text": "<strong>⚠️ Fraud investigations launched — proceed with extreme caution.</strong> Multiple law firms investigating. $1.1B LEO backlog is real, MDA SHIELD contract won. But stock swings 10%+ daily. Earnings March 26 (EPS -$1.05 expected). At $32, near breakeven on your $33 cost."
+        },
+        {
+            "ticker": "NVTS",
+            "type": "neutral",
+            "signal": "PIVOT",
+            "text": "<strong>Pivoting from mobile to AI data center power — high risk, high reward.</strong> Revenue tiny ($7.3M Q4, -59% YoY) during transition. New 250kW Solid-State Transformer for AI is innovative. CFO departing mid-pivot. At $8.86, down 11% from $10 cost. Beta 3.16 — swings HARD."
+        },
+        {
+            "ticker": "BTCUSD",
+            "type": "bearish",
+            "signal": "FEAR MODE",
+            "text": "<strong>BTC at $68.8K, bleeding with risk assets.</strong> Iran war sent oil to $90 and crushed crypto. Fear & Greed index at 24. ETF inflows reversed to outflows. Key support at $67.5K — a break there targets $60K. You're down 6% from your $73,135 cost. Not acting as a hedge."
+        }
+    ]
+}
