@@ -1,96 +1,102 @@
 {
-    "generated_at": "2026-05-17T23:07:28+07:00",
+    "generated_at": "2026-05-18T00:58:00+07:00",
     "market_overview": {
-        "sp500": { "value": "7,408", "change": "-1.24%", "direction": "down" },
-        "nasdaq": { "value": "26,225", "change": "-1.54%", "direction": "down" },
-        "dow": { "value": "49,526", "change": "-1.07%", "direction": "down" },
-        "btc": { "value": "$78,031", "change": "+0.62%", "direction": "up" },
-        "vix": { "value": "17.26", "change": "+15.0%", "direction": "up" },
-        "oil": { "value": "$105.42", "change": "+4.20%", "direction": "up" }
+        "sp500": { "value": "7,408.50", "change": "-1.24%", "direction": "down" },
+        "nasdaq": { "value": "26,225.14", "change": "-1.54%", "direction": "down" },
+        "dow": { "value": "49,526.17", "change": "-1.07%", "direction": "down" },
+        "btc": { "value": "$78,180", "change": "-1.11%", "direction": "down" },
+        "vix": { "value": "18.43", "change": "+6.78%", "direction": "up" },
+        "oil": { "value": "$105.42", "change": "+4.50%", "direction": "up" }
     },
     "sentiment": {
         "mood": "bearish",
         "icon": "🔴",
-        "summary": "Inflation shock and spiking Treasury yields broke the AI rally Friday, with oil surging 4% on Iran/Middle East fears and chipmakers leading a broad tech selloff."
+        "summary": "Friday's tape closed broadly red: hot PPI + spiking 10y yields broke the AI rally, oil surged 11% on the week as the Strait of Hormuz stayed effectively closed, and US futures point to caution heading into Google I/O Tuesday."
     },
     "insights": [
         {
             "ticker": "MARKET",
             "type": "bearish",
             "signal": "BEARISH",
-            "text": "<strong>Inflation shock kills the AI rally.</strong> PPI came in 3x hotter than expected, spiking 10-yr yields to 4.55%—highest in a year. Chips crashed: Micron -6.6%, Nvidia -4.4%. Oil hit $105 on Iran/Strait of Hormuz fears."
+            "text": "<strong>AI rally cracked on yields + oil shock.</strong> 10y yields ripped to 4.55% (highest in a year), VIX +6.8% to 18.43, WTI crude $105.42 on Iran/Hormuz fears. Chips led the unwind. Watch Tuesday's Google I/O for AI sentiment reset."
         },
         {
             "ticker": "NVTS",
-            "type": "neutral",
-            "signal": "CAUTION",
-            "text": "<strong>Navitas at ~$21 — 2x your $10 cost, but Q1 missed.</strong> Revenue miss and wider-than-expected loss reported May 12. Pulled back from $22.65 peak. Long-term GaN/SiC story in EV and AI charging intact—hold cautiously."
+            "type": "bullish",
+            "signal": "BULLISH",
+            "text": "<strong>Navitas ~2x your $10 cost — partnerships accelerating.</strong> Cyient Semiconductors deal launches India's first GaN power IC family (stock +21% intraday). Q1 revenue +18% sequential, Q2 guide +16% more. Strategic Navitas 2.0 pivot to high-power GaN/SiC is working."
         },
         {
             "ticker": "RKLB",
             "type": "bullish",
             "signal": "BULLISH",
-            "text": "<strong>ATH $133 then -5.87% Friday — still 2x your $62 cost.</strong> Q1 revenue +63.5% YoY, $2.2B backlog record, upgraded to Nasdaq Global Market. Selloff is yield-driven, not fundamental. Dip is buyable."
+            "text": "<strong>Rocket Lab still 2x your $62 cost after $133 ATH.</strong> Q1 record $200M revenue, $2.2B backlog (doubled YoY), 31 launch contracts in Q1 alone, Morgan Stanley upgrade to $105 PT. Buying Motiv Space Systems. Yield-driven pullback is buyable."
         },
         {
             "ticker": "TE",
-            "type": "bearish",
+            "type": "neutral",
             "signal": "CAUTION",
-            "text": "<strong>T1 Energy below your $6.73 cost at ~$5.50.</strong> Q1 beat expectations (+60% revenue beat) but $160M convertible notes offering weighs on shares. 2.1 GW solar fab underway—execution solid, dilution pressure real."
+            "text": "<strong>T1 Energy at ~$6.04 — just below your $6.73 cost.</strong> Record Q1: $177M revenue, $3.9M net income, $9.1M Adj EBITDA. G2_Austin solar fab on track for Q4 2026 cell production. $160M convertibles fund dilution offset by execution. Hold — fab milestone is the catalyst."
         },
         {
             "ticker": "STX",
             "type": "bullish",
             "signal": "BULLISH",
-            "text": "<strong>Seagate standout — Evercore raised PT to $1,000, Outperform.</strong> Beat Q3 estimates; AI HDD demand is structural and accelerating. Well above your $449 cost. Trail a stop — this run is legitimate."
+            "text": "<strong>Seagate at ~$710 — 58% above your $449 cost, +147% YTD.</strong> Q3 revenue $3.1B (+44% YoY), EPS $4.10 beat. Nearline HDD capacity sold out through 2027, datacenters = 80% of revenue. Evercore $1,000 PT. Trail a stop — let winners run."
         },
         {
             "ticker": "GOOG",
             "type": "bullish",
             "signal": "BULLISH",
-            "text": "<strong>Alphabet coils near your $390 cost — AI leverage underpriced.</strong> Cloud +63% YoY, massive AI capex committed. Friday's yield spike pressured all tech. Google I/O catalysts ahead — accumulate on dips."
+            "text": "<strong>Alphabet near your $390 cost — Google I/O Tuesday is the catalyst.</strong> Gemini 750M MAU, $4.8T market cap, 2026 capex $180–190B. Gemini 3.5/4.0 reveal + Googlebook launch fuel sentiment reset. Accumulate into I/O."
         },
         {
             "ticker": "MU",
             "type": "bullish",
             "signal": "HOLD",
-            "text": "<strong>Micron -6.6% Friday but up 60% in the past month.</strong> Supply shortages are driving pricing power and expanding margins. Short-term yield shock hit momentum. Structural memory supercycle intact — hold through the dip."
+            "text": "<strong>Micron near $747 — basically at your $791 cost after +180% YTD run.</strong> HBM sold out through 2026, Q2 revenue +196% YoY, gross margin 74.9%. Friday -6.6% on yield shock. Memory supercycle is structural — hold through volatility."
         },
         {
             "ticker": "MSFT",
             "type": "bullish",
             "signal": "HOLD",
-            "text": "<strong>Microsoft at ~$420, above your $410 cost — steady compounder.</strong> Azure AI and Copilot adoption are the growth engine. Defensive tech in a volatile tape. Hold with confidence."
+            "text": "<strong>Microsoft at ~$420 — above your $410 cost basis.</strong> Q3 Azure +40% constant currency, AI run-rate $37B (+123% YoY), 20M Copilot seats. 2026 capex $190B. Defensive compounder with $525+ analyst targets. Hold core position."
         },
         {
             "ticker": "SNDK",
             "type": "bullish",
             "signal": "BULLISH",
-            "text": "<strong>SanDisk up 482% YTD on structural AI NAND shortage.</strong> Record revenues driven by AI training infrastructure demand. Analysts flag cyclical risk as pricing may decelerate. Monitor closely — the bid stays strong for now."
+            "text": "<strong>SanDisk ~$1,381 — still below your $1,551 cost, but +482% YTD.</strong> Q4 guide: 79–81% gross margin, $7.7–8.2B revenue. Nearly sold out for 2026, long-term contracts locked in. NAND cycle risk lurks — monitor closely, but momentum is intact."
         },
         {
             "ticker": "NBIS",
             "type": "bullish",
             "signal": "BULLISH",
-            "text": "<strong>Nebius at $208 — best performer, up 59% from your $131 cost.</strong> Nvidia invested $2B, Meta and Microsoft signed major multi-year compute deals, Eigen AI acquired for $643M. AI infrastructure thesis fully validated."
+            "text": "<strong>Nebius your top winner — +60%+ above your $131 cost.</strong> Q1 revenue +684% YoY, AI cloud ARR $1.9B (+674%). Nvidia $2B investment, Meta + Microsoft multi-year deals, Eigen AI $643M acquisition. 3.5GW capacity, targeting 4GW. Hold or trim into strength."
         },
         {
             "ticker": "SATS",
             "type": "bullish",
             "signal": "BULLISH",
-            "text": "<strong>EchoStar hit $139.54 ATH May 14 — up 21% above your $114 cost.</strong> Spectrum deal value intact. Pulled back slightly Friday with broader market. Momentum strong — hold or trim into strength."
+            "text": "<strong>EchoStar ~$135 — 18% above your $114 cost.</strong> FCC approved the $40B spectrum sale to AT&T ($23B) + SpaceX ($17B). Initial closes by end of June. Stock +10% past week. Trim into strength — catalyst priced in."
         },
         {
             "ticker": "BBAI",
             "type": "bearish",
             "signal": "HIGH RISK",
-            "text": "<strong>BigBear.ai at $4 — down 55% from your $9.02 cost.</strong> Defense AI pipeline building with new senior leadership hires but losses continue. No near-term catalyst visible. High risk — size accordingly or exit."
+            "text": "<strong>BigBear.ai ~$4.38 — still down 51% from your $9.02 cost.</strong> Q1 narrowed EPS loss, $75M new wins, 17% 2026 revenue guide. Defense-AI story building but 87% federal-dependent. Size accordingly — small position, asymmetric outcome."
         },
         {
             "ticker": "OKLO",
             "type": "bearish",
             "signal": "SPECULATIVE",
-            "text": "<strong>Oklo at $62 — 50% below your $125 cost basis.</strong> Down 7.4% Friday on broad risk-off. NRC approved Aurora design—real progress. Zero revenue and long wait for reactor. Speculative hold only — needs patience."
+            "text": "<strong>Oklo ~$69 — 45% below your $125 cost.</strong> NRC approved Aurora PDC in record time (15 days vs 30–60 normal). 14GW pipeline (Switch 12GW, Equinix 500MW + $25M prepay). Zero revenue until 2027. Speculative hold only — multi-year story."
+        },
+        {
+            "ticker": "BTCUSD",
+            "type": "neutral",
+            "signal": "HOLD",
+            "text": "<strong>Bitcoin ~$78,180 — 7% above your $73,135 cost.</strong> -1.1% on the day, consolidating after the Friday risk-off. Macro yield spike pressuring risk assets. 2% allocation — fine to hold as portfolio hedge against fiat debasement."
         }
     ]
 }
