@@ -1,98 +1,28 @@
 {
-    "generated_at": "2026-05-18T10:15:00+07:00",
+    "generated_at": "2026-05-19T08:30:00+07:00",
     "market_overview": {
-        "sp500":  { "value": "7,406", "change": "-0.2%", "direction": "down" },
-        "nasdaq": { "value": "26,131", "change": "-0.6%", "direction": "down" },
-        "dow":    { "value": "49,670", "change": "+0.3%", "direction": "up" },
-        "btc":    { "value": "$76,860", "change": "-2.1%", "direction": "down" },
-        "vix":    { "value": "18.43", "change": "+5.2%", "direction": "up" },
-        "oil":    { "value": "$103.00", "change": "+1.8%", "direction": "up" }
+        "sp500":  { "value": "7,377", "change": "-0.35%", "direction": "down" },
+        "nasdaq": { "value": "25,949", "change": "-0.55%", "direction": "down" },
+        "dow":    { "value": "49,529", "change": "-0.32%", "direction": "down" },
+        "btc":    { "value": "$76,565", "change": "-1.0%", "direction": "down" },
+        "vix":    { "value": "18.01", "change": "+1.07%", "direction": "up" },
+        "oil":    { "value": "$103.52", "change": "-0.83%", "direction": "down" }
     },
-    "sentiment": { "mood": "bearish", "icon": "🔴", "summary": "Bond yields spiked above 4.6% and oil rallied on Iran tensions, stoking inflation fears and dragging tech lower while the Dow barely held green." },
+    "sentiment": { "mood": "bearish", "icon": "🔴", "summary": "Broad selloff as Iran tensions, rising yields, and Samsung supply fears hammer equities and crypto." },
     "insights": [
-        {
-            "ticker": "MARKET",
-            "type": "neutral",
-            "signal": "CAUTION",
-            "text": "<strong>Yield spike rattles tech, oil stokes inflation fears.</strong> 10-year Treasury briefly topped 4.6% Monday as oil rallied on Iran tensions. Nasdaq led declines while Dow held green — defensive rotation underway. Stagflation risk is back on the table."
-        },
-        {
-            "ticker": "NVTS",
-            "type": "bullish",
-            "signal": "BULLISH",
-            "text": "<strong>NVTS surges 21% on India GaN power IC partnership with Cyient Semiconductors.</strong> Launching India's first GaN power IC family is a major geopolitical tailwind. At $21.35 vs your $10 cost — up 113% — momentum is strong. ATH was $23.82 on May 11; watch for retest."
-        },
-        {
-            "ticker": "RKLB",
-            "type": "bullish",
-            "signal": "BULLISH",
-            "text": "<strong>RKLB pulled back from $133 ATH but fundamentals remain rock-solid.</strong> Q1 revenue grew 63.5% YoY; Motiv Space acquisition expands mission capabilities. Deutsche Bank targets $120, Clear Street $150. At ~$121 vs your $62.04 cost — up ~95% — dips are opportunities."
-        },
-        {
-            "ticker": "TE",
-            "type": "bullish",
-            "signal": "BULLISH",
-            "text": "<strong>TE rips 18% on Q1 earnings beat and major long-term supply deal.</strong> Narrower Q1 loss and higher net sales triggered institutional buying; ownership hit all-time highs. At $6.86 vs your $6.73 cost — this move finally puts you firmly in the green with upside ahead."
-        },
-        {
-            "ticker": "STX",
-            "type": "bearish",
-            "signal": "CAUTION",
-            "text": "<strong>STX drops 7% on AI storage competition fears despite a strong Q3 earnings beat.</strong> At $800.74 vs your $448.98 cost — still up 78% — but the selloff signals real market concern over AI-driven storage disruption risk long-term. Tighten your mental stop here."
-        },
-        {
-            "ticker": "GOOG",
-            "type": "neutral",
-            "signal": "HOLD",
-            "text": "<strong>GOOG at $398 — just 1.9% above your $390.64 cost amid broad tech pressure.</strong> Rate fears are the near-term headwind, but Google's AI search monetization and Cloud growth keep the long-term thesis intact. No action needed; accumulate on deeper dips."
-        },
-        {
-            "ticker": "MSFT",
-            "type": "neutral",
-            "signal": "HOLD",
-            "text": "<strong>MSFT at $418 — just 2% above your $409.86 cost as rates weigh on tech valuations.</strong> Copilot and Azure AI revenue growth remain strong secular drivers. Rising yields are the key near-term risk. Core position — hold steady, no changes needed today."
-        },
-        {
-            "ticker": "MU",
-            "type": "bearish",
-            "signal": "CAUTION",
-            "text": "<strong>MU drops 3% to $715 — down 9.5% from your $790.62 cost basis.</strong> Memory chip sentiment is weak amid macro uncertainty and AI capex spending concerns. You're underwater here. Wait for an HBM demand catalyst or earnings beat before adding more exposure."
-        },
-        {
-            "ticker": "SNDK",
-            "type": "bearish",
-            "signal": "CAUTION",
-            "text": "<strong>SNDK at $1,408 — down 9.2% from your $1,550.95 cost and tracking MU weakness.</strong> NAND flash supply normalization is dragging storage names. No near-term catalyst visible. Hold; watch for NAND pricing recovery or enterprise SSD demand pickup before acting."
-        },
-        {
-            "ticker": "NBIS",
-            "type": "bullish",
-            "signal": "BULLISH",
-            "text": "<strong>NBIS at $200 — up 52% from your $131.12 cost as European AI cloud demand surges.</strong> Strong positioning as a non-US GPU cloud alternative with Nvidia backing. Thesis firmly intact. Consider trimming a small portion to lock in gains and reduce single-name risk."
-        },
-        {
-            "ticker": "BTCUSD",
-            "type": "bearish",
-            "signal": "HOLD",
-            "text": "<strong>BTC dips to $76,860 on rate hike fears and whale profit-taking.</strong> Still 5.1% above your $73,135 cost basis. The $76,500 support level is key to watch. Any dovish Fed signal could spike this back above $80k fast — but macro headwinds keep near-term pressure on."
-        },
-        {
-            "ticker": "SATS",
-            "type": "bullish",
-            "signal": "BULLISH",
-            "text": "<strong>SATS rockets on SpaceX IPO proxy frenzy — $11B SpaceX exposure triggers retail surge.</strong> At $145.46 vs your $114.33 cost — up 27%. Fresh SpaceX IPO timeline news is the catalyst. High speculative momentum; can move violently both ways. Trail a tight stop."
-        },
-        {
-            "ticker": "BBAI",
-            "type": "bearish",
-            "signal": "HIGH RISK",
-            "text": "<strong>BBAI at $4.02 — down 55% from your $9.02 cost with no clear near-term catalyst.</strong> BigBear.ai is struggling with contract execution and revenue visibility. A deep loss position. A major government contract win is the only realistic recovery trigger. High-risk hold."
-        },
-        {
-            "ticker": "OKLO",
-            "type": "bearish",
-            "signal": "HIGH RISK",
-            "text": "<strong>OKLO at $62 — down 50% from your $125 cost as Q1 showed a $33.1M net loss.</strong> Regulatory progress and a new reactor partnership are encouraging but cash burn is real. Nuclear energy thesis is long-term valid; near-term pain is likely to persist. Patience required."
-        }
+        { "ticker": "MARKET", "type": "bearish", "signal": "CAUTION", "text": "<strong>Risk-off day.</strong> S&P -0.35%, NASDAQ -0.55%; VIX 18. Iran tensions + Samsung strike rattling markets." },
+        { "ticker": "NVTS", "type": "bearish", "signal": "HOLD", "text": "<strong>Q1 miss stings.</strong> ~$18.90 (-3%), adj. loss & rev drop. Still 89% above $10.00 cost basis." },
+        { "ticker": "RKLB", "type": "bullish", "signal": "HOLD", "text": "<strong>Ripping +5%.</strong> $131.16, record Q1 revenue, $2.2B backlog. 111% above $62.19 basis." },
+        { "ticker": "TE", "type": "neutral", "signal": "HOLD", "text": "<strong>Quiet day.</strong> No significant news or movement." },
+        { "ticker": "STX", "type": "bearish", "signal": "WATCH", "text": "<strong>Samsung strike fallout.</strong> Semis down 5–7%; STX under pressure near $448.98 basis." },
+        { "ticker": "GOOG", "type": "bearish", "signal": "HOLD", "text": "<strong>Near cost basis.</strong> $384 vs. $390.64 avg; light volume 8.5M vs 16.7M avg. Watch support." },
+        { "ticker": "MSFT", "type": "neutral", "signal": "HOLD", "text": "<strong>Holding steady.</strong> $418 vs. $409.86 basis. Ackman added 5.65M shares in Q1 — bullish." },
+        { "ticker": "MU", "type": "bearish", "signal": "WATCH", "text": "<strong>Samsung strike hits hard.</strong> Memory stocks -5–7% today. Deep below $790.62 basis." },
+        { "ticker": "SNDK", "type": "bearish", "signal": "WATCH", "text": "<strong>Down 4.34% yesterday.</strong> Samsung ripple hits storage. Well below $1,550.95 cost basis." },
+        { "ticker": "NBIS", "type": "neutral", "signal": "HOLD", "text": "<strong>Quiet day.</strong> No significant news or movement." },
+        { "ticker": "BTCUSD", "type": "bearish", "signal": "HOLD", "text": "<strong>BTC slides.</strong> $76,565, -4.83% on week. Iran tensions weigh. Just above $73,135 basis." },
+        { "ticker": "SATS", "type": "neutral", "signal": "HOLD", "text": "<strong>Quiet day.</strong> No significant news or movement." },
+        { "ticker": "BBAI", "type": "neutral", "signal": "HOLD", "text": "<strong>Quiet day.</strong> No significant news or movement." },
+        { "ticker": "OKLO", "type": "neutral", "signal": "HOLD", "text": "<strong>Quiet day.</strong> No significant news or movement." }
     ]
 }
